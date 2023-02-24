@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">Camera</string>
+
+    <string name="pref_camera_scenemode_title">"取景模式"</string>
+    <string name="pref_camera_scenemode_entry_auto">"自动"</string>
+    <string name="pref_camera_scenemode_entry_off">"关闭"</string>
+    <string name="pref_camera_scenemode_entry_action">"运动"</string>
+    <string name="pref_camera_scenemode_entry_night">"夜景"</string>
+    <string name="pref_camera_scenemode_entry_sunset">"日落"</string>
+    <string name="pref_camera_scenemode_entry_party">"派对"</string>
+    <string name="pref_camera_scenemode_entry_portrait">"肖像"</string>
+    <string name="pref_camera_scenemode_entry_landscape">"风景"</string>
+    <string name="pref_camera_scenemode_entry_night_portrait">"夜景肖像"</string>
+    <string name="pref_camera_scenemode_entry_theatre">"影院"</string>
+    <string name="pref_camera_scenemode_entry_beach">"海滩"</string>
+    <string name="pref_camera_scenemode_entry_snow">"雪景"</string>
+    <string name="pref_camera_scenemode_entry_steadyphoto">"防抖"</string>
+    <string name="pref_camera_scenemode_entry_fireworks">"烟火"</string>
+    <string name="pref_camera_scenemode_entry_sports">"运动"</string>
+    <string name="pref_camera_scenemode_entry_candlelight">"烛光"</string>
+    <string name="asd_hdr_guide">打开HDR可能使拍照效果更好</string>
+
+
+    <string name="pref_camera_whitebalance_title">"白平衡"</string>
+    <string name="pref_camera_whitebalance_entry_auto">"自动"</string>
+    <string name="pref_camera_whitebalance_entry_incandescent">"白炽光"</string>
+    <string name="pref_camera_whitebalance_entry_fluorescent">"荧光"</string>
+    <string name="pref_camera_whitebalance_entry_daylight">"日光"</string>
+    <string name="pref_camera_whitebalance_entry_cloudy">"阴天"</string>
+    <string name="pref_camera_whitebalance_entry_twilight">"微光"</string>
+    <string name="pref_camera_whitebalance_entry_shade">"阴影"</string>
+    <string name="pref_camera_whitebalance_entry_warm_fluorescent">"暖荧光"</string>
+    <string name="pref_camera_whitebalance_entry_tungsten">"钨丝灯"</string>
+
+    <string name="accessibility_mode">相机模式</string>
+    <string name="accessibility_thumbnail">"最新照片"</string>
+
+</resources>

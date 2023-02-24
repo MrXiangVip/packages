@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <SwitchPreference
+        android:key="key_ais"
+        android:title="AIS"
+        android:persistent="false"
+        />
+
+    <SwitchPreference
+        android:title="origin_ais"
+        android:key="origin_ais"
+        android:textColor="@android:color/white"
+        />
+<!--    <com.example.camerabg.preference.XdfSwitchPreference-->
+<!--        android:title="self_ais"-->
+<!--        android:key="self_ais"-->
+<!--        android:clickable="true"-->
+<!--        android:focusable="true"-->
+<!--        />-->
+<!--    android:layout="@layout/xdf_switch_preference"-->
+
+    <!--    android:order="20"-->
+</PreferenceScreen>

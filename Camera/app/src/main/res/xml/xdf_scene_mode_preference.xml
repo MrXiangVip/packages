@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.example.camera.preference.SummaryPreference
+        android:key="key_scene_mode"
+        android:title="取景模式"
+        android:persistent="false"
+        android:layout="@layout/summary_preference_layout"
+        android:order="41"
+        />
+<!--    android:order="10"-->
+
+</PreferenceScreen>

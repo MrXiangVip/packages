@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:key="scene_mode_selector">
+<!--    <com.example.camerabg.preference.RecyclerPreference-->
+<!--        android:key="scene_mode_selector_prefs"-->
+<!--        />-->
+<!--    android:layout="@layout/recycler_preference_layout"-->
+</PreferenceScreen>

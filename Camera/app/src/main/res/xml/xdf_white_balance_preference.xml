@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.example.camera.preference.SummaryPreference
+        android:key="key_white_balance"
+        android:title="白平衡"
+        android:persistent="false"
+        android:layout="@layout/summary_preference_layout"
+        android:order="51"/>
+<!--    android:order="60"-->
+</PreferenceScreen>

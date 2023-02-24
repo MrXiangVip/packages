@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--当没有被按压时，背景设置为ic_launcher_background-->
+    <item android:state_pressed="false" android:drawable="@drawable/ic_launcher_background"/>
+    <!--当被按压时，背景设置为ic_launcher_foreground-->
+    <item android:state_pressed="true" android:drawable="@drawable/ic_launcher_foreground"/>
+
+    <item android:state_selected="false" android:drawable="@drawable/ic_launcher_foreground" />
+    <item android:state_selected="true" android:drawable="@drawable/ic_launcher_background" />
+</selector>

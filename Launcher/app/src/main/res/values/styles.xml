@@ -1,0 +1,97 @@
+
+<resources>
+
+    <style name="HomeScreenElementTheme">
+        <item name="android:colorEdgeEffect">?attr/workspaceTextColor</item>
+        <item name="android:textColorPrimary">?attr/workspaceTextColor</item>
+        <item name="android:textColorSecondary">?attr/workspaceTextColor</item>
+    </style>
+
+    <style name="TextHeadline" parent="@android:style/TextAppearance.DeviceDefault.DialogWindowTitle" />
+    <style name="FastScrollerPopup" parent="@android:style/TextAppearance.DeviceDefault.DialogWindowTitle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:minWidth">@dimen/fastscroll_popup_width</item>
+        <item name="android:layout_height">@dimen/fastscroll_popup_height</item>
+        <item name="android:textSize">@dimen/fastscroll_popup_text_size</item>
+        <item name="android:paddingEnd">@dimen/fastscroll_popup_padding</item>
+        <item name="android:gravity">center</item>
+        <item name="android:alpha">0</item>
+        <item name="android:elevation">3dp</item>
+        <item name="android:saveEnabled">false</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:importantForAccessibility">no</item>
+    </style>
+
+
+    <style name="DropTargetButtonBase" parent="@android:style/TextAppearance.DeviceDefault">
+        <item name="android:drawablePadding">7.5dp</item>
+        <item name="android:paddingLeft">16dp</item>
+        <item name="android:paddingRight">16dp</item>
+        <item name="android:textColor">?attr/workspaceTextColor</item>
+        <item name="android:textSize">@dimen/drop_target_text_size</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:shadowColor">?attr/workspaceShadowColor</item>
+        <item name="android:shadowDx">0.0</item>
+        <item name="android:shadowDy">1.0</item>
+        <item name="android:shadowRadius">4.0</item>
+    </style>
+    <style name="DropTargetButton" parent="DropTargetButtonBase" />
+
+
+    <style name="BaseLauncherTheme" parent="@android:style/Theme.DeviceDefault.Light">
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:colorEdgeEffect">#FF757575</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowShowWallpaper">true</item>
+        <item name="folderTextColor">?attr/workspaceTextColor</item>
+    </style>
+
+    <style name="LauncherTheme" parent="@style/BaseLauncherTheme">
+        <item name="android:textColorSecondary">#DE000000</item>
+        <item name="allAppsScrimColor">#FFFFFFFF</item>
+        <item name="allAppsInterimScrimAlpha">46</item>
+        <item name="allAppsNavBarScrimColor">#66FFFFFF</item>
+        <item name="allAppsTheme">@style/AllAppsTheme</item>
+        <item name="popupColorPrimary">#FFF</item>
+        <item name="popupColorSecondary">#F1F3F4</item>
+        <item name="popupColorTertiary">#E0E0E0</item> <!-- Gray 300 -->
+        <item name="isMainColorDark">false</item>
+        <item name="isWorkspaceDarkText">false</item>
+        <item name="workspaceTextColor">@android:color/white</item>
+        <item name="workspaceShadowColor">#B0000000</item>
+        <item name="workspaceAmbientShadowColor">#33000000</item>
+        <item name="workspaceKeyShadowColor">#44000000</item>
+        <item name="workspaceStatusBarScrim">@mipmap/workspace_bg</item>
+        <item name="widgetsTheme">@style/WidgetContainerTheme</item>
+        <item name="folderDotColor">?android:attr/colorPrimary</item>
+        <item name="folderFillColor">#CDFFFFFF</item>
+        <item name="folderIconBorderColor">?android:attr/colorPrimary</item>
+        <item name="folderTextColor">#FF212121</item>
+        <item name="folderHintColor">#89616161</item>
+        <item name="loadingIconColor">#CCFFFFFF</item>
+        <item name="iconOnlyShortcutColor">?android:attr/textColorSecondary</item>
+        <item name="workProfileOverlayTextColor">#FF212121</item>
+        <item name="eduHalfSheetBGColor">?android:attr/colorAccent</item>
+        <item name="disabledIconAlpha">.54</item>
+
+        <item name="android:windowTranslucentStatus">false</item>
+        <item name="android:windowTranslucentNavigation">false</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:statusBarColor">#00000000</item>
+        <item name="android:navigationBarColor">#00000000</item>
+    </style>
+    <style name="AppTheme" parent="@style/LauncherTheme" />
+
+    <style name="AllAppsTheme">
+        <item name="disabledIconAlpha">.54</item>
+    </style>
+    <style name="WidgetContainerTheme" parent="@android:style/Theme.DeviceDefault.Settings">
+        <item name="android:colorEdgeEffect">?android:attr/textColorSecondaryInverse</item>
+        <item name="android:textColorPrimary">?android:attr/textColorPrimaryInverse</item>
+        <item name="android:textColorSecondary">?android:attr/textColorSecondaryInverse</item>
+    </style>
+</resources>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <com.example.camera.preference.XdfMultiImagesPreference
+        android:key="key_multi_image"
+        android:layout="@layout/xdf_images_preference_layout"
+        android:persistent="false"
+        >
+    </com.example.camera.preference.XdfMultiImagesPreference>
+
+</PreferenceScreen>

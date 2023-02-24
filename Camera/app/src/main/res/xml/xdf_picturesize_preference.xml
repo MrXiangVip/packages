@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <com.example.camera.preference.XdfPictureSizePreference
+        android:key="key_picture_size"
+        android:title=" 图片大小"
+        android:layout="@layout/xdf_group_button_preference"
+        android:persistent="false"
+        android:order="31">
+    </com.example.camera.preference.XdfPictureSizePreference>
+</PreferenceScreen>
