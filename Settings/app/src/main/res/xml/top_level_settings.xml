@@ -80,6 +80,7 @@
         android:summary="@string/sound_dashboard_summary"
         android:icon="@drawable/ic_homepage_sound"
         android:order="-70"
+        android:fragment="com.example.settings.notification.SoundSettings"
         />
 <!--        android:fragment="com.android.settings.notification.SoundSettings"/>-->
 
@@ -89,6 +90,7 @@
         android:summary="@string/summary_placeholder"
         android:icon="@drawable/ic_homepage_storage"
         android:order="-60"
+        android:fragment="com.example.settings.deviceinfo.StorageSettings"
         />
 <!--        android:fragment="com.android.settings.deviceinfo.StorageSettings"-->
 <!--        settings:controller="com.android.settings.deviceinfo.TopLevelStoragePreferenceController"/>-->
@@ -99,6 +101,7 @@
         android:summary="@string/privacy_dashboard_summary"
         android:icon="@drawable/ic_homepage_privacy"
         android:order="-55"
+        android:fragment="com.example.settings.privacy.PrivacyDashboardFragment"
         />
 <!--        android:fragment="com.android.settings.privacy.PrivacyDashboardFragment"/>-->
 
@@ -118,6 +121,7 @@
         android:summary="@string/summary_placeholder"
         android:icon="@drawable/ic_homepage_security"
         android:order="-40"
+        android:fragment="com.example.settings.security.SecuritySettings"
         />
 <!--        android:fragment="com.android.settings.security.SecuritySettings"-->
 <!--        settings:controller="com.android.settings.security.TopLevelSecurityEntryPreferenceController"/>-->
@@ -128,6 +132,7 @@
         android:summary="@string/summary_placeholder"
         android:icon="@drawable/ic_homepage_accounts"
         android:order="-30"
+        android:fragment="com.example.settings.accounts.AccountDashboardFragment"
         />
 <!--        android:fragment="com.android.settings.accounts.AccountDashboardFragment"-->
 <!--        settings:controller="com.android.settings.accounts.TopLevelAccountEntryPreferenceController"/>-->
@@ -138,6 +143,7 @@
         android:summary="@string/accessibility_settings_summary"
         android:icon="@drawable/ic_homepage_accessibility"
         android:order="-20"
+        android:fragment="com.example.settings.accessibility.AccessibilitySettings"
         />
 <!--        android:fragment="com.android.settings.accessibility.AccessibilitySettings"-->
 <!--        settings:controller="com.android.settings.accessibility.TopLevelAccessibilityPreferenceController"/>-->
@@ -148,6 +154,7 @@
         android:summary="@string/system_dashboard_summary"
         android:icon="@drawable/ic_homepage_system_dashboard"
         android:order="10"
+        android:fragment="com.example.settings.system.SystemDashboardFragment"
         />
 <!--        android:fragment="com.android.settings.system.SystemDashboardFragment"/>-->
 
@@ -157,6 +164,7 @@
         android:summary="@string/summary_placeholder"
         android:icon="@drawable/ic_homepage_about"
         android:order="20"
+        android:fragment="com.example.settings.aboutphone.MyDeviceInfoFragment"
         />
 <!--        android:fragment="com.android.settings.deviceinfo.aboutphone.MyDeviceInfoFragment"-->
 <!--        settings:controller="com.android.settings.deviceinfo.aboutphone.TopLevelAboutDevicePreferenceController"/>-->
