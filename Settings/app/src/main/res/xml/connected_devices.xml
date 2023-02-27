@@ -21,8 +21,9 @@
     android:title="@string/connected_devices_dashboard_title">
 
 <!--    <com.android.settings.slices.SlicePreference-->
-<!--        android:key="bt_nearby_slice"-->
-<!--        android:title="@string/summary_placeholder"-->
+    <Preference
+        android:key="bt_nearby_slice"
+        android:title="@string/summary_placeholder"/>
 <!--        settings:controller="com.android.settings.slices.SlicePreferenceController"-->
 <!--        settings:allowDividerBelow="true"/>-->
 
@@ -39,17 +40,17 @@
 <!--    settings:controller="com.android.settings.connecteddevice.ConnectedDeviceGroupController"-->
 
 <!--    <com.android.settingslib.RestrictedPreference-->
-<!--        android:key="add_bt_devices"-->
-<!--        android:title="@string/bluetooth_pairing_pref_title"-->
-<!--        android:icon="@drawable/ic_add_24dp"-->
-<!--        android:summary="@string/connected_device_add_device_summary"-->
-<!--        android:fragment="com.android.settings.bluetooth.BluetoothPairingDetail"-->
+    <SwitchPreference
+        android:key="add_bt_devices"
+        android:title="@string/bluetooth_pairing_pref_title"
+        android:icon="@drawable/ic_add_24dp"
+        android:summary="@string/connected_device_add_device_summary"/>
 <!--        settings:allowDividerAbove="true"-->
 <!--        settings:keywords="@string/keywords_add_bt_device"-->
 <!--        settings:userRestriction="no_config_bluetooth"-->
 <!--        settings:useAdminDisabledSummary="true"-->
-<!--        />-->
-<!--    settings:controller="com.android.settings.connecteddevice.AddDevicePreferenceController"-->
+<!--    android:fragment="com.android.settings.bluetooth.BluetoothPairingDetail"-->
+<!--    settings:controller="com.android.settings.connecteddevice.AddDevicePreferenceController"/>-->
     <PreferenceCategory
         android:key="previously_connected_devices"
         android:title="@string/connected_device_previously_connected_title"
@@ -70,17 +71,17 @@
         android:key="connection_preferences"
         android:title="@string/connected_device_connections_title"
         android:summary="@string/summary_placeholder"
-
         />
 <!--    settings:allowDividerAbove="true"-->
 <!--    android:fragment="com.android.settings.connecteddevice.AdvancedConnectedDeviceDashboardFragment"-->
 
     <!--    settings:controller="com.android.settings.connecteddevice.AdvancedConnectedDeviceController"-->
 <!--    <com.android.settingslib.widget.FooterPreference-->
-<!--        android:key="discoverable_footer"-->
-<!--        android:title="@string/bluetooth_off_footer"-->
-<!--        android:selectable="false"-->
+    <Preference
+        android:key="discoverable_footer"
+        android:title="@string/bluetooth_off_footer"
+        android:selectable="false">
 <!--        settings:controller="com.android.settings.connecteddevice.DiscoverableFooterPreferenceController">-->
-<!--    </com.android.settingslib.widget.FooterPreference>-->
+    </Preference>
 
 </PreferenceScreen>
