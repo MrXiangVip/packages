@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+<!--    <style name="PreferenceThemeOverlay.SettingsBase" parent="@style/PreferenceThemeOverlay">-->
+    <style name="PreferenceThemeOverlay.SettingsBase" parent="@style/PreferenceTheme">
+<!--        <item name="footerPreferenceStyle">@style/Preference.FooterPreference.SettingsBase</item>-->
+    </style>
+    <style name="PreferenceTheme" parent="@style/PreferenceThemeOverlay.SettingsBase">
+<!--        <item name="apnPreferenceStyle">@style/ApnPreference</item>-->
+<!--        <item name="cardPreferenceStyle">@style/CardPreference</item>-->
+<!--        <item name="slicePreferenceStyle">@style/SlicePreference</item>-->
+<!--        <item name="seekBarPreferenceStyle">@style/SettingsSeekBarPreference</item>-->
+<!--        <item name="twoStateButtonPreferenceStyle">@style/TwoStateButtonPreference</item>-->
+<!--        <item name="preferenceCategoryTitleTextAppearance">@style/TextAppearance.CategoryTitle</item>-->
+<!--        <item name="preferenceCategoryStyle">@style/SettingsCate    goryPreference</item>-->
+        <!-- For preference category color -->
+<!--        <item name="preferenceCategoryTitleTextColor">?android:attr/textColorSecondary</item>-->
+<!--        <item name="preferenceFragmentCompatStyle">@style/SettingsPreferenceFragmentStyle</item>-->
+    </style>
+
+</resources>
