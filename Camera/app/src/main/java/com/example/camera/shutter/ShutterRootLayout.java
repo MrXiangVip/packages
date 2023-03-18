@@ -1,4 +1,4 @@
-package com.example.camera.host;
+package com.example.camera.shutter;
 
 import android.content.Context;
 import android.util.AttributeSet;

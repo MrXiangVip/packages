@@ -20,7 +20,6 @@ import java.util.List;
 public class WhiteBalanceSettingView implements ICameraSettingView, SummaryPreference.OnLayoutClickListener, IWhiteBalanceRecyclerItemClickListener {
     private  String TAG="MyCamera.WhiteBalanceSettingView";
 
-
     private List<String> mEntries = new ArrayList<>();
     private List<String> mEntryValues = new ArrayList<>();
     private List<Integer> mIcons = new ArrayList<>();
@@ -32,9 +31,9 @@ public class WhiteBalanceSettingView implements ICameraSettingView, SummaryPrefe
     private String mSelectedValue = null;
     private String mSummary = null;
 
-    private Activity mActivity;
-    private String mKey;
-    private  SummaryPreference preference;
+    private Activity    mActivity;
+    private String      mKey;
+    private SummaryPreference preference;
     private PreferenceScreen  screen;
     private XdfTabHostFragment xdfTabHostFragment;
     public WhiteBalanceSettingView(Activity activity, String key) {
@@ -80,8 +79,8 @@ public class WhiteBalanceSettingView implements ICameraSettingView, SummaryPrefe
 
         if (xdfTabHostFragment == null) {
             xdfTabHostFragment = new XdfTabHostFragment();
-            xdfTabHostFragment.setOnWhiteBalanceRecylerItemClickListener( this );
         }
+        xdfTabHostFragment.setOnWhiteBalanceRecylerItemClickListener( this );
         xdfTabHostFragment.setWhiteBalanceSelectedValue(mSelectedValue);
         xdfTabHostFragment.setWhiteBalanceEntriesAndEntryValues(mEntries, mEntryValues, mIcons);
     }
@@ -117,9 +116,9 @@ public class WhiteBalanceSettingView implements ICameraSettingView, SummaryPrefe
     public void onLayoutClick(View view) {
         if (xdfTabHostFragment == null) {
             xdfTabHostFragment = new XdfTabHostFragment();
-            xdfTabHostFragment.setOnWhiteBalanceRecylerItemClickListener( this );;
         }
         xdfTabHostFragment.setCurrentIndex( 1 );
+        xdfTabHostFragment.setOnWhiteBalanceRecylerItemClickListener( this );
         xdfTabHostFragment.setWhiteBalanceSelectedValue(mSelectedValue);
         xdfTabHostFragment.setWhiteBalanceEntriesAndEntryValues(mEntries, mEntryValues, mIcons);
 
@@ -139,8 +138,8 @@ public class WhiteBalanceSettingView implements ICameraSettingView, SummaryPrefe
 
 
     @Override
-    public void onWhiteBalanceRecylerItemClick(String selectedValue) {
-        Log.d(TAG, "onRecylerItemClick "+selectedValue+" "+this);
-        preference.setSummary( selectedValue );
+    public void onWhiteBalanceRecylerItemClick(String entry, String entryValue) {
+        Log.d(TAG, "onRecylerItemClick "+entryValue+" "+this);
+        preference.setSummary( entryValue );
     }
 }

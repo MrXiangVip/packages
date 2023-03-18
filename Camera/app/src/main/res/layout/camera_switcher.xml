@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.example.camera.common.RotateImageView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/camera_switcher"
+    android:layout_width="50dp"
+    android:layout_height="50dp"
+    android:scaleType="center"
+    android:clickable="true"
+    android:focusable="true"
+    android:visibility="gone"
+    app:srcCompat="@mipmap/switch_camera_normal_xdf"/>

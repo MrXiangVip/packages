@@ -25,15 +25,15 @@
     </string-array>
 
     <array name="white_balance_icons" translatable="false">
-        <item>@drawable/ic_white_balance_auto</item>
-        <item>@drawable/ic_white_balance_incandescent</item>
-        <item>@drawable/ic_white_balance_daylight</item>
-        <item>@drawable/ic_white_balance_fluorescent</item>
-        <item>@drawable/ic_white_balance_cloudy</item>
-        <item>@drawable/ic_white_balance_twilight</item>
-        <item>@drawable/ic_white_balance_shade</item>
-        <item>@drawable/ic_white_balance_warm</item>
-        <item>@drawable/ic_white_balance_tungsten</item>
+        <item>@drawable/xdf_ic_white_balance_auto_selector</item>
+        <item>@drawable/xdf_ic_white_balance_incandescent_selector</item>
+        <item>@drawable/xdf_ic_white_balance_daylight_selector</item>
+        <item>@drawable/xdf_ic_white_balance_fluorescent_selector</item>
+        <item>@drawable/xdf_ic_white_balance_cloudy_selector</item>
+        <item>@drawable/xdf_ic_white_balance_twilight_selector</item>
+        <item>@drawable/xdf_ic_white_balance_shade_selector</item>
+        <item>@drawable/xdf_ic_white_balance_warm_selector</item>
+        <item>@drawable/xdf_ic_white_balance_tungsten_selector</item>
     </array>
 
     <array name="white_balance_indicators" translatable="false">

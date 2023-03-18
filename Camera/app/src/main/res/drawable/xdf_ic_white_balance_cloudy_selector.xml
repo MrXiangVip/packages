@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--  触摸时背景图片 -->
+    <item android:state_pressed="true" android:drawable="@drawable/xdf_ic_white_balance_cloudy_indicator" />
+    <!--选中时的图片背景-->
+    <item android:state_selected="true" android:drawable="@drawable/xdf_ic_white_balance_cloudy_indicator" />
+
+    <item android:state_focused="true" android:drawable="@drawable/xdf_ic_white_balance_cloudy_indicator" />
+
+    <!-- 窗口没有处于交互时的背景图片 -->
+    <item android:drawable="@drawable/xdf_ic_white_balance_cloudy" />
+
+</selector>

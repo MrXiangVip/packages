@@ -59,7 +59,9 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
                 int position = holder.getAdapterPosition();
                 String name = mEntries.get(position);
                 Toast.makeText(v.getContext(), "你点击了 View " + name, Toast.LENGTH_SHORT).show();
-                mListener.onRecylerItemClick( name );
+                if( mListener != null ){
+                    mListener.onRecylerItemClick( name );
+                }
                 Log.d(TAG, "onClick "+name);
 
             }

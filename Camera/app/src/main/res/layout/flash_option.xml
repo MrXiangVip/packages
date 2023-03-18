@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:layout_alignParentTop="true"
+    android:layout_marginTop="30dp">
+    <RelativeLayout
+        android:id="@+id/flash_choice"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layoutDirection="rtl">
+
+        <ImageView
+            android:layout_height="50dp"
+            android:layout_width="50dp"
+            android:id="@+id/flash_auto"
+            android:layout_toRightOf="@id/flash_on"
+            android:layout_marginLeft="92dp"
+            android:contentDescription="自动 "
+            android:src="@drawable/flash_auto"/>
+
+        <ImageView
+            android:layout_height="50dp"
+            android:layout_width="50dp"
+            android:id="@+id/flash_on"
+            android:layout_centerHorizontal="true"
+            android:contentDescription="开启"
+            android:src="@drawable/flash_on"/>
+
+        <ImageView
+            android:layout_height="50dp"
+            android:layout_width="50dp"
+            android:id="@+id/flash_off"
+            android:layout_toLeftOf="@id/flash_on"
+            android:layout_marginRight="92dp"
+            android:contentDescription="关闭"
+            android:src="@drawable/flash_off"/>
+    </RelativeLayout>>
+</LinearLayout>

@@ -94,8 +94,9 @@ public class XdfTabHostFragment extends Fragment  implements IScenceModeRecycler
                 LinearLayoutManager layoutManager=new LinearLayoutManager( getContext());
                 layoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
                 scenceModeRecycle.setLayoutManager(layoutManager);
-                ScenceModeRecyclerAdapter  scenceModeAdapter=new ScenceModeRecyclerAdapter(mScenceModeEntries,mScenceModeEntries, mScenceModeIcons  );
+                ScenceModeRecyclerAdapter  scenceModeAdapter=new ScenceModeRecyclerAdapter(scenceModeRecycle, mScenceModeEntries,mScenceModeEntries, mScenceModeIcons  );
                 scenceModeAdapter.setOnScenceModeRecylerItemClickListener( XdfTabHostFragment.this );
+                scenceModeAdapter.setScenceModeSelectedValue(mScenceModeSelectedValue);
                 scenceModeRecycle.setAdapter(scenceModeAdapter);
             }else if(tabTag.equals("tab2")){
 
@@ -103,8 +104,9 @@ public class XdfTabHostFragment extends Fragment  implements IScenceModeRecycler
                 LinearLayoutManager layoutManager=new LinearLayoutManager( getContext());
                 layoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
                 whiteBalanceRecycle.setLayoutManager(layoutManager);
-                WhiteBalanceRecyclerAdapter whiteBalanceAdapter=new WhiteBalanceRecyclerAdapter( mWhiteBalanceEntries,mWhiteBalanceEntries, mWhiteBalanceIcons);
+                WhiteBalanceRecyclerAdapter whiteBalanceAdapter=new WhiteBalanceRecyclerAdapter(whiteBalanceRecycle, mWhiteBalanceEntries,mWhiteBalanceValues, mWhiteBalanceIcons);
                 whiteBalanceAdapter.setOnWhilteBalanceRecylerItemClickListener( XdfTabHostFragment.this );
+                whiteBalanceAdapter.setWhiteBalanceSelectedValue(mWhiteBalanceSelectedValue);
                 whiteBalanceRecycle.setAdapter(whiteBalanceAdapter);
             }
         }
@@ -137,11 +139,12 @@ public class XdfTabHostFragment extends Fragment  implements IScenceModeRecycler
         mScenceModeIcons = icons;
     }
 
-    public void onRecylerItemClick(String selectedValue) {
-        Log.d(TAG, selectedValue+" "+this);
-        mWhiteBalanceSelectedValue = selectedValue;
-        mWhiteBalanceItemListener.onWhiteBalanceRecylerItemClick( selectedValue );
-        mSenceModeItemListener.onScenceModeRecylerItemClick( selectedValue);
+    public void onRecylerItemClick(String entry) {
+        Log.d(TAG, entry+" "+this);
+        mWhiteBalanceSelectedValue = entry;
+        mWhiteBalanceItemListener.onWhiteBalanceRecylerItemClick( entry, entry );
+        mSenceModeItemListener.onScenceModeRecylerItemClick( entry);
+
         FragmentTransaction transaction = getActivity().getFragmentManager()
                 .beginTransaction();
         getActivity().getFragmentManager().popBackStack();
@@ -154,22 +157,27 @@ public class XdfTabHostFragment extends Fragment  implements IScenceModeRecycler
         Log.d(TAG, selectedValue+" "+this);
         mScenceModeSelectedValue = selectedValue;
         mSenceModeItemListener.onScenceModeRecylerItemClick( selectedValue);
-        FragmentTransaction transaction = getActivity().getFragmentManager()
-                .beginTransaction();
-        getActivity().getFragmentManager().popBackStack(null, 1);
-        transaction.commit();
+//        取景模式点击后应停留在当前页面
+//        FragmentTransaction transaction = getActivity().getFragmentManager()
+//                .beginTransaction();
+//        getActivity().getFragmentManager().popBackStack(null, 1);
+//        transaction.commit();
+//        scenceModeRecycle.invalidate();
         Log.d(TAG, "onRecylerItemClick "+getActivity().getFragmentManager().getFragments().size()+" "+this);
     }
 
     @Override
-    public void onWhiteBalanceRecylerItemClick(String selectedValue) {
-        Log.d(TAG, selectedValue+" "+this);
-        mWhiteBalanceSelectedValue = selectedValue;
-        mWhiteBalanceItemListener.onWhiteBalanceRecylerItemClick( selectedValue );
-        FragmentTransaction transaction = getActivity().getFragmentManager()
-                .beginTransaction();
-        getActivity().getFragmentManager().popBackStack( null, 1);
-        transaction.commit();
+    public void onWhiteBalanceRecylerItemClick(String entry, String entryValue) {
+        Log.d(TAG, entry+" "+this);
+        mWhiteBalanceSelectedValue = entry;
+        mWhiteBalanceItemListener.onWhiteBalanceRecylerItemClick( entry, entryValue );
+//        白平衡点击后应停留在当前页面
+//        FragmentTransaction transaction = getActivity().getFragmentManager()
+//                .beginTransaction();
+//        getActivity().getFragmentManager().popBackStack( null, 1);
+//        transaction.commit();
+//        whiteBalanceRecycle.invalidate();
+
         Log.d(TAG, "onRecylerItemClick "+getActivity().getFragmentManager().getFragments().size()+" "+this);
     }
 
@@ -183,7 +191,7 @@ public class XdfTabHostFragment extends Fragment  implements IScenceModeRecycler
                 LinearLayoutManager layoutManager=new LinearLayoutManager( getContext());
                 layoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
                 scenceModeRecycle.setLayoutManager(layoutManager);
-                ScenceModeRecyclerAdapter scenceModeAdapter=new ScenceModeRecyclerAdapter( mScenceModeEntries,mScenceModeEntries, mScenceModeIcons );
+                ScenceModeRecyclerAdapter scenceModeAdapter=new ScenceModeRecyclerAdapter(scenceModeRecycle, mScenceModeEntries,mScenceModeEntries, mScenceModeIcons );
                 scenceModeAdapter.setOnScenceModeRecylerItemClickListener( XdfTabHostFragment.this );
                 scenceModeRecycle.setAdapter(scenceModeAdapter);
             }else if(tabId.equals("tab2")){
@@ -191,7 +199,7 @@ public class XdfTabHostFragment extends Fragment  implements IScenceModeRecycler
                 LinearLayoutManager layoutManager=new LinearLayoutManager( getContext());
                 layoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
                 whiteBalanceRecycle.setLayoutManager(layoutManager);
-                WhiteBalanceRecyclerAdapter whiteBalanceAdapter=new WhiteBalanceRecyclerAdapter(  mWhiteBalanceEntries,mWhiteBalanceEntries, mWhiteBalanceIcons );
+                WhiteBalanceRecyclerAdapter whiteBalanceAdapter=new WhiteBalanceRecyclerAdapter( whiteBalanceRecycle, mWhiteBalanceEntries,mWhiteBalanceEntries, mWhiteBalanceIcons );
                 whiteBalanceAdapter.setOnWhilteBalanceRecylerItemClickListener( XdfTabHostFragment.this );
                 whiteBalanceRecycle.setAdapter(whiteBalanceAdapter);
             }

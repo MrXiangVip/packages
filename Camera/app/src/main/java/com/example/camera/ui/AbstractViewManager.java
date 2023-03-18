@@ -1,11 +1,12 @@
-package com.example.camera.host;
+package com.example.camera.ui;
 
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.camera.common.IApp;
+import com.example.camera.host.IViewManager;
 
-public abstract class AbstractViewManager implements  IViewManager{
+public abstract class AbstractViewManager implements IViewManager {
     protected final IApp mApp;
     protected final ViewGroup mParentView;
     private View mView;

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    >
+    <com.example.camera.common.RotateImageView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:id="@+id/shutter_button"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:clickable="true"
+        android:scaleType="fitXY"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/xdf_shutter_photo2"/>
+
+    <!-- <com.mediatek.camera.common.widget.StrokeTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/shutter_text"
+        android:layout_above="@id/shutter_button"
+        android:textSize="20sp"
+        android:textColor="#FFFFFFFF"
+        android:maxLines="1"
+        android:gravity="center"
+        android:enabled="true"
+        android:clickable="true"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_centerHorizontal="true"/> -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/pic_shutter_text"
+        android:text="PHOTO"
+        android:textSize="18sp"
+        android:textColor="#000000"
+        android:enabled="true"
+        android:clickable="true"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:gravity="center"
+        android:layout_centerVertical="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="25dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="180dp"
+    />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/video_shutter_text"
+        android:text="VIDEO"
+        android:textSize="18sp"
+        android:textColor="#000000"
+        android:enabled="true"
+        android:clickable="true"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:gravity="center"
+        android:layout_centerVertical="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="25dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="100dp"
+    />
+</RelativeLayout>
+

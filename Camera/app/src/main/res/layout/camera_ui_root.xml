@@ -44,50 +44,27 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
-                    <com.example.camera.common.RotateImageView
-                        android:id="@+id/mode"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:layout_alignParentLeft="true"
-                        android:layout_alignParentTop="true"
-                        android:layout_marginLeft="50dp"
-                        android:layout_marginTop="32dp"
-                        android:clickable="true"
-                        android:contentDescription="@string/accessibility_mode"
-                        android:focusable="false"
-                        android:scaleType="fitCenter"
-                        android:visibility="visible" />
-
-		<ImageView
-			android:id="@+id/camera_off"
-			android:layout_width="32dp"
-			android:layout_height="32dp"
-			android:layout_marginLeft="50dp"
-			android:layout_marginTop="30dp"
-			android:gravity="center_vertical"
-			android:visibility="gone"
-			android:background="@drawable/ic_camera_off"/>
-		<ImageView
-			android:id="@+id/camera_on"
-			android:layout_width="32dp"
-			android:layout_height="32dp"
-			android:layout_marginLeft="50dp"			
-			android:layout_marginTop="30dp"
-			android:gravity="center_vertical"
-			android:visibility="gone"
-			android:background="@drawable/ic_camera_on"/>
-			
-                    <LinearLayout
+                   <LinearLayout
                         android:id="@+id/quick_switcher"
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
                         android:layout_alignParentTop="true"
                         android:layout_marginRight="@dimen/quick_switcher_margin_right_dp"
-                        android:layout_marginTop="30dp"
-                        android:layout_toRightOf="@+id/mode"
-                        android:gravity="center_vertical"
+                        android:layout_marginTop="40dp"
+                        android:gravity="center"
                         android:layoutDirection="rtl"
-                        android:orientation="horizontal"></LinearLayout>
+                        android:orientation="horizontal">
+                        <com.example.camera.common.RotateImageView
+                            android:id="@+id/mode"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_marginLeft="46dp"
+                            android:clickable="true"
+                            android:contentDescription="@string/accessibility_mode"
+                            android:focusable="true"
+                            android:scaleType="fitCenter"
+                            android:visibility="visible" />
+                </LinearLayout>
 
                 </LinearLayout>
 
@@ -99,13 +76,15 @@
                     android:layout_alignParentBottom="true">
                 </LinearLayout>
 
-                <com.example.camera.host.ShutterRootLayout
+                <com.example.camera.shutter.ShutterRootLayout
                     android:id="@+id/shutter_root"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_alignParentBottom="true"
                     android:layout_centerInParent="true"
-                    android:layout_marginBottom="18.5dp"></com.example.camera.host.ShutterRootLayout>
+                    android:layout_marginBottom="18.5dp">
+
+                </com.example.camera.shutter.ShutterRootLayout>
 
                 <View
                     android:id="@+id/center"
@@ -146,8 +125,19 @@
                     android:clickable="true"
                     android:focusable="false"
                     android:scaleType="center">
-
                 </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/camera_switcher_button"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="48dp"
+                    android:layout_marginLeft="80dp"
+                    android:layout_toRightOf="@+id/center_bottom"
+                    android:gravity="center_vertical"
+                    android:layoutDirection="rtl"
+                    android:orientation="horizontal"></LinearLayout>
 
                 <com.example.camera.common.RotateImageView
                     android:id="@+id/thumbnail"

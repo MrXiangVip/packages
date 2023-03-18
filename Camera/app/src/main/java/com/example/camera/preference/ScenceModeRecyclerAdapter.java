@@ -25,7 +25,12 @@ public class ScenceModeRecyclerAdapter extends RecyclerView.Adapter<ScenceModeRe
 
     private IScenceModeRecyclerItemClickListener  mListener;
 
-
+    private String mScenceModeSelectedValue ;
+    private RecyclerView mRecyclerView;
+//    private OnItemClickListener mOnItemClickListener;
+//    public interface OnItemClickListener {
+//        void onItemClicked(View view, int position);
+//    }
     static class ViewHolder extends RecyclerView.ViewHolder {
         View holderView;
         ImageView image;
@@ -39,9 +44,10 @@ public class ScenceModeRecyclerAdapter extends RecyclerView.Adapter<ScenceModeRe
         }
     }
 
-    public ScenceModeRecyclerAdapter(List<String> entries,
+    public ScenceModeRecyclerAdapter(RecyclerView recyclerView, List<String> entries,
                                      List<String> entryValues,
                                      List<Integer> icons) {
+        mRecyclerView = recyclerView;
         mEntries = entries;
         mEntryValues = entryValues;
         mIcons = icons;
@@ -62,6 +68,17 @@ public class ScenceModeRecyclerAdapter extends RecyclerView.Adapter<ScenceModeRe
                 mListener.onScenceModeRecylerItemClick( name );
                 Log.d(TAG, "onClick "+name);
 
+                if( mRecyclerView != null ){
+                    int count = mRecyclerView.getChildCount();
+                    for(int i =0; i< count; i++){
+                        ViewGroup viewGroup = (ViewGroup) mRecyclerView.getChildAt( i );
+                        ImageView imageView= (ImageView)viewGroup.findViewById(R.id.image);
+                        imageView.setSelected(false);
+                    }
+                    ViewGroup viewGroup = (ViewGroup) mRecyclerView.getChildAt( position );
+                    ImageView imageView= (ImageView)viewGroup.findViewById(R.id.image);
+                    imageView.setSelected(true);
+                }
             }
         });
 
@@ -74,6 +91,11 @@ public class ScenceModeRecyclerAdapter extends RecyclerView.Adapter<ScenceModeRe
         int id = mIcons.get(position);
         holder.image.setImageResource( id );
         holder.name.setText( name);
+        if( mScenceModeSelectedValue!=null && mScenceModeSelectedValue.equals(name) ){
+            holder.image.setSelected( true );
+        }else{
+            holder.image.setSelected( false );
+        }
     }
 
     @Override
@@ -81,6 +103,9 @@ public class ScenceModeRecyclerAdapter extends RecyclerView.Adapter<ScenceModeRe
         return mEntries.size();
     }
 
+    public void setScenceModeSelectedValue(String scenceModeSelectedValue){
+        mScenceModeSelectedValue = scenceModeSelectedValue;
+    }
     public void setOnScenceModeRecylerItemClickListener(IScenceModeRecyclerItemClickListener listener) {
         mListener =  listener;
     }

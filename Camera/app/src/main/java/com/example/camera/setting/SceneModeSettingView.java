@@ -104,9 +104,9 @@ public class SceneModeSettingView implements ICameraSettingView, SummaryPreferen
         Log.d(TAG, "onLayoutClick "+view+" "+mActivity.getFragmentManager().getFragments().size());
         if (xdfTabHostFragment == null) {
             xdfTabHostFragment = new XdfTabHostFragment();
-            xdfTabHostFragment.setOnSconceModeRecylerItemClickListener( this );
         }
         xdfTabHostFragment.setCurrentIndex( 0 );
+        xdfTabHostFragment.setOnSconceModeRecylerItemClickListener( this );
         xdfTabHostFragment.setScenceModeSelectedValue(mSelectedValue);
         xdfTabHostFragment.setScenceModeEntriesAndEntryValues(mEntries, mEntryValues, mIcons);
 

@@ -20,7 +20,7 @@ import com.example.camerabg.R;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SettingFragment extends PreferenceFragment implements IRecyclerItemClickListener {
+public class SettingFragment extends PreferenceFragment  {
     String TAG="SettingFragment.camera";
 
     private List<ICameraSettingView> mSettingViewList = new ArrayList<>();
@@ -39,11 +39,6 @@ public class SettingFragment extends PreferenceFragment implements IRecyclerItem
     private List<String> mEntryValues = new ArrayList<>();
     private List<Integer> mIcons = new ArrayList<>();
 
-    private XdfMultiImagesPreference xdfMultiImagesPreference;
-    private SummaryPreference sceneSummaryPreference;
-    private SummaryPreference whiteBalanceSummaryPreference;
-    private RecyclerPreference recyclerPreference;
-    private XdfSceneModeFragment mSceneModeSelector;
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,42 +63,10 @@ public class SettingFragment extends PreferenceFragment implements IRecyclerItem
         layout.setBackgroundResource(R.drawable.ic_container_background);
 
         LinearLayout.LayoutParams  params = new LinearLayout.LayoutParams(dpToPixel(640), dpToPixel(366));
-//        params.gravity = CENTER
         layout.setLayoutParams(params);
 
     }
-    @Override
-    public void onRecylerItemClick(String selectedValue) {
-            mSelectedValue = selectedValue;
-            sceneSummaryPreference.setSummary( selectedValue);
-    }
 
-//    @Override
-//    public void onLayoutClick(View view) {
-//        Toast.makeText(getContext(), view.getId()+"", Toast.LENGTH_LONG).show();
-//        mSceneModeSelector = new XdfSceneModeFragment();
-//        mSceneModeSelector.setSelectedValue(mSelectedValue);
-//        mSceneModeSelector.setEntriesAndEntryValues(mEntries, mEntryValues, mIcons);
-//
-//        mSceneModeSelector.setOnRecylerItemClickListener( this );
-//
-//
-//        FragmentTransaction transaction = getFragmentManager()
-//                .beginTransaction();
-//        Fragment fragment = getFragmentManager().findFragmentById( R.id.setting_container);
-//        transaction.hide( fragment );
-//        transaction.addToBackStack(null);
-//        transaction.replace(R.id.setting_tail,
-//                mSceneModeSelector, "Setting").commit();
-//    }
-    private void initEntries() {
-
-        for(int i=0; i <20; i++ ){
-            mEntries.add(""+i);
-            int id = R.drawable.ic_launcher_background;
-            mIcons.add( id );
-        }
-    }
 
     public synchronized void addSettingView(ICameraSettingView view) {
         if (view == null) {

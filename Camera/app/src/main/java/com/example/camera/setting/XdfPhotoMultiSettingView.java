@@ -1,5 +1,6 @@
 package com.example.camera.setting;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentTransaction;
@@ -35,13 +36,13 @@ public class XdfPhotoMultiSettingView implements ICameraSettingView , XdfMultiIm
 
     private static String mWhiteBalanceSelectedValue = null;
 // 情景模式
+    private static List<Integer> mScenceModeOriginalIcons = new ArrayList<>();
     private static List<String> mScenceModeOriginalEntries = new ArrayList<>();
     private static List<String> mScenceModeOriginalEntryValues = new ArrayList<>();
-    private static List<Integer> mScenceModeOriginalIcons = new ArrayList<>();
 
+    private static List<Integer> mScenceModeIcons = new ArrayList<>();
     private static List<String> mScenceModeEntries = new ArrayList<>();
     private static List<String> mScenceModeEntryValues = new ArrayList<>();
-    private static List<Integer> mScenceModeIcons = new ArrayList<>();
 
     private static String mScenceModeSelectedValue = null;
 //  AIS
@@ -53,6 +54,12 @@ public class XdfPhotoMultiSettingView implements ICameraSettingView , XdfMultiIm
         mActivity = activity;
         mKey = key;
 
+
+        initScenceModeOriginalEntryValues( mActivity );
+        initWhiteBalanceOriginalEntryValues( mActivity );
+
+    }
+    private void initScenceModeOriginalEntryValues(Activity activity ) {
         String[] originalEntriesInArray = mActivity.getResources()
                 .getStringArray(R.array.scene_mode_entries);
         String[] originalEntryValuesInArray = mActivity.getResources()
@@ -65,23 +72,46 @@ public class XdfPhotoMultiSettingView implements ICameraSettingView , XdfMultiIm
             originalIconsInArray[i] = array.getResourceId(i, 0);
         }
         array.recycle();
-
+        mScenceModeOriginalIcons.clear();
+        mScenceModeOriginalEntries.clear();
+        mScenceModeOriginalEntryValues.clear();
+        for (int icon : originalIconsInArray) {
+            mScenceModeOriginalIcons.add( icon );
+        }
         for (String value : originalEntriesInArray) {
-//            mWhiteBalanceOriginalEntries.add(value);
+            mScenceModeOriginalEntries.add( value);
+        }
+        for (String value : originalEntryValuesInArray) {
+            mScenceModeOriginalEntryValues.add( value );
+        }
+    }
+
+    private void initWhiteBalanceOriginalEntryValues(Activity activity ) {
+        String[] originalEntriesInArray = mActivity.getResources()
+                .getStringArray(R.array.white_balance_entries);
+        String[] originalEntryValuesInArray = mActivity.getResources()
+                .getStringArray(R.array.white_balance_entryvalues);
+
+        TypedArray array = mActivity.getResources().obtainTypedArray(R.array.white_balance_icons);
+        int n = array.length();
+        int[] originalIconsInArray = new int[n];
+        for (int i = 0; i < n; ++i) {
+            originalIconsInArray[i] = array.getResourceId(i, 0);
+        }
+        array.recycle();
+        mWhiteBalanceOriginalIcons.clear();
+        mWhiteBalanceOriginalEntries.clear();
+        mWhiteBalanceOriginalEntryValues.clear();
+        for (int icon : originalIconsInArray) {
+            mWhiteBalanceOriginalIcons.add( icon );
+        }
+        for (String value : originalEntriesInArray) {
             mWhiteBalanceOriginalEntries.add( value);
         }
         for (String value : originalEntryValuesInArray) {
-//            mWhiteBalanceOriginalEntryValues.add(value);
             mWhiteBalanceOriginalEntryValues.add( value );
         }
-        for (int icon : originalIconsInArray) {
-//            mWhiteBalanceOriginalIcons.add(icon);
-            mWhiteBalanceOriginalIcons.add( icon );
-        }
-
-
     }
-
     @Override
     public void loadView(PreferenceFragment fragment) {
         fragment.addPreferencesFromResource(R.xml.xdf_multi_image_preference);
@@ -102,10 +132,10 @@ public class XdfPhotoMultiSettingView implements ICameraSettingView , XdfMultiIm
 //        xdfTabHostFragment.setScenceModeEntriesAndEntryValues(mEntries, mEntryValues, mWhiteBalanceIcons);
     }
 
-    public void setWhiteBalanceEntryValues(List<String> entryValues) {
+    public void setWhiteBalanceEntryValues( ) {
+        mWhiteBalanceIcons.clear();
         mWhiteBalanceEntries.clear();
         mWhiteBalanceEntryValues.clear();
-        mWhiteBalanceIcons.clear();
 
         for (int i = 0; i < mWhiteBalanceOriginalEntryValues.size(); i++) {
             mWhiteBalanceEntryValues.add(mWhiteBalanceOriginalEntryValues.get(i));
@@ -114,10 +144,10 @@ public class XdfPhotoMultiSettingView implements ICameraSettingView , XdfMultiIm
         }
     }
 
-    public void setScenceModeEntryValues( List<String> entryValues){
+    public void setScenceModeEntryValues( ){
+        mScenceModeIcons.clear();
         mScenceModeEntries.clear();
         mScenceModeEntryValues.clear();
-        mScenceModeIcons.clear();
 
         for (int i = 0; i < mScenceModeOriginalEntryValues.size(); i++) {
             mScenceModeEntryValues.add(mScenceModeOriginalEntryValues.get(i));
@@ -139,11 +169,11 @@ public class XdfPhotoMultiSettingView implements ICameraSettingView , XdfMultiIm
 
     public void setScenceModeValue(String value) {
         Log.d(TAG, "setValue "+value);
-        mWhiteBalanceSelectedValue = value;
-        if ("hdr".equals(mWhiteBalanceSelectedValue)) {
-            mWhiteBalanceSelectedValue = "auto";
+        mScenceModeSelectedValue = value;
+        if ("hdr".equals(mScenceModeSelectedValue)) {
+            mScenceModeSelectedValue = "auto";
         }
-        int index = mWhiteBalanceEntryValues.indexOf(mWhiteBalanceSelectedValue);
+        int index = mWhiteBalanceEntryValues.indexOf(mScenceModeSelectedValue);
         if (index >= 0 && index < mWhiteBalanceEntries.size()) {
             mSummary = mWhiteBalanceEntries.get(index);
         }
@@ -154,17 +184,17 @@ public class XdfPhotoMultiSettingView implements ICameraSettingView , XdfMultiIm
         if( view.getId() == R.id.scence_mode ){
             if (xdfTabHostFragment == null) {
                 xdfTabHostFragment = new XdfTabHostFragment();
-                xdfTabHostFragment.setOnSconceModeRecylerItemClickListener( this );;
+                xdfTabHostFragment.setOnSconceModeRecylerItemClickListener( this );
             }
             xdfTabHostFragment.setCurrentIndex( 0 );
-            xdfTabHostFragment.setScenceModeSelectedValue(mWhiteBalanceSelectedValue);
-            xdfTabHostFragment.setScenceModeEntriesAndEntryValues(mWhiteBalanceEntries, mWhiteBalanceEntryValues, mWhiteBalanceIcons);
+            xdfTabHostFragment.setScenceModeSelectedValue(mScenceModeSelectedValue);
+            xdfTabHostFragment.setScenceModeEntriesAndEntryValues(mScenceModeEntries, mScenceModeEntryValues, mScenceModeIcons);
             FragmentTransaction transaction = mActivity.getFragmentManager()
                     .beginTransaction();
 
-
             Fragment fragment = mActivity.getFragmentManager().findFragmentById( R.id.setting_container);
             transaction.hide( fragment );
+            transaction.setCustomAnimations( R.anim.slide_in_bottom, 0);
             transaction.replace(R.id.setting_tail, xdfTabHostFragment, "scene_mode_fragment");
             transaction.addToBackStack(null);
             transaction.commit();
@@ -181,6 +211,7 @@ public class XdfPhotoMultiSettingView implements ICameraSettingView , XdfMultiIm
 
             Fragment fragment = mActivity.getFragmentManager().findFragmentById( R.id.setting_container);
             transaction.hide( fragment );
+            transaction.setCustomAnimations( R.anim.slide_in_bottom, 0);
             transaction.replace(R.id.setting_tail, xdfTabHostFragment, "scene_mode_fragment");
             transaction.addToBackStack(null);
             transaction.commit();
@@ -198,8 +229,8 @@ public class XdfPhotoMultiSettingView implements ICameraSettingView , XdfMultiIm
     }
 
     @Override
-    public void onWhiteBalanceRecylerItemClick(String selectedValue) {
-        Toast.makeText( mActivity, " " + selectedValue, Toast.LENGTH_SHORT).show();
+    public void onWhiteBalanceRecylerItemClick(String entry,String entryValue) {
+        Toast.makeText( mActivity, " " + entryValue, Toast.LENGTH_SHORT).show();
 
     }
 }
