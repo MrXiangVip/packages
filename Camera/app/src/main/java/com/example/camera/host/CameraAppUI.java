@@ -5,6 +5,7 @@ import android.app.FragmentTransaction;
 import android.content.res.Configuration;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.example.camera.ICameraSettingView;
 import com.example.camera.SettingFragment;
@@ -56,6 +57,7 @@ public class CameraAppUI implements IAppUi {
         ViewGroup rootView = (ViewGroup) mApp.getActivity().findViewById(R.id.app_ui_root);
         ViewGroup parentView = (ViewGroup) mApp.getActivity().getLayoutInflater().inflate( R.layout.camera_ui_root, rootView, true);
         View appUI = parentView.findViewById( R.id.camera_ui_root);
+
 
         mShutterManager = new ShutterButtonManager(mApp, parentView);
         mShutterManager.setVisibility(View.VISIBLE);

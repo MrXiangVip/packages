@@ -16,6 +16,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -24,7 +25,9 @@ import android.widget.RelativeLayout;
 import com.example.camera.common.IApp;
 import com.example.camera.common.IAppUi;
 import com.example.camera.common.IModeListener;
+import com.example.camera.common.PreviewFrameLayout;
 import com.example.camera.common.RotateImageView;
+import com.example.camera.exposure.ExposureView;
 import com.example.camera.mode.ModeManager;
 import com.example.camera.host.CameraAppUI;
 import com.example.camera.preference.RecyclerAdapter;
@@ -169,6 +172,14 @@ public class CameraActivity extends Activity implements IApp {
         RelativeLayout shutterView = (RelativeLayout) getLayoutInflater().inflate(
                 R.layout.shutter_item, mShutterLayout, false);
         mShutterLayout.addView(shutterView);
+
+        PreviewFrameLayout mFeatureRootView = findViewById(R.id.preview_layout_container);
+        FrameLayout focusView = (FrameLayout) getLayoutInflater().inflate(R.layout.focus_view, mFeatureRootView, false);
+        mFeatureRootView.addView( focusView );
+        RelativeLayout mExpandView = (RelativeLayout) mFeatureRootView.findViewById(R.id.expand_view);
+
+        ExposureView exposureView =(ExposureView)getActivity().getLayoutInflater().inflate(R.layout.exposure_view, mExpandView, false);
+        mExpandView.addView( exposureView );
 
     }
 

@@ -31,8 +31,7 @@
                 android:id="@+id/scence_mode"
                 android:layout_width="56dp"
                 android:layout_height="56dp"
-                android:src="@drawable/xdf_scence_mode_selector"
-                android:background="@drawable/ic_multi_image_background"
+                android:background="@drawable/xdf_scence_mode_selector"
                 />
             <TextView
                 android:layout_width="wrap_content"

@@ -20,6 +20,12 @@ public class RotateLayout extends ViewGroup implements  Rotatable {
         // is invisible.
         setBackgroundResource(android.R.color.transparent);
     }
+    public void onFinishInflate() {
+        super.onFinishInflate();
+        mChild = getChildAt(0);
+
+    }
+
     protected void onMeasure(int widthSpec, int heightSpec) {
         int w = 0;
         int h = 0;

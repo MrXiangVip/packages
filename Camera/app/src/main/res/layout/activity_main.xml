@@ -36,11 +36,12 @@
         android:id="@+id/app_ui_root"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:splitMotionEvents="false" />
+        android:splitMotionEvents="false"
+        android:visibility="gone"/>
 
     <com.example.camera.common.PreviewFrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:id="@+id/preview_layout_container"
         android:layout_gravity="center"
         android:layoutDirection="ltr"
@@ -55,8 +56,8 @@
         android:visibility="gone"/>
     <FrameLayout
         android:id="@+id/setting_ui_root"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:background="@android:color/transparent">
 

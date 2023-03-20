@@ -7,6 +7,7 @@ import android.widget.FrameLayout;
 import androidx.annotation.NonNull;
 
 public class PreviewFrameLayout extends FrameLayout {
+
     public PreviewFrameLayout(@NonNull Context context) {
         super(context);
     }
