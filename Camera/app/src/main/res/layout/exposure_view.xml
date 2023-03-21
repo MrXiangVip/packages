@@ -8,7 +8,7 @@
 
     <com.example.camera.exposure.VerticalSeekBar
         android:id="@+id/ev_seekbar"
-        android:layout_width="127dp"
+        android:layout_width="37dp"
         android:layout_height="132dp"
         android:maxHeight="2dp"
         android:minHeight="2dp"
