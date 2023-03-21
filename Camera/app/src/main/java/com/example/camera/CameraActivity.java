@@ -28,6 +28,8 @@ import com.example.camera.common.IModeListener;
 import com.example.camera.common.PreviewFrameLayout;
 import com.example.camera.common.RotateImageView;
 import com.example.camera.exposure.ExposureView;
+import com.example.camera.focus.FocusView;
+import com.example.camera.host.PreviewManager;
 import com.example.camera.mode.ModeManager;
 import com.example.camera.host.CameraAppUI;
 import com.example.camera.preference.RecyclerAdapter;
@@ -136,118 +138,12 @@ public class CameraActivity extends Activity implements IApp {
         mGestureListener = new GestureListener();
         mDetector = new GestureDetector(this, mGestureListener);
 
-
-        View rootView = findViewById(R.id.app_ui_root_substitude);
-        ViewGroup parentView = (ViewGroup) getActivity().getLayoutInflater()
-                .inflate(R.layout.camera_ui_root_substitude, (ViewGroup) rootView, true);
-        mQuickSwitcherLayout = (LinearLayout) parentView.findViewById(R.id.quick_switcher);
-        mTopBar = parentView.findViewById(R.id.top_bar);
-
-        mode = (RotateImageView) mQuickSwitcherLayout.findViewById(R.id.mode);
-        flash = (RotateImageView) mQuickSwitcherLayout.findViewById(R.id.flash);
-        hdr = (RotateImageView) mQuickSwitcherLayout.findViewById(R.id.hdr);
-
-        flash.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                Animator animator = (Animator) AnimatorInflater.loadAnimator(getActivity(),R.animator.image_enter);
-                animator.setTarget(flash);
-                animator.start();
-
-                initializeFlashChoiceView();
-                updateChoiceView();
-                showQuickSwitcherOption(mOptionLayout);
-            }
-        });
-
-        mode.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mCameraAppUI.showSetting();
-            }
-        });
-
-        ShutterRootLayout mShutterLayout = parentView.findViewById(R.id.shutter_root);
-        RelativeLayout shutterView = (RelativeLayout) getLayoutInflater().inflate(
-                R.layout.shutter_item, mShutterLayout, false);
-        mShutterLayout.addView(shutterView);
-
-        PreviewFrameLayout mFeatureRootView = findViewById(R.id.preview_layout_container);
-        FrameLayout focusView = (FrameLayout) getLayoutInflater().inflate(R.layout.focus_view, mFeatureRootView, false);
-        mFeatureRootView.addView( focusView );
-        RelativeLayout mExpandView = (RelativeLayout) mFeatureRootView.findViewById(R.id.expand_view);
-
-        ExposureView exposureView =(ExposureView)getActivity().getLayoutInflater().inflate(R.layout.exposure_view, mExpandView, false);
-        mExpandView.addView( exposureView );
-
     }
 
-    private void initializeFlashChoiceView() {
-        if (mOptionRoot == null) {
-            mOptionRoot = (ViewGroup) findViewById(R.id.quick_switcher_option);
-            mOptionLayout = getLayoutInflater().inflate(
-                    R.layout.flash_option, mOptionRoot, false);
-            mFlashChoiceView = mOptionLayout.findViewById(R.id.flash_choice);
-            mFlashOnIcon = (ImageView) mOptionLayout.findViewById(R.id.flash_on);
-            mFlashOffIcon = (ImageView) mOptionLayout.findViewById(R.id.flash_off);
-            mFlashAutoIcon = (ImageView) mOptionLayout.findViewById(R.id.flash_auto);
-            mFlashOffIcon.setOnClickListener(mFlashChoiceViewListener);
-            mFlashOnIcon.setOnClickListener(mFlashChoiceViewListener);
-            mFlashAutoIcon.setOnClickListener(mFlashChoiceViewListener);
-        }
-    }
-    private void updateChoiceView() {
-    }
-    public void showQuickSwitcherOption(View optionView) {
-        if (mOptionRoot.getChildCount() != 0) {
-            Log.e(TAG, "[showQuickSwitcherOption] Already has options to be shown!");
-            return;
-        }
-//        Animation inAnim = AnimationUtils.loadAnimation(getActivity(), R.anim.anim_top_in);
-        mOptionRoot.addView(optionView);
-        mOptionRoot.setVisibility(View.VISIBLE);
-        mOptionRoot.setClickable(true);
-//        mOptionRoot.startAnimation(inAnim);
-        mTopBar.setVisibility(View.GONE);
-
-    }
-    private View.OnClickListener mFlashChoiceViewListener = new View.OnClickListener() {
-        @Override
-        public void onClick(View view) {
-            hideQuickSwitcherOption();
-        }
-    };
-    public void hideQuickSwitcherOption() {
-        Animation outAnim = AnimationUtils.loadAnimation( getActivity(), R.anim.anim_top_out);
-        outAnim.setAnimationListener(new Animation.AnimationListener() {
-            @Override
-            public void onAnimationStart(Animation animation) {
-
-            }
-            @Override
-            public void onAnimationEnd(Animation animation) {
-                mOptionRoot.setVisibility(View.GONE);
-                mOptionRoot.setClickable(false);
-//                mOptionRoot.removeAllViews();
-                mTopBar.setVisibility(View.VISIBLE);
-
-            }
-            @Override
-            public void onAnimationRepeat(Animation animation) {
-
-            }
-        });
-        mOptionRoot.startAnimation(outAnim);
-        outAnim.setFillAfter(true);
-    }
 
     protected void onResume( ) {
         mCameraAppUI.onResume();
         super.onResume();
     }
-
-
-
 
 }

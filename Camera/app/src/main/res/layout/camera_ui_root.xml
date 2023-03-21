@@ -63,7 +63,30 @@
                             android:contentDescription="@string/accessibility_mode"
                             android:focusable="true"
                             android:scaleType="fitCenter"
-                            android:visibility="visible" />
+                            android:visibility="visible"
+                            android:src="@drawable/xdf_ic_normal_mode"/>
+                       <com.example.camera.common.RotateImageView
+                           android:id="@+id/flash"
+                           android:layout_width="50dp"
+                           android:layout_height="50dp"
+                           android:layout_marginLeft="46dp"
+                           android:clickable="true"
+                           android:contentDescription="@string/accessibility_mode"
+                           android:focusable="true"
+                           android:scaleType="fitCenter"
+                           android:visibility="visible"
+                           android:src="@mipmap/ic_flash_status_auto_selected_xdf"/>
+                       <com.example.camera.common.RotateImageView
+                           android:id="@+id/hdr"
+                           android:layout_width="50dp"
+                           android:layout_height="50dp"
+                           android:layout_marginLeft="46dp"
+                           android:clickable="true"
+                           android:contentDescription="@string/accessibility_mode"
+                           android:focusable="true"
+                           android:scaleType="fitCenter"
+                           android:visibility="visible"
+                           android:src="@drawable/ic_hdr_auto"/>
                 </LinearLayout>
 
                 </LinearLayout>

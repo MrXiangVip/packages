@@ -5,6 +5,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RelativeLayout;
 
 import com.example.camera.common.IApp;
 import com.example.camera.ui.AbstractViewManager;
@@ -31,6 +32,9 @@ public class ShutterButtonManager extends AbstractViewManager {
 
     public void registerDone() {
         Log.d(TAG, "registerDone");
+        RelativeLayout shutterView = (RelativeLayout) mInflater.inflate(
+                R.layout.shutter_item, mShutterLayout, false);
+        mShutterLayout.addView(shutterView);
     }
 
 }

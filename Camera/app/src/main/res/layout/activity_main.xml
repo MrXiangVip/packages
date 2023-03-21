@@ -6,17 +6,17 @@
     android:id="@+id/activity_root"
     >
 
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+<!--    <FrameLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="vertical">-->
 
-        <FrameLayout
-            android:id="@+id/app_ui_root_substitude"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:splitMotionEvents="false" />
-    </FrameLayout>
+<!--        <FrameLayout-->
+<!--            android:id="@+id/app_ui_root_substitude"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:splitMotionEvents="false" />-->
+<!--    </FrameLayout>-->
 
 
     <FrameLayout
@@ -37,7 +37,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:splitMotionEvents="false"
-        android:visibility="gone"/>
+        android:visibility="visible"/>
 
     <com.example.camera.common.PreviewFrameLayout
         android:layout_width="wrap_content"

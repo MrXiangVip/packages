@@ -9,6 +9,9 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatSeekBar;
 
 public class VerticalSeekBar extends AppCompatSeekBar {
+
+    private OnSeekBarChangeListener mListener;
+
     public VerticalSeekBar(@NonNull Context context) {
         super(context);
     }
@@ -25,5 +28,10 @@ public class VerticalSeekBar extends AppCompatSeekBar {
 //        c.rotate(90);
 //        c.translate(-getHeight(), 0);
         super.onDraw(c);
+    }
+
+    public void setOnSeekBarChangeListener(OnSeekBarChangeListener l) {
+        super.setOnSeekBarChangeListener(l);
+        mListener = l;
     }
 }

@@ -3,6 +3,7 @@ package com.example.camera.host;
 import android.annotation.SuppressLint;
 import android.app.FragmentTransaction;
 import android.content.res.Configuration;
+import android.view.GestureDetector;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
@@ -10,6 +11,7 @@ import android.widget.Toast;
 import com.example.camera.ICameraSettingView;
 import com.example.camera.SettingFragment;
 import com.example.camera.common.IAppUiListener;
+import com.example.camera.common.PreviewFrameLayout;
 import com.example.camera.effect.EffectViewManager;
 import com.example.camera.modepicker.ModePickerManager;
 import com.example.camera.setting.AISSettingView;
@@ -39,6 +41,8 @@ public class CameraAppUI implements IAppUi {
     private CameraSwitcherManager mCameraSwitcherManager;
 
     private EffectViewManager mEffectViewManager;
+    private PreviewManager mPreviewManager;
+
     private SettingFragment mSettingFragment;
 
     private List<String> entries = new ArrayList<>();
@@ -61,7 +65,7 @@ public class CameraAppUI implements IAppUi {
 
         mShutterManager = new ShutterButtonManager(mApp, parentView);
         mShutterManager.setVisibility(View.VISIBLE);
-//        mShutterManager.setOnShutterChangedListener(new OnShutterChangeListenerImpl());
+        mShutterManager.registerDone();
         mViewManagers.add(mShutterManager);
 
         mCameraSwitcherManager = new CameraSwitcherManager(mApp, parentView);
@@ -83,7 +87,8 @@ public class CameraAppUI implements IAppUi {
         mEffectViewManager.setVisibility(View.VISIBLE);
         mViewManagers.add(mEffectViewManager);
 
-
+        mPreviewManager = new PreviewManager( mApp );
+        mPreviewManager.init();
         mSettingFragment = new SettingFragment();
 
         initEntriesAndIcons();
@@ -111,7 +116,6 @@ public class CameraAppUI implements IAppUi {
     }
 
 
-    @SuppressLint("ResourceType")
     public void showSetting() {
         FragmentTransaction transaction = mApp.getActivity().getFragmentManager()
                 .beginTransaction();
@@ -161,6 +165,15 @@ public class CameraAppUI implements IAppUi {
     public void updateCurrentMode(String mode) {
 
     }
+    public PreviewFrameLayout getPreviewFrameLayout() {
+        return mPreviewManager.getPreviewFrameLayout();
+    }
+
+    @Override
+    public void registerGestureListener(GestureDetector.OnGestureListener listener, int priority) {
+
+    }
+
 
     private  class  OnOrientationChangeListenerImpl implements  IApp.OnOrientationChangeListener{
 
