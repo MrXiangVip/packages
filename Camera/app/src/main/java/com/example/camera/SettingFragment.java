@@ -23,24 +23,48 @@ import java.util.List;
 public class SettingFragment extends PreferenceFragment  {
     String TAG="SettingFragment.camera";
 
+    private StateListener mStateListener;
     private List<ICameraSettingView> mSettingViewList = new ArrayList<>();
-
     public static Preference mUptime;
-
     private CheckBoxPreference m_prefCheckBoxTwo;
     private LoadingPreference loadingPreference;
-
     private List<String> mValues = new ArrayList<>();
 
 
     private String mSelectedValue = null;
-
     private List<String> mEntries = new ArrayList<>();
     private List<String> mEntryValues = new ArrayList<>();
     private List<Integer> mIcons = new ArrayList<>();
 
+    public interface StateListener {
+        /**
+         * Callback when setting fragment is created.
+         */
+        public void onCreate();
+
+        /**
+         * Callback when setting fragment is resumed.
+         */
+        public void onResume();
+
+        /**
+         * Callback when setting fragment is paused.
+         */
+        public void onPause();
+
+        /**
+         * Callback when setting fragment is destroyed.
+         */
+        public void onDestroy();
+    }
+    public void setStateListener(StateListener listener) {
+        mStateListener = listener;
+    }
 
     public void onCreate(Bundle savedInstanceState) {
+        if (mStateListener != null) {
+            mStateListener.onCreate();
+        }
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.settingsfragment);
 
@@ -78,5 +102,12 @@ public class SettingFragment extends PreferenceFragment  {
         }
     }
 
+    public void onDestroy() {
+        Log.d(TAG, "[onDestroy]");
+        super.onDestroy();
 
+        if (mStateListener != null) {
+            mStateListener.onDestroy();
+        }
+    }
 }

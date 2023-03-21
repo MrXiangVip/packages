@@ -26,6 +26,14 @@ public abstract class AbstractViewManager implements IViewManager {
             hide(View.GONE);
         }
     }
+
+    public int getVisibility() {
+        if (mView != null) {
+            return mView.getVisibility();
+        }
+        return -1;
+    }
+
     protected abstract View getView();
 
     private void show() {
