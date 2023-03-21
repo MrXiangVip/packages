@@ -11,7 +11,7 @@ import com.example.camerabg.R;
 
 public class ExposureView extends RotateLayout {
 
-    private VerticalSeekBar mEvSeekbar;
+    private SeekBar mEvSeekbar;
     private String TAG ="ExposureView";
 
     public ExposureView(Context context) {
@@ -23,14 +23,14 @@ public class ExposureView extends RotateLayout {
     }
     public void onFinishInflate() {
         super.onFinishInflate();
-        mEvSeekbar = (VerticalSeekBar) findViewById(R.id.ev_seekbar);
+        mEvSeekbar = (SeekBar) findViewById(R.id.ev_seekbar);
         mEvSeekbar.setThumb(this.getResources().getDrawable(R.drawable.icev_scrubber_xdf));
         mEvSeekbar.setOnSeekBarChangeListener(mEvSeekBarChangedListener);
 
     }
 
-    private VerticalSeekBar.OnSeekBarChangeListener mEvSeekBarChangedListener =
-            new VerticalSeekBar.OnSeekBarChangeListener() {
+    private SeekBar.OnSeekBarChangeListener mEvSeekBarChangedListener =
+            new SeekBar.OnSeekBarChangeListener() {
 
                 @Override
                 public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {

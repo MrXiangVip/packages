@@ -3,8 +3,8 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/exposure_view"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
 
     <com.example.camera.exposure.VerticalSeekBar
         android:id="@+id/ev_seekbar"
@@ -16,5 +16,14 @@
         android:progressTint="#FFFFD01F"
         android:thumbOffset="0dp"
         android:visibility="visible"/>
-
+<!--    <com.example.camera.exposure.VerticalSeekBar2-->
+<!--        android:id="@+id/ev_seekbar"-->
+<!--        android:layout_width="127dp"-->
+<!--        android:layout_height="132dp"-->
+<!--        android:maxHeight="2dp"-->
+<!--        android:minHeight="2dp"-->
+<!--        android:progressBackgroundTint="@android:color/transparent"-->
+<!--        android:progressTint="#FFFFD01F"-->
+<!--        android:thumbOffset="0dp"-->
+<!--        android:visibility="visible"/>-->
 </com.example.camera.exposure.ExposureView>
