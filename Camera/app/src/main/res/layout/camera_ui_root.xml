@@ -64,6 +64,7 @@
                             android:focusable="true"
                             android:scaleType="fitCenter"
                             android:visibility="visible"
+                            android:background="@drawable/ic_button_background"
                             android:src="@drawable/xdf_ic_normal_mode"/>
                        <com.example.camera.common.RotateImageView
                            android:id="@+id/flash"

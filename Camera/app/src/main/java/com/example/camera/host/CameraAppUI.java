@@ -22,6 +22,7 @@ import com.example.camera.setting.XdfPhotoMultiSettingView;
 import com.example.camera.shutter.ShutterButtonManager;
 import com.example.camera.ui.CameraSwitcherManager;
 import com.example.camera.ui.QuickSwitcherManager;
+import com.example.camera.ui.ThumbnailViewManager;
 import com.example.camerabg.R;
 import com.example.camera.common.IApp;
 import com.example.camera.common.IAppUi;
@@ -39,6 +40,7 @@ public class CameraAppUI implements IAppUi {
     private ModePickerManager mModePickerManager;
     private QuickSwitcherManager mQuickSwitcherManager;
     private CameraSwitcherManager mCameraSwitcherManager;
+    private ThumbnailViewManager mThumbnailViewManager;
 
     private EffectViewManager mEffectViewManager;
     private PreviewManager mPreviewManager;
@@ -62,12 +64,12 @@ public class CameraAppUI implements IAppUi {
         ViewGroup parentView = (ViewGroup) mApp.getActivity().getLayoutInflater().inflate( R.layout.camera_ui_root, rootView, true);
         View appUI = parentView.findViewById( R.id.camera_ui_root);
 
-
+//      拍照按钮
         mShutterManager = new ShutterButtonManager(mApp, parentView);
         mShutterManager.setVisibility(View.VISIBLE);
         mShutterManager.registerDone();
         mViewManagers.add(mShutterManager);
-
+//      切换按钮
         mCameraSwitcherManager = new CameraSwitcherManager(mApp, parentView);
         mCameraSwitcherManager.setVisibility(View.VISIBLE);
         mViewManagers.add(mCameraSwitcherManager);
@@ -78,6 +80,7 @@ public class CameraAppUI implements IAppUi {
         mModePickerManager.setVisibility(View.VISIBLE);
         mViewManagers.add(mModePickerManager);
 
+//      设置按钮
         mQuickSwitcherManager = new QuickSwitcherManager(mApp, parentView);
         mQuickSwitcherManager.setVisibility(View.VISIBLE);
 //        mQuickSwitcherManager.setModeChangeListener(new OnQuickModeChangedListenerImpl());
@@ -86,6 +89,10 @@ public class CameraAppUI implements IAppUi {
         mEffectViewManager = new EffectViewManager(mApp, parentView);
         mEffectViewManager.setVisibility(View.VISIBLE);
         mViewManagers.add(mEffectViewManager);
+
+        mThumbnailViewManager = new ThumbnailViewManager(mApp, parentView);
+        mThumbnailViewManager.setVisibility(View.VISIBLE);
+        mViewManagers.add(mThumbnailViewManager);
 
         mPreviewManager = new PreviewManager( mApp );
         mPreviewManager.init();

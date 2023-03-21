@@ -7,5 +7,5 @@
     android:scaleType="center"
     android:clickable="true"
     android:focusable="true"
-    android:visibility="gone"
-    app:srcCompat="@mipmap/switch_camera_normal_xdf"/>
+    android:visibility="visible"
+    app:srcCompat="@drawable/xdf_switch_camera_normal"/>
