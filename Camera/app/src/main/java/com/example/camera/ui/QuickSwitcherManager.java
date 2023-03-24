@@ -81,6 +81,8 @@ public class QuickSwitcherManager extends AbstractViewManager {
         mFlashView =  mQuickSwitcherLayout.findViewById(R.id.flash);
         mHdrView =  mQuickSwitcherLayout.findViewById(R.id.hdr);
 
+
+
         mFlashView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -100,6 +102,8 @@ public class QuickSwitcherManager extends AbstractViewManager {
                 ((CameraAppUI)mApp.getAppUi()).showSetting();
             }
         });
+
+
     }
 
     public void updateViewOrientation() {

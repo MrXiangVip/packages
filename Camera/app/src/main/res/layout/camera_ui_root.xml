@@ -127,6 +127,7 @@
                     android:layout_below="@id/top_bar"
                     android:layout_marginRight="15dp"
                     android:gravity="bottom"
+                    android:visibility="gone"
                     android:orientation="vertical"></LinearLayout>
 
                 <View

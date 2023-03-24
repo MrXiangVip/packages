@@ -8,6 +8,7 @@ import android.os.Looper;
 import android.os.Message;
 import android.util.Log;
 import android.view.GestureDetector;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
@@ -63,7 +64,6 @@ public class CameraAppUI implements IAppUi {
     private String TAG="CameraAppUI";
 
     private class SettingStateListener implements SettingFragment.StateListener {
-
         @Override
         public void onCreate() {
             View view = mApp.getActivity().findViewById(R.id.setting_ui_root);
@@ -72,17 +72,14 @@ public class CameraAppUI implements IAppUi {
             applyAllUIVisibility(View.GONE);
 //            setUIEnabled(SHUTTER_BUTTON, false);
         }
-
         @Override
         public void onResume() {
 
         }
-
         @Override
         public void onPause() {
 
         }
-
         @Override
         public void onDestroy() {
             View view = mApp.getActivity().findViewById(R.id.setting_ui_root);
@@ -123,6 +120,21 @@ public class CameraAppUI implements IAppUi {
                 default:
                     break;
             }
+        }
+    }
+
+    private class OnTouchListenerImpl implements View.OnTouchListener {
+        @Override
+        public boolean onTouch(View v, MotionEvent event) {
+            return true;
+        }
+    }
+
+    private  class  OnOrientationChangeListenerImpl implements  IApp.OnOrientationChangeListener{
+
+        @Override
+        public void onOrientationChanged(int orientation) {
+
         }
     }
 
@@ -169,8 +181,11 @@ public class CameraAppUI implements IAppUi {
         mThumbnailViewManager.setVisibility(View.VISIBLE);
         mViewManagers.add(mThumbnailViewManager);
 
-        mPreviewManager = new PreviewManager( mApp );
-        mPreviewManager.init();
+        mPreviewManager = new PreviewManager( mApp, parentView );
+        mPreviewManager.setVisibility( View.VISIBLE);
+//        mPreviewManager.init();
+        mPreviewManager.setOnTouchListener(new OnTouchListenerImpl());
+
 
         mSettingFragment = new SettingFragment();
         mSettingFragment.setStateListener(new SettingStateListener());
@@ -259,13 +274,6 @@ public class CameraAppUI implements IAppUi {
     }
 
 
-    private  class  OnOrientationChangeListenerImpl implements  IApp.OnOrientationChangeListener{
-
-        @Override
-        public void onOrientationChanged(int orientation) {
-
-        }
-    }
     private boolean isMainThread() {
         return Looper.myLooper() == Looper.getMainLooper();
     }
