@@ -35,4 +35,9 @@
     <string name="accessibility_mode">相机模式</string>
     <string name="accessibility_thumbnail">"最新照片"</string>
 
+    <string name="pref_camera_antibanding_entry_auto">Auto</string>
+    <string name="pref_camera_antibanding_entry_off">Off</string>
+    <string name="pref_camera_antibanding_entry_50hz">50Hz</string>
+    <string name="pref_camera_antibanding_entry_60hz">60Hz</string>
+
 </resources>

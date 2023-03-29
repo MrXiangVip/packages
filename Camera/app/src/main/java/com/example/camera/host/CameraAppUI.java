@@ -18,11 +18,14 @@ import com.example.camera.SettingFragment;
 import com.example.camera.common.IAppUiListener;
 import com.example.camera.common.PreviewFrameLayout;
 import com.example.camera.effect.EffectViewManager;
+import com.example.camera.gesture.GestureManager;
 import com.example.camera.modepicker.ModePickerManager;
+import com.example.camera.preference.GroupPreference;
 import com.example.camera.setting.AISSettingView;
 import com.example.camera.setting.PictureSizeSettingView;
 import com.example.camera.setting.SceneModeSettingView;
 import com.example.camera.setting.WhiteBalanceSettingView;
+import com.example.camera.setting.XdfAntiFlickerSettingView;
 import com.example.camera.setting.XdfPhotoMultiSettingView;
 import com.example.camera.shutter.ShutterButtonManager;
 import com.example.camera.ui.CameraSwitcherManager;
@@ -62,6 +65,7 @@ public class CameraAppUI implements IAppUi {
     private static final int SET_UI_VISIBILITY = 2;
     private static final int SET_UI_ENABLED = 3;
     private String TAG="CameraAppUI";
+    private GestureManager mGestureManager;
 
     private class SettingStateListener implements SettingFragment.StateListener {
         @Override
@@ -125,7 +129,11 @@ public class CameraAppUI implements IAppUi {
 
     private class OnTouchListenerImpl implements View.OnTouchListener {
         @Override
-        public boolean onTouch(View v, MotionEvent event) {
+        public boolean onTouch(View view, MotionEvent event) {
+            if (mGestureManager != null) {
+
+                mGestureManager.getOnTouchListener().onTouch(view, event);
+            }
             return true;
         }
     }
@@ -212,6 +220,10 @@ public class CameraAppUI implements IAppUi {
         xdfMultiSettingView.setWhiteBalanceEntryValues(  );
         xdfMultiSettingView.setScenceModeEntryValues( );
         addSettingView( xdfMultiSettingView );
+
+
+        XdfAntiFlickerSettingView xdfAntiFlickerSettingView = new XdfAntiFlickerSettingView(mApp.getActivity(), "shake");
+        addSettingView( xdfAntiFlickerSettingView );
     }
 
 

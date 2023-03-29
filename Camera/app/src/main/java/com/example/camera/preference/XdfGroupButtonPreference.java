@@ -1,8 +1,10 @@
 package com.example.camera.preference;
 
+import android.animation.ObjectAnimator;
 import android.content.Context;
 import android.graphics.Color;
 import android.preference.Preference;
+import android.preference.PreferenceScreen;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -18,8 +20,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class XdfGroupButtonPreference extends Preference {
-    private   String  TAG =
-           (XdfGroupButtonPreference.class.getSimpleName()+".xshx");
+    private   String  TAG = (XdfGroupButtonPreference.class.getSimpleName()+".xshx");
     private List<String> mEntryValues = new ArrayList<>();
     private String mSelectedValue;
     private LinearLayout layout;
@@ -27,7 +28,9 @@ public class XdfGroupButtonPreference extends Preference {
     private View mRootView;
     private LayoutInflater inflater;
     private Context mContext;
+    private PreferenceScreen mRootPreference;
 
+    private float lastX=0;
     private OnItemClickListener mListener;
     public interface OnItemClickListener {
         /**
@@ -56,7 +59,7 @@ public class XdfGroupButtonPreference extends Preference {
 
     }
 
-    public void setValue(String value) {
+    public void setSelectedValue(String value) {
         mSelectedValue = value;
     }
 
@@ -67,6 +70,7 @@ public class XdfGroupButtonPreference extends Preference {
     public void setOnItemClickListener(OnItemClickListener listener) {
         mListener = listener;
     }
+
     protected View onCreateView(ViewGroup parent) {
         super.onCreateView(parent);
         Log.d(TAG, "onCreateView parent "+parent);
@@ -79,26 +83,32 @@ public class XdfGroupButtonPreference extends Preference {
 
     protected void onBindView(View view) {
         super.onBindView(view);
+//        layout = (LinearLayout) view.findViewById(R.id.group_radio_summary );
 
-
-        upButtonView(view);
+        updateButtonView(view);
     }
 
     private class MyOnClickListener  implements  View.OnClickListener{
         @Override
         public void onClick(View v) {
+            Log.d(TAG, "position x "+v.getX()+" y "+v.getY());
             String value =((Button)v).getText().toString();
+
             int index = mEntryValues.indexOf( value );
             mSelectedValue = mEntryValues.get( index );
 
-            upButtonView(v);
+            float currentX = v.getX();
+            ObjectAnimator animator = ObjectAnimator.ofFloat(v, "translationX", lastX, currentX);
+            animator.setDuration(3000);
+            animator.start();
+            updateButtonView(v);
             mListener.onItemClick(value);
 
         }
     }
 
-    private void upButtonView(View view){
-        layout = (LinearLayout) view.findViewById(R.id.group_radio_summary );
+    private void updateButtonView(View view){
+        layout = (LinearLayout) mRootView.findViewById(R.id.group_radio_summary );
         layout.removeAllViews();
         for (int i = 0 ; i < mEntryValues.size(); i++) {
             Button button = new Button( getContext() );
@@ -115,11 +125,16 @@ public class XdfGroupButtonPreference extends Preference {
                 if (i != 0){
                     button.setTextColor(Color.BLACK);
                     button.setBackgroundResource(R.drawable.setting_button_bg);
+                    lastX = button.getX();
                 }else {
                     button.setBackgroundResource(R.drawable.setting_button_white_bg);
                 }
             }
             layout.addView( button );
         }
+    }
+
+    public void setRootPreference(PreferenceScreen rootPreference) {
+        mRootPreference = rootPreference;
     }
 }

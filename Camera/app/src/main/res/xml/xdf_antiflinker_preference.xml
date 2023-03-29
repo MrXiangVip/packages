@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <com.example.camera.preference.XdfGroupButtonPreference
+        android:key="anti_flinker"
+        android:title=" 防闪烁"
+        android:persistent="false"
+        android:order="11">
+    </com.example.camera.preference.XdfGroupButtonPreference>
+</PreferenceScreen>
