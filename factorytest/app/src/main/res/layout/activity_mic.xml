@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:voiceView="http://schemas.android.com/apk/res-auto"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:orientation="horizontal"
+            android:background="#22A0A0A0"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="10dp"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/tv_msg"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/left_channel"
+                    android:gravity="left"
+                    android:textColor="@color/black"
+                    android:textSize="20dip" />
+                <com.mediatek.factorytest.widget.VoiceLineView
+                    android:id="@+id/voicLine"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:background="@android:color/white"
+                    voiceView:maxVolume="200"
+                    voiceView:middleLine="@android:color/black"
+                    voiceView:middleLineHeight="1dp"
+                    voiceView:fineness="three"
+                    voiceView:rectSpace="2dp"
+                    voiceView:rectWidth="5dp"
+                    voiceView:sensibility="4"
+                    voiceView:viewMode="line"
+                    voiceView:lineSpeed="90"
+                    voiceView:voiceLine="@android:color/holo_green_dark" />
+                <TextView
+                    android:id="@+id/channel1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="channel1"
+                    android:textSize="20dp"
+                    android:textColor="@color/black"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="10dp"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/tv_msg2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:text="@string/right_channel"
+                    android:textColor="@color/black"
+                    android:textSize="20dip" />
+                <com.mediatek.factorytest.widget.VoiceLineView
+                    android:id="@+id/voicLine2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:background="@android:color/white"
+                    voiceView:maxVolume="200"
+                    voiceView:middleLine="@android:color/black"
+                    voiceView:middleLineHeight="1dp"
+                    voiceView:fineness="three"
+                    voiceView:rectSpace="2dp"
+                    voiceView:rectWidth="5dp"
+                    voiceView:sensibility="4"
+                    voiceView:viewMode="line"
+                    voiceView:lineSpeed="90"
+                    voiceView:voiceLine="@android:color/holo_green_dark" />
+                <TextView
+                    android:id="@+id/channel2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="channel2"
+                    android:textSize="20dp"
+                    android:layout_gravity="center"
+                    android:textColor="@color/black"/>
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="10dp">
+            <ToggleButton
+                android:id="@+id/recorder_controller"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:checked="true"
+                android:enabled="true"
+                android:textOn="@string/stop_recording"
+                android:textOff="@string/start_recording"
+                />
+            <ToggleButton
+                android:id="@+id/player_controller"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:checked="true"
+                android:enabled="false"
+                android:textOn="@string/play_recorder"
+                android:textOff="@string/stop_recorder"
+                />
+        </LinearLayout>
+    </LinearLayout>
+
+    <include layout="@layout/mid_btns"/>
+
+</FrameLayout>

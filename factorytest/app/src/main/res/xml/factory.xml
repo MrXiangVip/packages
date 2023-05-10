@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+    <!--     fragment 起始页    是否在nvram存储数据    -->
+    <Factory
+        fragmentIndex="0"
+        data_in_nvram="false">
+
+        <Item
+            key="touch_panel"
+            action="com.mediatek.intent.action.TP_TEST"
+            title="@string/title_activity_tp_test"></Item>
+
+        <Item
+            key="lcd"
+            action="com.mediatek.intent.action.LCD_TEST"
+            title="@string/Test_LCD"></Item>
+
+        <Item
+            key="back_light"
+            action="com.mediatek.intent.action.BACK_LIGHT"
+            title="@string/title_lcmlight_test"></Item>
+
+        <Item
+            key="master_camera"
+            action="com.mediatek.intent.action.MASTER_CAMERA"
+            title="@string/master_camera"></Item>
+
+        <Item
+            key="front_camera"
+            action="com.mediatek.intent.action.FRONT_CAMERA"
+            title="@string/front_camera"></Item>
+
+        <Item
+            key="flash_light"
+            action="com.mediatek.intent.action.FLASH_TEST"
+            title="@string/masterflash_test"></Item>
+
+        <Item
+            key="battery"
+            action="com.mediatek.intent.action.BATTERY_TEST"
+            title="@string/title_activity_battery_test"></Item>
+
+        <Item
+            key="key"
+            action="com.mediatek.intent.action.KEY_TEST"
+            title="@string/title_activity_key_test"></Item>
+
+        <Item
+            key="loud_speaker"
+            action="com.mediatek.intent.action.LOUDSPEAKER_TEST"
+            title="@string/title_activity_LoudSpeaker_test"></Item>
+
+        <Item
+            key="mic"
+            action="com.mediatek.intent.action.MIC_TEST"
+            title="@string/values_mic_test"></Item>
+
+        <Item
+            key="headset"
+            action="com.mediatek.intent.action.HEADSET"
+            title="@string/title_activity_Mic_test"></Item>
+
+        <Item
+            key="wifi"
+            action="com.mediatek.intent.action.WIFI_TEST"
+            title="@string/title_activity_WIFI_test"></Item>
+
+        <Item
+            key="bluetooth"
+            action="com.mediatek.intent.action.BLUETOOTH"
+            title="@string/title_activity_BT_test"></Item>
+
+        <Item
+            key="vibrator"
+            action="com.mediatek.intent.action.VIBRATE"
+            title="@string/title_activity_vibate_test"></Item>
+
+        <Item
+            key="sdcard"
+            action="com.mediatek.intent.action.SDCARD_TEST"
+            title="@string/title_activity_SDCard_test"></Item>
+
+        <Item
+            key="otg"
+            action="com.mediatek.intent.action.OTG_TEST"
+            title="@string/otg_test"></Item>
+
+        <Item
+            key="msensor"
+            action="com.mediatek.intent.action.MSENSOR_TEST"
+            title="@string/msensor_test"></Item>
+
+        <Item
+            key="sensor"
+            action="com.mediatek.intent.action.SENSOR_TEST"
+            title="@string/Button_Test_Sensor"></Item>
+
+        <Item
+            key="gySensor"
+            action="com.mediatek.intent.action.GYSENSOR_TEST"
+            title="@string/gy_sensor_test"></Item>
+
+<!--        <Item-->
+<!--            key="demo"-->
+<!--            action="com.mediatek.intent.action.DEMO_TEST"-->
+<!--            title="@string/demo"></Item>-->
+
+    </Factory>
+</resources>
