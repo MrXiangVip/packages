@@ -3,7 +3,7 @@
     <!--     fragment 起始页    是否在nvram存储数据    -->
     <Factory
         fragmentIndex="0"
-        data_in_nvram="false">
+        data_in_nvram="true">
 
         <Item
             key="touch_panel"
@@ -51,9 +51,18 @@
             title="@string/title_activity_LoudSpeaker_test"></Item>
 
         <Item
+            key="microphone"
+            action="com.mediatek.intent.action.MICROPHONE_TEST"
+            title="@string/values_mic_test"></Item>
+        <Item
             key="mic"
             action="com.mediatek.intent.action.MIC_TEST"
             title="@string/values_mic_test"></Item>
+
+        <Item
+            key="mic2"
+            action="com.mediatek.intent.action.MIC_TEST2"
+            title="@string/values_mic_test_2"></Item>
 
         <Item
             key="headset"

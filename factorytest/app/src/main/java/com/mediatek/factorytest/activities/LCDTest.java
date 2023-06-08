@@ -27,7 +27,7 @@ public class LCDTest<what> extends Activity implements View.OnClickListener{
     private LinearLayout judgLayout;
 //    private ImageView  imageView;
     private TextView    switcher;
-    SharedPreferences localSharedPreferences = getSharedPreferences("FactoryMode", 0);
+//    SharedPreferences localSharedPreferences = getSharedPreferences("FactoryMode", 0);
 
 //    private Integer[] mImageIds = {
 //            R.drawable.lcd_test_00,

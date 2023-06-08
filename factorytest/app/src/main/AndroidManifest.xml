@@ -2,7 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:versionCode="1"
-    android:versionName="1.0">
+    android:versionName="1.0"
+
+    >
 
     <uses-feature android:name="android.hardware.autofocus" />
     <uses-permission android:name="android.permission.CAMERA" />
@@ -48,7 +50,8 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Factorytest"
+        android:theme="@style/Theme.AppCompat.Light.DarkActionBar"
+
         >
         <activity
             android:name=".MainActivity"
@@ -58,22 +61,22 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".waveform.activity.MainActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".waveform.activity.SinActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+<!--        <activity-->
+<!--            android:name=".waveform.activity.MainActivity"-->
+<!--            android:exported="true">-->
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
+<!--        </activity>-->
+<!--        <activity-->
+<!--            android:name=".waveform.activity.SinActivity"-->
+<!--            android:exported="true">-->
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
+<!--        </activity>-->
 
         <activity
             android:name=".activities.TouchPanel"
@@ -155,10 +158,27 @@
         </activity>
 
         <activity
+            android:name=".activities.microphone.MicRecorder"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.mediatek.intent.action.MICROPHONE_TEST" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".activities.MicTest"
             android:exported="false">
             <intent-filter>
                 <action android:name="com.mediatek.intent.action.MIC_TEST" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".activities.MicTest2"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.mediatek.intent.action.MIC_TEST2" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>

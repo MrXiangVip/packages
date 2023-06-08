@@ -130,6 +130,7 @@
     <string name="values_mic_7"> Mobile Mic test: recording is complete!(4s) ... </string>
     <string name="values_mic_3"> Mobile Mic test is complete!. </string>
     <string name="values_mic_test"> Mic </string>
+    <string name="values_mic_test_2"> Mic 2</string>
 
     <string name="values_infrared_control_test">Infrared control test ...</string>
 

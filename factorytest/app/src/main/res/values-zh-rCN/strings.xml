@@ -129,7 +129,8 @@
     <string name="values_mic_3">手机麦克测试完毕!.</string>
     
     <string name="values_mic_test">手机麦克</string>
-    
+    <string name="values_mic_test_2">手机麦克2</string>
+
     <string name="values_infrared_control_test">红外控制测试 ...</string>
     
     <string name="values_mic_1">手机麦克测试完毕!</string>
