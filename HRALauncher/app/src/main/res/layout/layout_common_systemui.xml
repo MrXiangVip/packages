@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_40"
+    >
+
+    <com.mediatek.hralauncher.widget.layout.WifiView
+        android:id="@+id/wifi_status"
+        android:layout_width="@dimen/dp_20"
+        android:layout_height="@dimen/dp_13"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/time"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        android:layout_marginLeft="@dimen/dp_20"
+        android:gravity="center"
+        android:orientation="horizontal"
+        >
+        <ImageView
+            android:id="@+id/wifi_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="center"/>
+    </com.mediatek.hralauncher.widget.layout.WifiView>
+
+    <!--<androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/wifi_status"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/time"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:src="@drawable/study_wifi_status_100"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        android:layout_marginLeft="10dp"/>-->
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/net_speed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@id/wifi_status"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_16"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:visibility="gone"/>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/bluetooth_status"
+        android:layout_width="@dimen/dp_10"
+        android:layout_height="@dimen/dp_13"
+        app:layout_constraintLeft_toRightOf="@id/net_speed"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:src="@mipmap/study_bluetooth_open"
+        android:layout_marginLeft="@dimen/dp_10"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@id/wifi_status"
+        app:layout_constraintRight_toLeftOf="@id/battery_status"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="下午 16:13"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_16"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/battery_percent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintRight_toLeftOf="@id/battery_status"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="100%"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_16"
+        android:layout_marginRight="@dimen/dp_10"
+        />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/battery_status"
+        android:layout_width="@dimen/dp_26"
+        android:layout_height="@dimen/dp_14"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/time"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@mipmap/study_battery_status_100"
+        android:layout_marginRight="@dimen/dp_10"
+        />
+    
+    
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/message_notification_icon"
+        android:layout_width="@dimen/dp_12"
+        android:layout_height="@dimen/dp_14"
+        android:src="@mipmap/message_notification_hint"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/battery_percent"
+        android:layout_marginRight="@dimen/dp_15"/>
+    
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/message_notification_count"
+        android:layout_width="@dimen/dp_6"
+        android:layout_height="@dimen/dp_6"
+        android:src="@mipmap/message_notification_red_point"
+        app:layout_constraintTop_toTopOf="@id/message_notification_icon"
+        app:layout_constraintRight_toRightOf="@id/message_notification_icon"/>
+
+    <!--<androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/message_notification_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1"
+        android:textSize="20sp"
+        android:textColor="@color/red_color"
+        app:layout_constraintTop_toTopOf="@id/message_notification_icon"
+        app:layout_constraintBottom_toBottomOf="@id/message_notification_icon"
+        app:layout_constraintLeft_toRightOf="@id/message_notification_icon"
+        android:gravity="top"
+        android:layout_marginBottom="20dp"/>-->
+
+</androidx.constraintlayout.widget.ConstraintLayout>

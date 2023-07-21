@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.165" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintDimensionRatio="w,1030:462"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.6"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline1">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="784"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <com.mediatek.hralauncher.widget.view.RoundedImageView
+                android:id="@+id/image1"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="270"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/ic_quality_image1"
+                app:riv_corner_radius="@dimen/dp_16" />
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="24" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="196"
+                android:orientation="horizontal">
+
+                <com.mediatek.hralauncher.widget.view.RoundedImageView
+                    android:id="@+id/image2"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="376"
+                    android:scaleType="centerCrop"
+                    android:src="@mipmap/ic_quality_image2"
+                    app:riv_corner_radius="@dimen/dp_16" />
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="32" />
+
+                <com.mediatek.hralauncher.widget.view.RoundedImageView
+                    android:id="@+id/image3"
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="match_parent"
+                    android:layout_weight="376"
+                    android:scaleType="centerCrop"
+                    android:src="@mipmap/ic_quality_image3"
+                    app:riv_corner_radius="@dimen/dp_16" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="32" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="320"
+            android:orientation="vertical">
+
+            <com.mediatek.hralauncher.widget.view.RoundedImageView
+                android:id="@+id/image4"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="142"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/ic_quality_image4"
+                app:riv_corner_radius="@dimen/dp_16" />
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="32" />
+
+            <com.mediatek.hralauncher.widget.view.RoundedImageView
+                android:id="@+id/image5"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="142"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/ic_quality_image5"
+                app:riv_corner_radius="@dimen/dp_16" />
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="32" />
+
+            <com.mediatek.hralauncher.widget.view.RoundedImageView
+                android:id="@+id/image6"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="142"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/ic_quality_image6"
+                app:riv_corner_radius="@dimen/dp_16" />
+        </LinearLayout>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

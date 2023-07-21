@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<level-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:maxLevel="50" android:drawable="@mipmap/study_wifi_status_50"/>
+    <item android:maxLevel="70" android:drawable="@mipmap/study_wifi_status_70"/>
+    <item android:maxLevel="80" android:drawable="@mipmap/study_wifi_status_80"/>
+    <item android:maxLevel="100" android:drawable="@mipmap/study_wifi_status_100"/>
+
+</level-list>

@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:oneshot="false">
+    <item
+        android:drawable="@mipmap/radar1"
+        android:duration="50" />
+    <item
+        android:drawable="@mipmap/radar2"
+        android:duration="50" />
+    <item
+        android:drawable="@mipmap/radar3"
+        android:duration="50" />
+    <item
+        android:drawable="@mipmap/radar4"
+        android:duration="50" />
+    <item
+        android:drawable="@mipmap/radar5"
+        android:duration="50" />
+    <item
+        android:drawable="@mipmap/radar6"
+        android:duration="50" />
+    <item
+        android:drawable="@mipmap/radar7"
+        android:duration="50" />
+    <item
+        android:drawable="@mipmap/radar8"
+        android:duration="50" />
+    <item
+        android:drawable="@mipmap/radar9"
+        android:duration="50" />
+    <item
+        android:drawable="@mipmap/radar10"
+        android:duration="50" />
+    <item
+        android:drawable="@mipmap/radar11"
+        android:duration="50" />
+    <item
+        android:drawable="@mipmap/radar12"
+        android:duration="50" />
+    <item
+        android:drawable="@mipmap/radar13"
+        android:duration="50" />
+
+    <item
+        android:drawable="@mipmap/radar14"
+        android:duration="50" />
+
+    <item
+        android:drawable="@mipmap/radar15"
+        android:duration="50" />
+
+    <item
+        android:drawable="@mipmap/radar16"
+        android:duration="50" />
+
+    <item
+        android:drawable="@mipmap/radar17"
+        android:duration="50" />
+    <item
+        android:drawable="@mipmap/radar18"
+        android:duration="50" />
+    <item
+        android:drawable="@mipmap/radar19"
+        android:duration="50" />
+    <item
+        android:drawable="@mipmap/radar20"
+        android:duration="50" />
+    <item
+        android:drawable="@mipmap/radar21"
+        android:duration="50" />
+    <item
+        android:drawable="@mipmap/radar22"
+        android:duration="50" />
+    <item
+        android:drawable="@mipmap/radar23"
+        android:duration="50" />
+
+    <item
+        android:drawable="@mipmap/radar24"
+        android:duration="50" />
+
+    <item
+        android:drawable="@mipmap/radar25"
+        android:duration="50" />
+
+    <item
+        android:drawable="@mipmap/radar26"
+        android:duration="50" />
+    <item
+        android:drawable="@mipmap/radar27"
+        android:duration="50" />
+    <item
+        android:drawable="@mipmap/radar28"
+        android:duration="50" />
+    <item
+        android:drawable="@mipmap/radar29"
+        android:duration="50" />
+    <item
+        android:drawable="@mipmap/radar30"
+        android:duration="50" />
+    <item
+        android:drawable="@mipmap/radar31"
+        android:duration="50" />
+    <item
+        android:drawable="@mipmap/radar32"
+        android:duration="50" />
+    <item
+        android:drawable="@mipmap/radar33"
+        android:duration="50" />
+    <item
+        android:drawable="@mipmap/radar34"
+        android:duration="50" />
+    <item
+        android:drawable="@mipmap/radar35"
+        android:duration="50" />
+    <item
+        android:drawable="@mipmap/radar36"
+        android:duration="50" />
+    <item
+        android:drawable="@mipmap/radar37"
+        android:duration="50" />
+    <item
+        android:drawable="@mipmap/radar38"
+        android:duration="50" />
+    <item
+        android:drawable="@mipmap/radar39"
+        android:duration="50" />
+    <item
+        android:drawable="@mipmap/radar40"
+        android:duration="50" />
+    <item
+        android:drawable="@mipmap/radar41"
+        android:duration="50" />
+    <item
+        android:drawable="@mipmap/radar42"
+        android:duration="50" />
+    <item
+        android:drawable="@mipmap/radar43"
+        android:duration="50" />
+    <item
+        android:drawable="@mipmap/radar44"
+        android:duration="50" />
+    <item
+        android:drawable="@mipmap/radar45"
+        android:duration="50" />
+</animation-list>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <FrameLayout
+        android:id="@id/fl_main"
+        android:tag="layout/item_i_reader_folder_0"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!--com.boll.tutorialclasslauncher.widget.IReaderFolder-->
+
+        <RelativeLayout
+            android:layout_gravity="center"
+            android:id="@id/i_reader_folder"
+            android:clipToPadding="false"
+            android:layout_width="@dimen/dp_120"
+            android:layout_height="@dimen/dp_120"
+            android:layout_marginBottom="@dimen/dp_38">
+
+            <View
+                android:id="@id/i_reader_folder_bg"
+                android:background="#80000000"
+                android:visibility="invisible"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <com.mediatek.hralauncher.widget.layout.IReaderGridLayout
+                android:id="@id/i_reader_folder_grid"
+                android:padding="@dimen/dp_8"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:iReaderRowCount="2"
+                app:iReaderColumnCount="2"
+                app:iReaderGap="@dimen/dp_8"
+                />
+
+            <FrameLayout
+                android:id="@id/i_reader_folder_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <TextView
+                android:textColor="#ffffffff"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:id="@id/i_reader_folder_tag"
+                android:background="@color/transparent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxLength="6"
+                android:layout_marginTop="@dimen/dp_m_10"
+                android:text="appname"
+                android:singleLine="true"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true" />
+
+            <ImageView
+                android:id="@id/iv_appicon"
+                android:layout_width="@dimen/dp_73"
+                android:layout_height="@dimen/dp_73"
+                android:layout_centerInParent="true"
+                android:scaleType="fitXY"
+                app:borderRadius="@dimen/dp_17"
+                app:type_image="round" />
+
+            <ImageView
+                android:id="@id/iv_appicon_forbidden"
+                android:visibility="gone"
+                android:layout_width="@dimen/dp_73"
+                android:layout_height="@dimen/dp_73"
+                android:src="@mipmap/bg_app_forbidden"
+                android:scaleType="fitXY"
+                android:layout_centerInParent="true"
+                app:borderRadius="@dimen/dp_17"
+                app:type_image="round" />
+
+            <TextView
+                android:textSize="@dimen/sp_12"
+                android:textColor="#ffffffff"
+                android:gravity="center"
+                android:id="@id/i_reader_folder_check_box"
+                android:visibility="gone"
+                android:layout_width="@dimen/dp_26"
+                android:layout_height="@dimen/dp_26"
+                android:layout_marginLeft="@dimen/dp_22"
+                android:layout_marginTop="@dimen/dp_22"
+                android:layout_alignParentLeft="true" />
+        </RelativeLayout>
+    </FrameLayout>
+</layout>

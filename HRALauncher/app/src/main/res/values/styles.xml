@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <style name="ai_recommended_tv">
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">#FF66FFFE</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+</resources>

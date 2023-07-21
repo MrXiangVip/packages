@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <!-- <item
+        android:id="@android:id/background"
+        android:drawable="@drawable/video_progress_bg">
+    </item> -->
+    <item android:id="@android:id/progress">
+        <clip
+            android:clipOrientation="horizontal"
+            android:drawable="@mipmap/video_progress"
+            android:gravity="left|center_vertical" />
+    </item>
+
+</layer-list>

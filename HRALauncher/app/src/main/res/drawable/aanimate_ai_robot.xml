@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:oneshot="false"
+    >
+
+    <item
+        android:duration="50"
+        android:drawable="@mipmap/songshu_0"/>
+    <item
+        android:duration="50"
+        android:drawable="@mipmap/songshu_1"/>
+    <item
+        android:duration="50"
+        android:drawable="@mipmap/songshu_2"/>
+    <item
+        android:duration="50"
+        android:drawable="@mipmap/songshu_3"/>
+    <item
+        android:duration="50"
+        android:drawable="@mipmap/songshu_4"/>
+
+    <item
+        android:duration="50"
+        android:drawable="@mipmap/songshu_5"/>
+    <item
+        android:duration="50"
+        android:drawable="@mipmap/songshu_6"/>
+    <item
+        android:duration="50"
+        android:drawable="@mipmap/songshu_7"/>
+    <item
+        android:duration="50"
+        android:drawable="@mipmap/songshu_8"/>
+    <item
+        android:duration="50"
+        android:drawable="@mipmap/songshu_9"/>
+
+
+    <item
+        android:duration="50"
+        android:drawable="@mipmap/songshu_10"/>
+    <item
+        android:duration="50"
+        android:drawable="@mipmap/songshu_11"/>
+    <item
+        android:duration="50"
+        android:drawable="@mipmap/songshu_12"/>
+    <item
+        android:duration="50"
+        android:drawable="@mipmap/songshu_13"/>
+    <item
+        android:duration="50"
+        android:drawable="@mipmap/songshu_14"/>
+
+
+    <item
+        android:duration="50"
+        android:drawable="@mipmap/songshu_15"/>
+    <item
+        android:duration="50"
+        android:drawable="@mipmap/songshu_16"/>
+    <item
+        android:duration="50"
+        android:drawable="@mipmap/songshu_17"/>
+    <item
+        android:duration="50"
+        android:drawable="@mipmap/songshu_18"/>
+    <item
+        android:duration="50"
+        android:drawable="@mipmap/songshu_19"/>
+
+
+    <item
+        android:duration="50"
+        android:drawable="@mipmap/songshu_20"/>
+    <item
+        android:duration="50"
+        android:drawable="@mipmap/songshu_21"/>
+    <item
+        android:duration="50"
+        android:drawable="@mipmap/songshu_22"/>
+    <item
+        android:duration="50"
+        android:drawable="@mipmap/songshu_23"/>
+    <item
+        android:duration="50"
+        android:drawable="@mipmap/songshu_24"/>
+
+    <item
+        android:duration="50"
+        android:drawable="@mipmap/songshu_25"/>
+    <item
+        android:duration="50"
+        android:drawable="@mipmap/songshu_26"/>
+    <item
+        android:duration="50"
+        android:drawable="@mipmap/songshu_27"/>
+    <item
+        android:duration="50"
+        android:drawable="@mipmap/songshu_28"/>
+    <item
+        android:duration="50"
+        android:drawable="@mipmap/songshu_29"/>
+
+    <item
+        android:duration="50"
+        android:drawable="@mipmap/songshu_30"/>
+    <item
+        android:duration="50"
+        android:drawable="@mipmap/songshu_31"/>
+    <item
+        android:duration="50"
+        android:drawable="@mipmap/songshu_32"/>
+    <item
+        android:duration="50"
+        android:drawable="@mipmap/songshu_33"/>
+    <item
+        android:duration="50"
+        android:drawable="@mipmap/songshu_34"/>
+
+
+    <item
+        android:duration="50"
+        android:drawable="@mipmap/songshu_35"/>
+    <item
+        android:duration="50"
+        android:drawable="@mipmap/songshu_36"/>
+    <item
+        android:duration="50"
+        android:drawable="@mipmap/songshu_37"/>
+    <item
+        android:duration="50"
+        android:drawable="@mipmap/songshu_38"/>
+    <item
+        android:duration="50"
+        android:drawable="@mipmap/songshu_39"/>
+
+
+<!--    <item-->
+<!--        android:duration="50"-->
+<!--        android:drawable="@drawable/songshu_35"/>-->
+<!--    <item-->
+<!--        android:duration="50"-->
+<!--        android:drawable="@drawable/songshu_36"/>-->
+<!--    <item-->
+<!--        android:duration="50"-->
+<!--        android:drawable="@drawable/songshu_37"/>-->
+<!--    <item-->
+<!--        android:duration="50"-->
+<!--        android:drawable="@drawable/songshu_38"/>-->
+<!--    <item-->
+<!--        android:duration="50"-->
+<!--        android:drawable="@drawable/songshu_39"/>-->
+
+
+    <item
+        android:duration="50"
+        android:drawable="@mipmap/songshu_40"/>
+    <item
+        android:duration="50"
+        android:drawable="@mipmap/songshu_41"/>
+    <item
+        android:duration="50"
+        android:drawable="@mipmap/songshu_42"/>
+    <item
+        android:duration="50"
+        android:drawable="@mipmap/songshu_43"/>
+    <item
+        android:duration="50"
+        android:drawable="@mipmap/songshu_44"/>
+
+    <item
+        android:duration="50"
+        android:drawable="@mipmap/songshu_45"/>
+    <item
+        android:duration="50"
+        android:drawable="@mipmap/songshu_46"/>
+    <item
+        android:duration="50"
+        android:drawable="@mipmap/songshu_47"/>
+    <item
+        android:duration="50"
+        android:drawable="@mipmap/songshu_48"/>
+    <item
+        android:duration="50"
+        android:drawable="@mipmap/songshu_49"/>
+
+</animation-list>

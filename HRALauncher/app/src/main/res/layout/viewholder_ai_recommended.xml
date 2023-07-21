@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageRecommend"
+        android:layout_width="@dimen/dp_492"
+        android:layout_height="@dimen/dp_413"
+        android:layout_marginStart="@dimen/dp_44"
+        android:layout_marginTop="@dimen/dp_134"
+        android:src="@mipmap/image_recommend"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/groupRecommend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="imageOne,imageTwo,imageThree, imageFour" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/aicon_ai_robot"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/dp_9"
+        android:src="@drawable/aanimate_ai_robot"
+        app:layout_constraintDimensionRatio="251.5:312.5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.78"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageOne"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:src="@mipmap/image_launcher_item1"
+        app:layout_constraintDimensionRatio="155:42.5"
+        app:layout_constraintHeight_percent="0.1063"
+        app:layout_constraintStart_toStartOf="@+id/guidelineImageOneV"
+        app:layout_constraintTop_toTopOf="@+id/guidelineImageOneH" />
+
+    <ImageView
+        android:id="@+id/imageNewKnowledge"
+        android:layout_width="@dimen/dp_31"
+        android:layout_height="@dimen/dp_16"
+        android:layout_marginTop="@dimen/dp_38"
+        android:layout_marginEnd="@dimen/dp_80"
+        android:src="@mipmap/icon_knowledge_new"
+        app:layout_constraintEnd_toEndOf="@id/imageOne"
+        app:layout_constraintTop_toTopOf="@id/imageOne" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageTwo"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@mipmap/image_launcher_item2"
+        app:layout_constraintDimensionRatio="152.5:42"
+        app:layout_constraintHeight_percent="0.105"
+        app:layout_constraintStart_toStartOf="@+id/guidelineImageTwoV"
+        app:layout_constraintTop_toTopOf="@+id/guidelineImageTwoH" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageThree"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@mipmap/image_launcher_item3"
+        app:layout_constraintDimensionRatio="156.5:43.9"
+        app:layout_constraintHeight_percent="0.10975"
+        app:layout_constraintStart_toStartOf="@+id/guidelineImageThreeV"
+        app:layout_constraintTop_toTopOf="@+id/guidelineImageThreeH" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageFour"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@mipmap/image_launcher_item4"
+        app:layout_constraintDimensionRatio="160:40.8"
+        app:layout_constraintHeight_percent="0.102"
+        app:layout_constraintStart_toStartOf="@+id/guidelineImageFourV"
+        app:layout_constraintTop_toTopOf="@+id/guidelineImageFourH" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_bdc"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/guideline3"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintHeight_percent="0.2"
+        app:layout_constraintStart_toStartOf="@+id/guideline4"
+        app:srcCompat="@mipmap/amodule_bdc" />
+
+    <TextView
+        style="@style/ai_recommended_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/dp_34"
+        android:layout_marginBottom="@dimen/dp_4"
+        android:background="@mipmap/aicon_text_bg"
+        android:paddingBottom="@dimen/dp_6"
+        android:text="背单词"
+        android:textSize="@dimen/sp_16"
+        app:layout_constraintBottom_toBottomOf="@id/iv_bdc"
+        app:layout_constraintRight_toRightOf="@id/iv_bdc" />
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_jzc"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@id/guideline5"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintHeight_percent="0.2"
+        app:layout_constraintStart_toStartOf="@id/guideline6"
+        app:srcCompat="@mipmap/amodule_jzc" />
+
+    <TextView
+        style="@style/ai_recommended_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_20"
+        android:layout_marginBottom="@dimen/dp_4"
+        android:background="@mipmap/aicon_text_bg"
+        android:paddingBottom="@dimen/dp_6"
+        android:text="精准测"
+        android:textSize="@dimen/sp_16"
+        app:layout_constraintBottom_toBottomOf="@id/iv_jzc"
+        app:layout_constraintLeft_toLeftOf="@id/iv_jzc" />
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_hxzsd"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@id/guideline3"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintHeight_percent="0.2"
+        app:layout_constraintStart_toStartOf="@id/guideline7"
+        app:srcCompat="@mipmap/amodule_hxzsd" />
+
+    <TextView
+        style="@style/ai_recommended_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_40"
+        android:layout_marginBottom="@dimen/dp_4"
+        android:background="@mipmap/aicon_text_bg"
+        android:paddingBottom="@dimen/dp_6"
+        android:text="核心知识点"
+        android:textSize="@dimen/sp_16"
+        app:layout_constraintBottom_toBottomOf="@id/iv_hxzsd"
+        app:layout_constraintLeft_toLeftOf="@id/iv_hxzsd" />
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_gpyct"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/guideline8"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintHeight_percent="0.2"
+        app:layout_constraintStart_toStartOf="@+id/guideline6"
+        app:srcCompat="@mipmap/amodule_gpyct" />
+
+    <TextView
+        style="@style/ai_recommended_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_20"
+        android:layout_marginBottom="@dimen/dp_4"
+        android:background="@mipmap/aicon_text_bg"
+        android:paddingBottom="@dimen/dp_6"
+        android:text="高频易错题"
+        android:textSize="@dimen/sp_16"
+        app:layout_constraintBottom_toBottomOf="@id/iv_gpyct"
+        app:layout_constraintLeft_toLeftOf="@id/iv_gpyct" />
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.1675" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.43" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.54" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.69" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.35" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.75" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.82" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.725" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineImageOneH"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.1625" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineImageOneV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.1765" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineImageTwoH"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.3" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineImageTwoV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.0789" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineImageThreeH"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.4425" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineImageThreeV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.0344" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineImageFourH"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.5875" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineImageFourV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.1" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="@dimen/dp_m_5"
+    android:layout_marginRight="@dimen/dp_m_5"
+    android:background="@mipmap/amodule_bg_launcher_common"
+    android:splitMotionEvents="false">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/aicon_bg_launcher_bottom"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageProto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        android:src="@mipmap/image_prototype"
+        android:visibility="gone"
+        tools:visibility="visible" />
+
+    <include
+        android:id="@+id/common_systemui_bar"
+        layout="@layout/layout_common_systemui"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_40"
+        android:visibility="gone" />
+
+    <!--    <com.boll.tutorialclasslauncher.widget.shape.ShapeTextView-->
+    <!--        android:id="@+id/textNet"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="@dimen/dp_40"-->
+    <!--        android:drawablePadding="@dimen/dp_4"-->
+    <!--        android:gravity="center"-->
+    <!--        android:text="网络连接不可用，请检查你的网络设置"-->
+    <!--        android:textColor="#4B4F54"-->
+    <!--        android:textSize="@dimen/sp_20"-->
+    <!--        android:visibility="visible"-->
+    <!--        app:layout_constraintTop_toTopOf="parent"-->
+    <!--        app:sa_fillColor="#FED2D5"-->
+    <!--        app:sa_leftDrawable="@drawable/icon_exclamation_red"-->
+    <!--        app:sa_leftDrawableHeight="@dimen/dp_24"-->
+    <!--        app:sa_leftDrawableWidth="@dimen/dp_24"-->
+    <!--        app:sa_wrapContent="false"-->
+    <!--        tools:visibility="visible" />-->
+
+    <com.mediatek.hralauncher.widget.view.ParallaxViewPager
+        android:id="@id/mViewPager"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:splitMotionEvents="false"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <com.mediatek.hralauncher.widget.view.PageIndicatorView
+        android:id="@id/pageIndicatorView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        app:layout_constraintBottom_toTopOf="@+id/guideline1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+    />
+<!--    app:piv_padding="@dimen/dp_15"-->
+<!--    app:piv_radius="@dimen/dp_5"-->
+
+    <com.mediatek.hralauncher.widget.view.ShapeTextView
+        android:id="@+id/tv_qkctb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawablePadding="@dimen/dp_4"
+        android:drawableTop="@mipmap/amodule_bgzx"
+        android:gravity="center"
+        android:text="全科错题本"
+        android:textColor="#FFFFFFFF"
+        android:textSize="@dimen/sp_14"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/tv_bgzx"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline1"
+        app:layout_constraintVertical_bias="0.10"
+        app:sa_fillColor="@color/transparent"
+        app:sa_topDrawable="@mipmap/amodule_qkctb"
+        app:sa_topDrawableHeight="@dimen/dp_60"
+        app:sa_topDrawableWidth="@dimen/dp_60" />
+
+
+    <com.mediatek.hralauncher.widget.view.ShapeTextView
+        android:id="@+id/tv_bgzx"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_70"
+        android:layout_marginRight="@dimen/dp_70"
+        android:drawableTop="@mipmap/amodule_bgzx"
+        android:drawablePadding="@dimen/dp_4"
+        android:gravity="center"
+        android:text="报告中心"
+        android:textColor="#FFFFFFFF"
+        android:textSize="@dimen/sp_14"
+        app:layout_constraintEnd_toStartOf="@id/tv_wdkc"
+        app:layout_constraintStart_toEndOf="@id/tv_qkctb"
+        app:layout_constraintTop_toTopOf="@id/tv_qkctb"
+        app:sa_fillColor="@color/transparent"
+        app:sa_topDrawable="@mipmap/amodule_bgzx"
+        app:sa_topDrawableHeight="@dimen/dp_60"
+        app:sa_topDrawableWidth="@dimen/dp_60" />
+
+    <com.mediatek.hralauncher.widget.view.ShapeTextView
+        android:id="@+id/tv_wdkc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/dp_70"
+        android:drawableTop="@mipmap/amodule_wdkc"
+        android:drawablePadding="@dimen/dp_4"
+        android:gravity="center"
+        android:text="我的课程"
+        android:textColor="#FFFFFFFF"
+        android:textSize="@dimen/sp_14"
+        app:layout_constraintEnd_toStartOf="@id/tv_songshu"
+        app:layout_constraintStart_toEndOf="@id/tv_bgzx"
+        app:layout_constraintTop_toTopOf="@id/tv_qkctb"
+        app:sa_fillColor="@color/transparent"
+        app:sa_topDrawable="@mipmap/amodule_wdkc"
+        app:sa_topDrawableHeight="@dimen/dp_60"
+        app:sa_topDrawableWidth="@dimen/dp_60" />
+
+    <com.mediatek.hralauncher.widget.view.ShapeTextView
+        android:id="@+id/tv_songshu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/dp_70"
+        android:drawableTop="@mipmap/icon_ssai_college"
+        android:drawablePadding="@dimen/dp_4"
+        android:gravity="center"
+        android:text="春田学院"
+        android:textColor="#FFFFFFFF"
+        android:textSize="@dimen/sp_14"
+        app:layout_constraintBottom_toBottomOf="@id/tv_wdkc"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tv_wdkc"
+        app:sa_fillColor="@color/transparent"
+        app:sa_topDrawable="@mipmap/icon_ssai_college"
+        app:sa_topDrawableHeight="@dimen/dp_60"
+        app:sa_topDrawableWidth="@dimen/dp_60" />
+
+    <com.mediatek.hralauncher.widget.view.CircleImageView
+        android:id="@+id/icon_head"
+        android:layout_width="@dimen/dp_70"
+        android:layout_height="@dimen/dp_70"
+        android:layout_marginStart="@dimen/dp_53"
+        android:layout_marginTop="@dimen/dp_46"
+        android:scaleType="fitXY"
+        android:src="@mipmap/pic_tx_default"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@id/img_dot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="0dp"
+        android:src="@drawable/shape_dot"
+        android:visibility="invisible"
+        app:layout_constraintLeft_toLeftOf="@id/icon_head"
+        app:layout_constraintTop_toTopOf="@id/icon_head" />
+
+    <com.mediatek.hralauncher.widget.view.AutoMarqueeTextView
+        android:id="@id/main_page_user_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:layout_marginLeft="@dimen/dp_20"
+        android:ellipsize="marquee"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:maxWidth="@dimen/dp_150"
+        android:singleLine="true"
+        android:text="未登录"
+        android:textColor="@color/white"
+        android:textSize="@dimen/dp_21"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@id/icon_head"
+        app:layout_constraintLeft_toRightOf="@id/icon_head"
+        app:layout_constraintTop_toTopOf="@id/icon_head" />
+
+    <ImageView
+        android:id="@+id/img_notify"
+        android:layout_width="@dimen/dp_24"
+        android:layout_height="@dimen/dp_24"
+        android:layout_marginStart="@dimen/dp_20"
+        android:layout_marginTop="0dp"
+        android:src="@mipmap/icon_notify"
+        app:layout_constraintBottom_toBottomOf="@id/main_page_user_name"
+        app:layout_constraintStart_toEndOf="@id/main_page_user_name"
+        app:layout_constraintTop_toTopOf="@id/main_page_user_name" />
+
+    <ImageView
+        android:id="@+id/img_notify_dot"
+        android:layout_width="@dimen/dp_6"
+        android:layout_height="@dimen/dp_6"
+        android:layout_marginStart="@dimen/dp_20"
+        android:layout_marginTop="0dp"
+        android:src="@drawable/shape_dot"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@id/img_notify"
+        app:layout_constraintTop_toTopOf="@id/img_notify" />
+
+    <TextView
+        android:id="@id/user_grade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:layout_marginTop="@dimen/dp_3"
+        android:ellipsize="end"
+        android:maxEms="4"
+        android:maxLines="1"
+        android:text="点击登录"
+        android:textColor="#ff2bddf6"
+        android:textSize="@dimen/dp_23"
+        android:visibility="gone"
+        app:layout_constraintLeft_toLeftOf="@id/main_page_user_name"
+        app:layout_constraintTop_toBottomOf="@id/main_page_user_name" />
+
+    <ImageView
+        android:id="@id/study_report_update_dot_iv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_13"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@id/icon_head"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+
+    <com.mediatek.hralauncher.widget.layout.SlidingTabLayout
+        android:id="@+id/subject_container"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dp_60"
+        android:layout_marginRight="@dimen/dp_12"
+        android:visibility="visible"
+        app:layout_constraintRight_toRightOf="@+id/guideline2"
+        app:layout_constraintTop_toTopOf="@id/icon_head"
+        app:tl_indicator_width_equal_title="true"
+        app:tl_tab_padding="@dimen/dp_10"
+        app:tl_tab_width="@dimen/dp_130"
+        app:tl_textBold="SELECT"
+        app:tl_textBottom="true"
+        app:tl_textSelsize="@dimen/sp_24"
+        app:tl_text_bottom_margin="@dimen/dp_3"
+        app:tl_textsize="@dimen/sp_20" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@id/user_center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:constraint_referenced_ids="icon_head, main_page_user_name, subject_container,img_notify"
+        tools:ignore="UnknownId" />
+
+    <com.mediatek.hralauncher.widget.view.ShapeTextView
+        android:id="@+id/textGestureTips"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dp_28"
+        android:layout_marginBottom="@dimen/dp_15"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/dp_12"
+        android:paddingEnd="@dimen/dp_12"
+        android:text="手势更新了隔空翻页,下一步的动作哦, 快去试试吧！"
+        android:textColor="#66FFFE"
+        android:textSize="@dimen/sp_14"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/main_page_user_name"
+        app:layout_constraintStart_toEndOf="@+id/icon_head"
+        app:sa_cornerRadius="@dimen/dp_14"
+        app:sa_fillColor="#80010A66"
+        app:sa_strokeColor="#66FFFE"
+        app:sa_strokeWidth="@dimen/dp_0_5"
+        tools:visibility="visible" />
+
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/nav_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        app:constraint_referenced_ids="tv_qkctb, tv_bgzx, tv_wdkc,tv_songshu"
+        tools:ignore="UnknownId" />
+
+    <com.mediatek.hralauncher.widget.layout.AirobotWidget
+        android:id="@+id/airobotWidget"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1"
+        tools:visibility="visible" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.81" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.93" />
+
+    <com.mediatek.hralauncher.widget.layout.TopNotifyView
+        android:id="@+id/viewTopNotify"
+        android:layout_width="@dimen/dp_468"
+        android:layout_height="@dimen/dp_24"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.mediatek.hralauncher.widget.layout.PopupNotifyView
+        android:id="@+id/popupNotifyView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_100"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--查看比赛结果倒计时-->
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_competition_float"
+        android:layout_width="@dimen/dp_172"
+        android:layout_height="@dimen/dp_134"
+        android:src="@mipmap/icon_float_boy"
+        android:scaleType="fitXY"
+        android:layout_marginEnd="@dimen/dp_70"
+        android:layout_marginBottom="@dimen/dp_78"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <com.mediatek.hralauncher.widget.view.CountdownView
+        android:id="@+id/cdv_timer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:isHideTimeBackground="true"
+        app:isShowMinute="true"
+        app:isShowSecond="true"
+        app:isTimeTextBold="true"
+        app:suffixGravity="center"
+        app:suffixMinute=":"
+        app:suffixTextColor="@color/white"
+        app:suffixTextSize="@dimen/sp_20"
+        app:timeTextColor="@color/white"
+        app:timeTextSize="@dimen/sp_20"
+        android:layout_marginBottom="@dimen/dp_8"
+        app:layout_constraintStart_toStartOf="@id/iv_competition_float"
+        app:layout_constraintEnd_toEndOf="@id/iv_competition_float"
+        app:layout_constraintBottom_toBottomOf="@id/iv_competition_float"
+        tools:text="29:48"/>
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/pk_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:constraint_referenced_ids="iv_competition_float,cdv_timer"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

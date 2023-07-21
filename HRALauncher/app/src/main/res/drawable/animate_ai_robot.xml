@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:oneshot="false">
+    <item
+        android:duration="1200"
+        android:drawable="@drawable/xueban1" />
+    <item
+        android:duration="100"
+        android:drawable="@drawable/xueban2" />
+    <item
+        android:duration="100"
+        android:drawable="@drawable/xueban3" />
+    <item
+        android:duration="100"
+        android:drawable="@drawable/xueban4" />
+    <item
+        android:duration="100"
+        android:drawable="@drawable/xueban5" />
+    <item
+        android:duration="100"
+        android:drawable="@drawable/xueban6" />
+</animation-list>

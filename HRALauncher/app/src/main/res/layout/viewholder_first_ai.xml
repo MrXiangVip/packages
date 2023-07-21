@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@id/viewholder_first_ai"
+    android:paddingLeft="@dimen/dp_70"
+    android:paddingRight="@dimen/dp_70"
+    android:paddingBottom="@dimen/dp_70"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@id/ai_study_system_tag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_87"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text=" 智适应提分系统 "
+        android:textColor="#D2EFFF"
+        android:textSize="@dimen/sp_32"
+        android:textStyle="bold|italic"/>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@id/left_layout"
+        android:layout_marginTop="156dp"
+        android:layout_width="@dimen/dp_666"
+        android:layout_height="@dimen/dp_400"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:background="@drawable/bg_knowledge_snapshot"
+        app:layout_constraintTop_toTopOf="parent"
+        >
+
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/knowledge_map_container"
+            android:layout_width="@dimen/dp_666"
+            android:layout_height="@dimen/dp_354"
+            app:layout_constraintLeft_toLeftOf="@id/left_layout"
+            app:layout_constraintRight_toRightOf="@id/left_layout"
+            app:layout_constraintBottom_toBottomOf="@id/left_layout"
+            android:background="@drawable/bg_knowlegde_map_bg_all_corner">
+
+            <TextView
+                android:textSize="@dimen/dp_18"
+                android:textColor="#ff333333"
+                android:id="@id/chapter_section_info"
+                android:layout_width="@dimen/dp_400"
+                android:layout_height="@dimen/dp_50"
+                android:gravity="left|center_vertical"
+                android:singleLine="true"
+                android:text="第一章 有理数 > 1.3 有理数的加减法"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginLeft="@dimen/dp_20"/>
+
+
+            <com.mediatek.hralauncher.widget.view.MasteryDegreeView
+                android:id="@+id/hint_grade_no"
+                android:layout_width="@dimen/dp_160"
+                android:layout_height="@dimen/dp_50"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_marginRight="@dimen/dp_20"/>
+
+            <com.mediatek.hralauncher.widget.view.KnowledgeGraphView
+                android:id="@id/knowledge_map"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_300"
+                android:layout_marginLeft="@dimen/dp_5"
+                android:layout_marginRight="@dimen/dp_5"
+                app:raduis="@dimen/dp_10"
+                app:knTextSize="@dimen/sp_10"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"/>
+
+
+            <TextView
+                android:textSize="@dimen/sp_14"
+                android:textColor="#ff666666"
+                android:gravity="center"
+                android:id="@id/tv_mapping_state"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/dp_5"
+                android:layout_marginRight="@dimen/dp_5"
+                android:layout_marginTop="@dimen/dp_110"
+                app:layout_constraintTop_toBottomOf="@id/knowledge_map"
+                app:layout_constraintLeft_toLeftOf="@id/knowledge_map"
+                app:layout_constraintRight_toRightOf="@id/knowledge_map"
+                app:layout_constraintBottom_toTopOf="@id/knowledge_map"
+                android:drawableTop="@mipmap/network_error"
+                android:drawablePadding="@dimen/dp_13"
+                android:visibility="gone" />
+
+
+            <TextView
+                android:gravity="center"
+                android:id="@+id/tv_mapping_no_data"
+                android:layout_width="@dimen/dp_237"
+                android:layout_height="@dimen/dp_168"
+                android:layout_marginLeft="@dimen/dp_5"
+                android:layout_marginRight="@dimen/dp_5"
+                app:layout_constraintTop_toBottomOf="@id/knowledge_map"
+                app:layout_constraintLeft_toLeftOf="@id/knowledge_map"
+                app:layout_constraintRight_toRightOf="@id/knowledge_map"
+                app:layout_constraintBottom_toTopOf="@id/knowledge_map"
+                android:drawableTop="@mipmap/data_error"
+                android:drawablePadding="@dimen/dp_13"
+                android:visibility="gone"
+                />
+
+
+            <TextView
+                android:id="@+id/data_error_hint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="开发中，敬请期待..."
+                android:textSize="@dimen/sp_16"
+                android:textColor="#999999"
+                android:gravity="center"
+                app:layout_constraintLeft_toLeftOf="@id/tv_mapping_no_data"
+                app:layout_constraintRight_toRightOf="@id/tv_mapping_no_data"
+                app:layout_constraintTop_toBottomOf="@id/tv_mapping_no_data"
+                android:visibility="gone"/>
+
+
+
+            <com.mediatek.hralauncher.widget.view.CircularProgressBar
+                android:id="@id/loading_progress"
+                android:layout_width="@dimen/dp_35"
+                android:layout_height="@dimen/dp_35"
+                android:layout_marginBottom="@dimen/dp_7"
+                android:indeterminate="true"
+                android:indeterminateOnly="false"
+                app:cpb_colors="@array/gplus_colors"
+                app:layout_constraintLeft_toLeftOf="@id/knowledge_map"
+                app:layout_constraintRight_toRightOf="@id/knowledge_map"
+                app:layout_constraintTop_toTopOf="@id/knowledge_map"
+                app:layout_constraintBottom_toBottomOf="@id/knowledge_map"
+                android:visibility="gone"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+    <Button
+        android:id="@+id/subject_chinese"
+        android:layout_width="175dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="151dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="@id/left_layout"
+        android:background="@drawable/selector_subject_left"
+        android:text="语文"
+        android:textColor="#0CB1EE"
+        android:textSize="24sp"
+        app:layout_constraintHorizontal_bias="0.0"
+        android:tag="语文"/>
+
+
+    <Button
+        android:id="@+id/subject_math"
+        android:layout_width="175dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="151dp"
+        app:layout_constraintLeft_toRightOf="@id/subject_chinese"
+        app:layout_constraintRight_toLeftOf="@id/subject_english"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/selector_subject_middle"
+        android:text="数学"
+        android:textColor="#0CB1EE"
+        android:textSize="24sp"
+        app:layout_constraintHorizontal_bias="0.52"
+        android:tag="数学"/>
+
+    <Button
+        android:id="@+id/subject_english"
+        android:layout_width="175dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="151dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="@id/left_layout"
+        app:layout_constraintRight_toRightOf="@id/left_layout"
+        android:background="@drawable/selector_subject_middle"
+        android:text="英语"
+        android:textColor="#0CB1EE"
+        android:textSize="24sp"
+        android:tag="英语"/>
+
+    <Button
+        android:id="@+id/subject_physical"
+        android:layout_width="175dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="151dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/subject_english"
+        app:layout_constraintRight_toLeftOf="@id/subject_chemistry"
+        android:background="@drawable/selector_subject_middle"
+        android:text="物理"
+        android:textColor="#0CB1EE"
+        android:textSize="24sp"
+        app:layout_constraintHorizontal_bias="0.48"
+        android:tag="物理"
+        android:visibility="visible"/>
+
+    <Button
+        android:id="@+id/subject_chemistry"
+        android:layout_width="175dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="151dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="@id/left_layout"
+        android:background="@drawable/selector_subject_right"
+        android:text="化学"
+        android:textColor="#0CB1EE"
+        android:textSize="24sp"
+        android:tag="化学"
+        android:visibility="visible"/>
+
+    <ImageView
+        android:id="@id/module_wrong_answer"
+        android:background="@mipmap/module_wrong_answer"
+        android:paddingLeft="26dp"
+        android:paddingRight="26dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="@id/left_layout"
+        app:layout_constraintTop_toBottomOf="@id/left_layout"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="24dp"/>
+
+    <ImageView
+        android:id="@+id/module_znzj"
+        android:background="@mipmap/module_znzj"
+        android:paddingLeft="26dp"
+        android:paddingRight="26dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="@id/left_layout"
+        app:layout_constraintLeft_toRightOf="@id/left_layout"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/module_xszc"
+        android:layout_marginLeft="26dp"/>
+
+    <ImageView
+        android:id="@+id/module_xszc"
+        android:background="@mipmap/module_xszc"
+        android:paddingLeft="26dp"
+        android:paddingRight="26dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/module_znzj"
+        app:layout_constraintLeft_toRightOf="@id/left_layout"
+        app:layout_constraintRight_toLeftOf="@id/module_pbxzs"
+        app:layout_constraintBottom_toTopOf="@id/module_middle_dictionary_search"
+        android:layout_marginLeft="26dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"
+        android:layout_marginRight="15dp"/>
+
+
+    <ImageView
+        android:id="@+id/module_pbxzs"
+        android:background="@mipmap/module_pbxzs"
+        android:paddingLeft="26dp"
+        android:paddingRight="26dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="@id/module_xszc"
+        app:layout_constraintLeft_toRightOf="@id/module_xszc"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/module_xszc"
+        />
+
+    <ImageView
+        android:id="@+id/module_middle_dictionary_search"
+        android:background="@mipmap/module_middle_dictionary_search"
+        android:paddingLeft="26dp"
+        android:paddingRight="26dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/module_xszc"
+        app:layout_constraintLeft_toRightOf="@id/left_layout"
+        app:layout_constraintRight_toLeftOf="@id/module_hyzs"
+        app:layout_constraintBottom_toBottomOf="@id/left_layout"
+        android:layout_marginLeft="26dp"
+        android:layout_marginRight="15dp"/>
+
+    <ImageView
+        android:id="@+id/module_hyzs"
+        android:background="@mipmap/module_hyzs"
+        android:paddingLeft="26dp"
+        android:paddingRight="26dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="@id/module_middle_dictionary_search"
+        app:layout_constraintLeft_toRightOf="@id/module_middle_dictionary_search"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/module_middle_dictionary_search"
+        />
+
+
+    <ImageView
+        android:id="@id/module_learning_report"
+        android:background="@mipmap/module_learning_report"
+        android:paddingLeft="26dp"
+        android:paddingRight="26dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintTop_toBottomOf="@id/module_middle_dictionary_search"
+        app:layout_constraintLeft_toRightOf="@id/left_layout"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginLeft="26dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

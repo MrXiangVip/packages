@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.165" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintDimensionRatio="w,1030:462"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.6"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline1">
+
+        <com.mediatek.hralauncher.widget.view.RoundedImageView
+            android:id="@+id/imageContent"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/image_growth_left_bg"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintHeight_percent="0.43"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent="0.42"
+            app:riv_corner_radius="@dimen/dp_20" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:paddingStart="@dimen/dp_32"
+            android:paddingEnd="@dimen/dp_32"
+            app:layout_constrainedHeight="true"
+            app:layout_constraintBottom_toBottomOf="@id/imageContent"
+            app:layout_constraintEnd_toEndOf="@id/imageContent"
+            app:layout_constraintStart_toStartOf="@id/imageContent"
+            app:layout_constraintTop_toTopOf="@id/imageContent">
+
+            <TextView
+                android:id="@+id/textThemeTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_28"
+                android:ellipsize="end"
+                android:includeFontPadding="false"
+                android:maxLines="1"
+                android:textColor="#ff323232"
+                android:textSize="@dimen/sp_28"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="快速阅读能力是什么？" />
+
+            <TextView
+                android:id="@+id/textThemeSubtitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_6"
+                android:ellipsize="end"
+                android:includeFontPadding="false"
+                android:maxLines="1"
+                android:textColor="#CC323232"
+                android:textSize="@dimen/sp_20"
+                app:layout_constraintStart_toStartOf="@id/textThemeTitle"
+                app:layout_constraintTop_toBottomOf="@id/textThemeTitle"
+                tools:text="让「一目十行」成为可能" />
+
+            <com.mediatek.hralauncher.widget.view.TagWidget
+                android:id="@+id/tagWidget"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_28"
+                android:layout_marginBottom="@dimen/dp_16"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textThemeSubtitle"
+                tools:layout_height="@dimen/dp_40" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.mediatek.hralauncher.widget.layout.Banner
+            android:id="@+id/imageBanner"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:scaleType="centerCrop"
+            app:banner_radius="@dimen/dp_20"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent="0.43"
+            app:layout_constraintHorizontal_bias="1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent="0.56"
+            tools:background="@mipmap/image_grow_up_banner" />
+
+        <com.mediatek.hralauncher.widget.view.RoundedImageView
+            android:id="@+id/imageLove"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/icon_gold_shop_bg"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHeight_percent="0.54"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintWidth_percent="0.56"
+            app:riv_corner_radius="@dimen/dp_20" />
+        <!--
+                <ImageView
+                    android:id="@+id/textLoveText"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:src="@mipmap/image_love_text"
+                    app:layout_constraintBottom_toBottomOf="@id/imageLove"
+                    app:layout_constraintDimensionRatio="w,287:78"
+                    app:layout_constraintEnd_toEndOf="@id/imageLove"
+                    app:layout_constraintHeight_percent="0.14"
+                    app:layout_constraintHorizontal_bias="0.87"
+                    app:layout_constraintStart_toStartOf="@id/imageLove"
+                    app:layout_constraintTop_toTopOf="@id/imageLove"
+                    app:layout_constraintVertical_bias="0.24" />
+
+                <TextView
+                    android:id="@+id/textLoveValue"
+                    android:layout_width="@dimen/dp_136"
+                    android:layout_height="@dimen/dp_30"
+                    android:layout_marginTop="@dimen/dp_12"
+                    android:background="@drawable/shape_growup_love_value"
+                    android:drawableStart="@mipmap/image_growup_love"
+                    android:drawablePadding="@dimen/dp_2"
+                    android:gravity="center_vertical"
+                    android:paddingStart="@dimen/dp_36"
+                    android:text="×0"
+                    android:textColor="#ffffffff"
+                    android:textSize="@dimen/sp_18"
+                    app:layout_constraintEnd_toEndOf="@id/textLoveText"
+                    app:layout_constraintStart_toStartOf="@id/textLoveText"
+                    app:layout_constraintTop_toBottomOf="@id/textLoveText" />
+        -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutRight"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/dp_20"
+            android:background="@drawable/shape_grow_up_bg"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintTop_toTopOf="@id/imageLove"
+            app:layout_constraintWidth_percent="0.42">
+
+            <TextView
+                android:id="@+id/textTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_32"
+                android:layout_marginTop="@dimen/dp_20"
+                android:text="成长报告"
+                android:textColor="#ffe05151"
+                android:textSize="@dimen/sp_28"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <LinearLayout
+                android:id="@+id/layoutEmpty"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textTitle"
+                tools:visibility="visible">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/dp_120"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:src="@mipmap/image_grow_empty" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/dp_2"
+                    android:gravity="center"
+                    android:text="还没有学习数据\n 快去开启你的智适应学习之旅吧～"
+                    android:textColor="#ffed6b3f"
+                    android:textSize="@dimen/sp_14" />
+            </LinearLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layoutGrowReport"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/dp_32"
+                android:layout_marginEnd="@dimen/dp_32"
+                android:paddingBottom="10dp"
+                android:visibility="gone"
+                tools:visibility="gone">
+
+                <TextView
+                    android:id="@+id/textReportTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_70"
+                    android:lineSpacingExtra="@dimen/dp_4"
+                    android:text="今日学习总时长：34分钟\n最佳记录：3小时50分钟"
+                    android:textColor="#ffe05151"
+                    android:textSize="@dimen/sp_18"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:src="@mipmap/image_growup_people"
+                    app:layout_constraintBottom_toTopOf="@id/layoutReportDetail"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHeight_percent="0.5"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="1"
+                    app:layout_constraintWidth_percent="0.4" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layoutReportDetail"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/dp_106"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:background="@drawable/shape_grow_up_bgs"
+                    android:paddingStart="@dimen/dp_32"
+                    android:paddingEnd="@dimen/dp_32"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/textReportTitle">
+
+                    <TextView
+                        android:id="@+id/textReportDay"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="18天"
+                        android:textColor="#ffffffff"
+                        android:textSize="@dimen/sp_26"
+                        app:layout_constraintBottom_toTopOf="@id/textReportDaySub"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_chainStyle="packed" />
+
+                    <TextView
+                        android:id="@+id/textReportDaySub"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_10"
+                        android:lineSpacingExtra="@dimen/dp_4"
+                        android:text="最大连续天数"
+                        android:textColor="#ffffffff"
+                        android:textSize="@dimen/sp_18"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="@id/textReportDay"
+                        app:layout_constraintTop_toBottomOf="@id/textReportDay" />
+
+
+                    <TextView
+                        android:id="@+id/textReportDay2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="55dp"
+                        android:text="18天"
+                        android:textColor="#ffffffff"
+                        android:textSize="@dimen/sp_26"
+                        app:layout_constraintStart_toStartOf="@id/textReportDaySub2"
+                        app:layout_constraintTop_toTopOf="@id/textReportDay" />
+
+                    <TextView
+                        android:id="@+id/textReportDaySub2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:lineSpacingExtra="@dimen/dp_4"
+                        android:text="当前连续天数"
+                        android:textColor="#ffffffff"
+                        android:textSize="@dimen/sp_18"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/textReportDaySub" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

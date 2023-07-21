@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <public type="attr" name="piv_padding" id="0x7f0101b0" />
+    <public type="attr" name="piv_radius" id="0x7f0101af" />
+
+    <public type="attr" name="DragInMergeScaleX" id="0x7f010129" />
+    <public type="attr" name="DragInMergeScaleY" id="0x7f01012a" />
+</resources>
