@@ -17,14 +17,14 @@
         android:layout_marginTop="@dimen/dp_100"
         android:layout_marginBottom="@dimen/dp_60"
         android:splitMotionEvents="false"
-
+        app:MainSpanCount="6"
+        app:MainClipToPadding="false"
+        app:SubClipToPadding="false"
+        app:MainPaddingBottom="0dp"
+        app:DragScaleX="1.1"
+        app:DragScaleY="1.1"
+        app:DragInMergeScaleX="0.9"
+        app:DragInMergeScaleY="0.9"
         />
-<!--    app:MainSpanCount="6"-->
-<!--    app:MainClipToPadding="false"-->
-<!--    app:SubClipToPadding="false"-->
-<!--    app:MainPaddingBottom="0dp"-->
-<!--    app:DragScaleX="1.1"-->
-<!--    app:DragScaleY="1.1"-->
-<!--    app:DragInMergeScaleX="0.9"-->
-<!--    app:DragInMergeScaleY="0.9"-->
+
 </RelativeLayout>

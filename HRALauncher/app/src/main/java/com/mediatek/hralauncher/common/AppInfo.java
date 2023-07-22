@@ -20,7 +20,9 @@ public class AppInfo implements Serializable, Comparable<AppInfo>{
     public void setIcon(Drawable icon) {
         this.icon = icon;
     }
-
+    public Drawable getIcon(){
+        return  icon;
+    }
     public void setAppName(String appName) {
         this.appName = appName;
     }

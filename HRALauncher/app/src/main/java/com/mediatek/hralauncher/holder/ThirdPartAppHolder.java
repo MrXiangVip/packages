@@ -12,10 +12,10 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 
 public class ThirdPartAppHolder extends BaseHolder {
-    private Context mContext;
-    private ThirdAppAdapter mAdapter = null;
-    private ArrayList<AppInfo> mAppInfos= new ArrayList();
-    ThirdAppClassifyView mIconListView;
+    private Context             mContext;
+    private ThirdAppAdapter     mAdapter = null;
+    private ArrayList<AppInfo>  mAppInfos= new ArrayList();
+    ThirdAppClassifyView        mIconListView;
     public ThirdPartAppHolder(Context context, ArrayList<AppInfo> appList) {
         super(context);
         mContext = context;
@@ -41,5 +41,6 @@ public class ThirdPartAppHolder extends BaseHolder {
     private void initDataView() {
         mAdapter = new ThirdAppAdapter(mContext);
         mIconListView.setAdapter( mAdapter );
+        mAdapter.setMockSource( mAppInfos );
     }
 }

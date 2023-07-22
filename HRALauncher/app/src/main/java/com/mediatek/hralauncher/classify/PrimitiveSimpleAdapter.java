@@ -44,6 +44,7 @@ public abstract class PrimitiveSimpleAdapter<VH extends PrimitiveSimpleAdapter.V
 
         @Override
         public void onBindViewHolder(@NonNull VH holder, int position) {
+            Log.d(TAG, "onBindViewHolder "+position);
             PrimitiveSimpleAdapter.this.onBindMainViewHolder(holder, position);
         }
 

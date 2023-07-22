@@ -20,6 +20,15 @@ public class ClassifyView extends FrameLayout {
     private int mMainSpanCount=3;
     private int mSubSpanCount=3;
 
+    /**
+     * 放置主要RecyclerView的容器
+     */
+    private ViewGroup mMainContainer;
+    /**
+     * 放置次级RecyclerView的容器
+     */
+    private ViewGroup mSubContainer;
+
     private RecyclerView.OnItemTouchListener mMainItemTouchListener;
     private RecyclerView.OnItemTouchListener mSubItemTouchListener;
 //    private MainRecyclerViewCallBack mMainCallBack;
@@ -43,8 +52,16 @@ public class ClassifyView extends FrameLayout {
     }
 
     private void init(Context context, AttributeSet attrs, int defStyleAttr) {
+
+
+        mMainContainer = new FrameLayout(context);
+        mSubContainer = new FrameLayout(context);
+        mMainContainer.setLayoutParams(new LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
         mMainRecyclerView = getMain(context, attrs);
         mSubRecyclerView = getSub(context, attrs);
+
+        mMainContainer.addView(mMainRecyclerView);
+        addViewInLayout(mMainContainer, 0, mMainContainer.getLayoutParams());
 
     }
     protected RecyclerView getMain(Context context, AttributeSet parentAttrs) {
@@ -76,10 +93,10 @@ public class ClassifyView extends FrameLayout {
     }
     public void setAdapter(BaseMainAdapter mainAdapter, BaseSubAdapter subAdapter) {
         mMainRecyclerView.setAdapter(mainAdapter);
-        mMainRecyclerView.addOnItemTouchListener(mMainItemTouchListener);
+//        mMainRecyclerView.addOnItemTouchListener(mMainItemTouchListener);
 //        mMainCallBack = mainAdapter;
         mSubRecyclerView.setAdapter(subAdapter);
-        mSubRecyclerView.addOnItemTouchListener(mSubItemTouchListener);
+//        mSubRecyclerView.addOnItemTouchListener(mSubItemTouchListener);
 //        mSubCallBack = subAdapter;
 //        mMainRecyclerView.setOnDragListener(new MainDragListener());
     }

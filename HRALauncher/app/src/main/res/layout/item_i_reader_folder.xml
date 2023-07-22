@@ -1,12 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
-
-    <data>
-
-    </data>
-
-    <FrameLayout
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@id/fl_main"
         android:tag="layout/item_i_reader_folder_0"
         android:layout_width="match_parent"
@@ -91,5 +85,4 @@
                 android:layout_marginTop="@dimen/dp_22"
                 android:layout_alignParentLeft="true" />
         </RelativeLayout>
-    </FrameLayout>
-</layout>
+</FrameLayout>
