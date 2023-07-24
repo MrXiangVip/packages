@@ -146,7 +146,7 @@
         android:drawableTop="@mipmap/icon_ssai_college"
         android:drawablePadding="@dimen/dp_4"
         android:gravity="center"
-        android:text="春田学院"
+        android:text="春田学园"
         android:textColor="#FFFFFFFF"
         android:textSize="@dimen/sp_14"
         app:layout_constraintBottom_toBottomOf="@id/tv_wdkc"

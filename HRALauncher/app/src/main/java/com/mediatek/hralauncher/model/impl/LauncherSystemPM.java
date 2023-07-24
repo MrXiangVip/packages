@@ -35,7 +35,7 @@ public class LauncherSystemPM implements ISystemPackageManager {
             ApplicationInfo applicationInfo = resolveInfo.activityInfo.applicationInfo;
             AppInfo appInfo = new AppInfo();
             appInfo.setPackageName( applicationInfo.packageName );
-            appInfo.setAppName( resolveInfo.activityInfo.name);
+            appInfo.setAppName( resolveInfo.loadLabel(mPM).toString());
             appInfo.setIcon( applicationInfo.loadIcon(mPM));
             result.add( appInfo);
         }

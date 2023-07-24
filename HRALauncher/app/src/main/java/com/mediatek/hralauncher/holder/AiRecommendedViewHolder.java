@@ -1,13 +1,16 @@
 package com.mediatek.hralauncher.holder;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.View;
 
 import com.mediatek.hralauncher.R;
 
-public class AiRecommendedViewHolder extends BaseHolder{
+public class AiRecommendedViewHolder extends BaseHolder implements View.OnClickListener{
 
     Context mContext;
+    private String TAG="AiRecommendedViewHolder.";
+
     @Override
     int getLayoutId() {
         return R.layout.viewholder_ai_recommended;
@@ -26,5 +29,10 @@ public class AiRecommendedViewHolder extends BaseHolder{
     public AiRecommendedViewHolder(Context context){
         super(context);
         mContext = context;
+    }
+
+    @Override
+    public void onClick(View v) {
+        Log.d(TAG, "onClick ");
     }
 }

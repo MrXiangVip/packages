@@ -1,11 +1,14 @@
 package com.mediatek.hralauncher.holder;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.View;
 
 import com.mediatek.hralauncher.R;
 
-public class AiQualityViewHolder extends BaseHolder{
+public class AiQualityViewHolder extends BaseHolder implements  View.OnClickListener{
+
+    private String TAG="AiQualityViewHolder.";
 
     public AiQualityViewHolder(Context mContext) {
         super(mContext);
@@ -19,5 +22,10 @@ public class AiQualityViewHolder extends BaseHolder{
     @Override
     void initView(Context context, View view) {
 
+    }
+
+    @Override
+    public void onClick(View v) {
+        Log.d(TAG, "onClick "+v);
     }
 }

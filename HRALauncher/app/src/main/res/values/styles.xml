@@ -8,4 +8,12 @@
         <item name="android:textStyle">bold</item>
     </style>
 
+    <style name="DefaultStyle">
+<!--        <item name="SubRatio">60.000004%</item>-->
+        <item name="MainSpanCount">3</item>
+<!--        <item name="SubSpanCount">3</item>-->
+<!--        <item name="ShadowColor">#d5292929</item>-->
+<!--        <item name="AnimationDuration">@android:integer/config_mediumAnimTime</item>-->
+<!--        <item name="EdgeWidth">0.0dip</item>-->
+    </style>
 </resources>

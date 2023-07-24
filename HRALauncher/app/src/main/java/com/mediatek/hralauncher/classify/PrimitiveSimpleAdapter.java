@@ -12,10 +12,13 @@ import com.mediatek.hralauncher.adapter.BaseSubAdapter;
 
 public abstract class PrimitiveSimpleAdapter<VH extends PrimitiveSimpleAdapter.ViewHolder> implements BaseSimpleAdapter {
 
-    private SimpleMainAdapter mSimpleMainAdapter = new SimpleMainAdapter();
-    private SimpleSubAdapter mSimpleSubAdapter = new SimpleSubAdapter();
+    private SimpleMainAdapter mSimpleMainAdapter ;
+    private SimpleSubAdapter  mSimpleSubAdapter ;
     private String TAG = "PrimitiveSimpleAdapter.";
-
+    public PrimitiveSimpleAdapter() {
+        mSimpleMainAdapter = new SimpleMainAdapter();
+        mSimpleSubAdapter = new SimpleSubAdapter();
+    }
     @Override
     public BaseMainAdapter getMainAdapter() {
         return mSimpleMainAdapter;
@@ -53,6 +56,21 @@ public abstract class PrimitiveSimpleAdapter<VH extends PrimitiveSimpleAdapter.V
             return PrimitiveSimpleAdapter.this.getItemCount();
 
         }
+
+        @Override
+        public void onItemClick(int position, View pressedView) {
+
+        }
+
+        @Override
+        public void onItemClick(RecyclerView recyclerView, int position, View pressedView) {
+            VH viewHolder = (VH) recyclerView.findViewHolderForAdapterPosition(position);
+            if(viewHolder != null)
+                PrimitiveSimpleAdapter.this.onItemClick(viewHolder,position,-1);
+        }
+    }
+    protected void onItemClick(VH viewHolder, int parentIndex, int index) {
+        onItemClick(viewHolder,parentIndex,index);
     }
 
     private class SimpleSubAdapter extends BaseSubAdapter<VH> {

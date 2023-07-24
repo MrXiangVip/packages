@@ -399,7 +399,7 @@
         <attr name="roundWidth" format="dimension" />
     </declare-styleable>
 
-    <declare-styleable name="ThirdAppClassifyView">
+    <declare-styleable name="ClassifyView">
         <attr name="DragInMergeScaleX" format="float"/>
         <attr name="DragInMergeScaleY" format="float"/>
         <attr name="DragScaleX" format="float"/>
