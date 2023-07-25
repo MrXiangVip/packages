@@ -206,7 +206,6 @@ public class LauncherActivity extends BaseLauncherActivity implements OnTabSelec
         } else {
             user_center.setVisibility( View.VISIBLE);
         }
-        return ;
     }
     void refreshNavContainer(int position) {
         Log.e(TAG, "refreshNavContainer position:$position");

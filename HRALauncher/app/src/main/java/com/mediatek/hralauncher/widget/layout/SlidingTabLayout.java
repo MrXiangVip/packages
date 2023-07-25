@@ -1,6 +1,8 @@
 package com.mediatek.hralauncher.widget.layout;
 
 import android.content.Context;
+import android.content.res.TypedArray;
+import android.graphics.Color;
 import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.View;
@@ -27,7 +29,11 @@ public class SlidingTabLayout extends HorizontalScrollView {
     private OnTabSelectListener mListener;
     private int mTextBold;
     private int mTextUnselectColor;
+    private float mTabPadding;
+
+    private static final int TEXT_BOLD_NONE = 0;
     private static final int TEXT_BOLD_WHEN_SELECT = 1;
+    private static final int TEXT_BOLD_BOTH = 2;
 
     public SlidingTabLayout(Context context) {
         this(context, null);
@@ -46,6 +52,19 @@ public class SlidingTabLayout extends HorizontalScrollView {
         mContext = context;
         mTabsContainer = new LinearLayout(context);
         addView(mTabsContainer);
+
+        obtainAttributes(context, attrs);
+    }
+    private void obtainAttributes(Context context, AttributeSet attrs) {
+        TypedArray ta = context.obtainStyledAttributes(attrs, R.styleable.SlidingTabLayout);
+        mTabWidth = ta.getDimension(R.styleable.SlidingTabLayout_tl_tab_width, dp2px(-1));
+        mTabSpaceEqual = ta.getBoolean(R.styleable.SlidingTabLayout_tl_tab_space_equal, false);
+        mTabPadding = ta.getDimension(R.styleable.SlidingTabLayout_tl_tab_padding, mTabSpaceEqual || mTabWidth > 0 ? dp2px(0) : dp2px(20));
+        mTextBold = ta.getInt(R.styleable.SlidingTabLayout_tl_textBold, TEXT_BOLD_NONE);
+        mTextUnselectColor = ta.getColor(R.styleable.SlidingTabLayout_tl_textUnselectColor, Color.parseColor("#AAffffff"));
+        mTextsize = ta.getDimension(R.styleable.SlidingTabLayout_tl_textsize, sp2px(14));
+        mSelTextsize = ta.getDimension(R.styleable.SlidingTabLayout_tl_textSelsize, sp2px(14));
+
     }
 
     public void setTabs(List<String> tabs, List<Integer> colors) {
@@ -133,4 +152,13 @@ public class SlidingTabLayout extends HorizontalScrollView {
         this.mListener = listener;
     }
 
+    protected int dp2px(float dp) {
+        final float scale = mContext.getResources().getDisplayMetrics().density;
+        return (int) (dp * scale + 0.5f);
+    }
+
+    protected int sp2px(float sp) {
+        final float scale = this.mContext.getResources().getDisplayMetrics().scaledDensity;
+        return (int) (sp * scale + 0.5f);
+    }
 }
