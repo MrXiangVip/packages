@@ -57,7 +57,7 @@ public class LauncherActivity extends BaseLauncherActivity implements OnTabSelec
 
     private SlidingTabLayout        subject_container;
 
-    private List mSubjectTitles = Arrays.asList("数学", "语文", "英语", "物理化学", "素质中心", "我的成长");
+    private List mSubjectTitles = Arrays.asList("语文", "数学", "英语", "综合学科", "素质中心", "我的成长");
     private List mSubjectColors = Arrays.asList(
             Color.parseColor("#FF70DC73"),
             Color.parseColor("#FFFF9146"),
