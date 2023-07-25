@@ -41,6 +41,18 @@ public class ThirdPartAppHolder extends BaseHolder implements View.OnClickListen
         initDataView();
     }
 
+    @Override
+    public void onScrollIn() {
+        super.onScrollIn();
+        Log.d(TAG,"onScrollIn");
+    }
+
+    @Override
+    public void onScrollOut() {
+        super.onScrollOut();
+        Log.d(TAG,"onScrollOut");
+    }
+
     private void initDataView() {
         mAdapter = new ThirdAppAdapter(mContext);
         mIconListView.setAdapter( mAdapter );

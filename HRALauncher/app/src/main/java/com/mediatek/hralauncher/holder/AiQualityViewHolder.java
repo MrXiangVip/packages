@@ -15,6 +15,19 @@ public class AiQualityViewHolder extends BaseHolder implements  View.OnClickList
     }
 
     @Override
+    public void onScrollIn() {
+        super.onScrollIn();
+        Log.d(TAG, "onScrollIn");
+
+    }
+
+    @Override
+    public void onScrollOut() {
+        super.onScrollOut();
+
+    }
+
+    @Override
     int getLayoutId() {
         return R.layout.view_holder_ai_quality;
     }

@@ -9,22 +9,21 @@ import com.mediatek.hralauncher.R;
 import com.mediatek.hralauncher.application.LauncherApplication;
 
 public abstract class BaseHolder {
-    private final String TAG="BaseHolder.";
+    private final String TAG = "BaseHolder.";
     Context context;
     View mRootView;
 
-
     abstract int getLayoutId();
-    abstract void initView(Context context,View view);
+
+    abstract void initView(Context context, View view);
 
     public void initDataBeforeInflate(Context context) {
-
     }
 
-    public void onCreate(){
-
+    public void onCreate() {
     }
-    BaseHolder(Context mContext){
+
+    BaseHolder(Context mContext) {
         context = mContext;
         initDataBeforeInflate(context);
         long time = System.currentTimeMillis();
@@ -37,11 +36,17 @@ public abstract class BaseHolder {
             mRootView = LayoutInflater.from(context).inflate(getLayoutId(), null, false);
             //ScreenAdapterTools.getInstance()?.loadView(mRootView!!)
         }
-        Log.d(TAG,"inflate耗时：(" + this.getClass().getSimpleName() + "):" + (System.currentTimeMillis() - time));
+        Log.d(TAG, "inflate耗时：(" + this.getClass().getSimpleName() + "):" + (System.currentTimeMillis() - time));
         initView(context, mRootView);
     }
 
     public View getRootView() {
         return mRootView;
+    }
+
+    public  void onScrollIn(){
+    }
+
+    public  void onScrollOut(){
     }
 }

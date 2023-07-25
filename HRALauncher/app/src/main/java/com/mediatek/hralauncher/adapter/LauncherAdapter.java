@@ -10,6 +10,7 @@ import androidx.viewpager.widget.PagerAdapter;
 import com.mediatek.hralauncher.holder.BaseHolder;
 import com.mediatek.hralauncher.util.ListUtils;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class LauncherAdapter extends PagerAdapter {
@@ -54,4 +55,19 @@ public class LauncherAdapter extends PagerAdapter {
     public void destroyItem(ViewGroup container, int position, Object object) {
         container.removeView(((BaseHolder) object).getRootView());
     }
+
+    public List<BaseHolder> getAllHolders() {
+        List<BaseHolder> holders = new ArrayList<>();
+        if (this.mCardHolders != null) {
+            holders.addAll(this.mCardHolders);
+        }
+        if (this.mAppHolders != null) {
+            holders.addAll(this.mAppHolders);
+        }
+        return holders;
+    }
+    public int getCardViewCount() {
+        return ListUtils.size(this.mCardHolders);
+    }
+
 }

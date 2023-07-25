@@ -32,6 +32,16 @@ public class AiRecommendedViewHolder extends BaseHolder implements View.OnClickL
     }
 
     @Override
+    public void onScrollIn() {
+        super.onScrollIn();
+    }
+
+    @Override
+    public void onScrollOut() {
+        super.onScrollOut();
+    }
+
+    @Override
     public void onClick(View v) {
         Log.d(TAG, "onClick ");
     }
