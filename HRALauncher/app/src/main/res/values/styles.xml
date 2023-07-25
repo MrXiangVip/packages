@@ -16,4 +16,26 @@
 <!--        <item name="AnimationDuration">@android:integer/config_mediumAnimTime</item>-->
 <!--        <item name="EdgeWidth">0.0dip</item>-->
     </style>
+
+    <!--  注册界面输入背景样式  -->
+    <style name="registerTheme">
+        <item name="android:layout_width">@dimen/dp_460</item>
+        <item name="android:layout_height">@dimen/dp_64</item>
+        <item name="android:layout_marginTop">@dimen/dp_20</item>
+    </style>
+
+    <!--  提交按钮  -->
+    <style name="SubmitTheme">
+        <item name="android:layout_width">@dimen/dp_275</item>
+        <item name="android:layout_height">@dimen/dp_80</item>
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:textSize">@dimen/sp_20</item>
+    </style>
+
+    <!--单选框-->
+    <style name="checkbox" parent="@android:style/Widget.CompoundButton.CheckBox">
+        <item name="android:button">@drawable/selector_checkbox</item>
+        <item name="android:layout_width">@dimen/dp_28</item>
+        <item name="android:layout_height">@dimen/dp_28</item>
+    </style>
 </resources>

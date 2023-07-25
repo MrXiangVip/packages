@@ -1,9 +1,12 @@
 package com.mediatek.hralauncher.ui;
 
+import android.content.ComponentName;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 
 import androidx.constraintlayout.widget.Group;
 import androidx.viewpager.widget.ViewPager;
@@ -24,6 +27,7 @@ import com.mediatek.hralauncher.model.impl.LauncherModelView;
 import com.mediatek.hralauncher.model.impl.LauncherAppViewHolderMgr;
 import com.mediatek.hralauncher.model.interf.ILauncherPagersView;
 import com.mediatek.hralauncher.model.interf.ISystemPMHooker;
+import com.mediatek.hralauncher.ui.user.activity.PersonCenterActivity;
 import com.mediatek.hralauncher.widget.layout.SlidingTabLayout;
 import com.mediatek.hralauncher.widget.view.PageIndicatorView;
 import com.mediatek.hralauncher.widget.view.ParallaxViewPager;
@@ -32,7 +36,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class LauncherActivity extends BaseLauncherActivity implements OnTabSelectListener {
+public class LauncherActivity extends BaseLauncherActivity implements OnTabSelectListener, View.OnClickListener {
 
     LauncherModel       mLauncherModel;
     LauncherModelView   mLauncherView;
@@ -56,7 +60,7 @@ public class LauncherActivity extends BaseLauncherActivity implements OnTabSelec
     private AiQualityViewHolder ai_quality_market;
 
     private SlidingTabLayout        subject_container;
-
+    private ImageView              icon_head;
     private List mSubjectTitles = Arrays.asList("语文", "数学", "英语", "综合学科", "素质中心", "我的成长");
     private List mSubjectColors = Arrays.asList(
             Color.parseColor("#FF70DC73"),
@@ -77,6 +81,7 @@ public class LauncherActivity extends BaseLauncherActivity implements OnTabSelec
         nav_container = findViewById(R.id.nav_container);
         mViewPager = findViewById(R.id.mViewPager);
         pageIndicatorView = findViewById(R.id.pageIndicatorView);
+        icon_head = findViewById(R.id.icon_head);
         try{
             startModel();
             initSubjectWidgets();
@@ -120,7 +125,7 @@ public class LauncherActivity extends BaseLauncherActivity implements OnTabSelec
     private void initListener() {
 
         subject_container.setOnTabSelectListener(this);
-
+        icon_head.setOnClickListener(this);
     }
 
     @Override
@@ -131,6 +136,19 @@ public class LauncherActivity extends BaseLauncherActivity implements OnTabSelec
     @Override
     public void onTabReselect(int position) {
         mViewPager.setCurrentItem(position + 1);
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch( v.getId() ){
+            case R.id.icon_head:
+                Intent intent = new Intent();
+                intent.setComponent(new ComponentName(this, PersonCenterActivity.class));
+                startActivity( intent);
+                break;
+            default:
+                break;
+        }
     }
 
     class AppListViewHolderManager implements ILauncherPagersView {

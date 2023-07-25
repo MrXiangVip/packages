@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/imageTop"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/dp_42"
+        android:background="@mipmap/image_interactive_top"
+        app:layout_constraintDimensionRatio="524:200"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutInput"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp_100"
+        app:layout_constraintEnd_toEndOf="@+id/imageTop"
+        app:layout_constraintStart_toStartOf="@+id/imageTop"
+        app:layout_constraintTop_toBottomOf="@+id/imageTop"
+        app:layout_constraintVertical_chainStyle="packed"
+        tools:visibility="visible">
+
+        <ImageView
+            android:id="@+id/imageInput"
+            android:layout_width="@dimen/dp_56"
+            android:layout_height="@dimen/dp_56"
+            android:layout_marginStart="@dimen/dp_20"
+            android:layout_marginEnd="@dimen/dp_24"
+            android:src="@mipmap/icon_sogou"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textDataTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_24"
+            android:text="搜狗输入法"
+            android:textColor="#4B4F54"
+            android:textSize="@dimen/sp_20"
+            app:layout_constraintStart_toEndOf="@+id/imageInput"
+            app:layout_constraintTop_toTopOf="@+id/imageInput"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <TextView
+            android:id="@+id/textDataDes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_24"
+            android:layout_marginTop="@dimen/dp_8"
+            android:text="点击安装搜狗输入法航智云定制版"
+            android:textColor="#8994A4"
+            android:textSize="@dimen/sp_14"
+            app:layout_constraintBottom_toBottomOf="@+id/imageInput"
+            app:layout_constraintStart_toEndOf="@+id/imageInput"
+            app:layout_constraintTop_toBottomOf="@+id/textDataTitle" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_0_5"
+            android:background="#DEE5F0"
+            app:layout_constraintBottom_toBottomOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutAudio"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp_100"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/layoutRace"
+        app:layout_constraintEnd_toEndOf="@+id/imageTop"
+        app:layout_constraintStart_toStartOf="@+id/imageTop"
+        app:layout_constraintTop_toBottomOf="@+id/layoutInput"
+        tools:visibility="visible">
+
+        <ImageView
+            android:id="@+id/imageAudio"
+            android:layout_width="@dimen/dp_56"
+            android:layout_height="@dimen/dp_56"
+            android:layout_marginStart="@dimen/dp_20"
+            android:layout_marginEnd="@dimen/dp_24"
+            android:src="@mipmap/image_interactive_audio"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textAudioTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_24"
+            android:text="语音学伴"
+            android:textColor="#4B4F54"
+            android:textSize="@dimen/sp_20"
+            app:layout_constraintStart_toEndOf="@+id/imageAudio"
+            app:layout_constraintTop_toTopOf="@+id/imageAudio"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <TextView
+            android:id="@+id/textAudioDes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_24"
+            android:layout_marginTop="@dimen/dp_8"
+            android:text="唤醒小伙伴，和ta一起学习、成长、玩游戏"
+            android:textColor="#8994A4"
+            android:textSize="@dimen/sp_14"
+            app:layout_constraintBottom_toBottomOf="@+id/imageAudio"
+            app:layout_constraintStart_toEndOf="@+id/imageAudio"
+            app:layout_constraintTop_toBottomOf="@+id/textAudioTitle" />
+
+        <com.mediatek.hralauncher.widget.view.UISwitchButton
+            android:id="@+id/switchAudio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dp_20"
+            android:clickable="true"
+            android:focusable="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_0_5"
+            android:background="#DEE5F0"
+            app:layout_constraintBottom_toBottomOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutRace"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp_100"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@+id/imageTop"
+        app:layout_constraintStart_toStartOf="@+id/imageTop"
+        app:layout_constraintTop_toBottomOf="@+id/layoutAudio"
+        tools:visibility="gone">
+
+        <ImageView
+            android:id="@+id/imageRace"
+            android:layout_width="@dimen/dp_56"
+            android:layout_height="@dimen/dp_56"
+            android:layout_marginStart="@dimen/dp_20"
+            android:layout_marginEnd="@dimen/dp_24"
+            android:src="@mipmap/image_interactive_race"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textRaceTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_24"
+            android:text="比赛模式"
+            android:textColor="#4B4F54"
+            android:textSize="@dimen/sp_20"
+            app:layout_constraintStart_toEndOf="@+id/imageRace"
+            app:layout_constraintTop_toTopOf="@+id/imageRace"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <TextView
+            android:id="@+id/textRaceDes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_24"
+            android:layout_marginTop="@dimen/dp_8"
+            android:text="以后比赛模式也会需要一段文案的"
+            android:textColor="#8994A4"
+            android:textSize="@dimen/sp_14"
+            app:layout_constraintBottom_toBottomOf="@+id/imageRace"
+            app:layout_constraintStart_toEndOf="@+id/imageRace"
+            app:layout_constraintTop_toBottomOf="@+id/textRaceTitle" />
+
+        <com.mediatek.hralauncher.widget.view.UISwitchButton
+            android:id="@+id/switchRace"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dp_20"
+            android:clickable="true"
+            android:focusable="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

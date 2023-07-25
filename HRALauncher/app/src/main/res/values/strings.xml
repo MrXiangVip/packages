@@ -1,3 +1,119 @@
 <resources>
     <string name="app_name">春田学园</string>
+
+    <!-- 常用 -->
+    <string name="cancel">取消</string>
+    <string name="confirm">确定</string>
+    <string name="complete">完成</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="userManage">用户管理</string>
+    <string name="accountmanage">账号管理</string>
+    <string name="useHelp">使用帮助</string>
+    <string name="after_sale_service">售后服务</string>
+    <string name="feedback">意见反馈</string>
+
+    <!-- 登录注册界面   -->
+    <string name="tel_hint">请输入手机号</string>
+    <string name="getcode">获取验证码</string>
+    <string name="code_hint">请输入验证码</string>
+    <string name="account_hint">请输入账号</string>
+    <string name="pwd_hint">请输入密码</string>
+    <string name="setPwd_hint">请设置6-16位字母数字组合的密码</string>
+    <string name="register_protocol">注册即表示同意《用户注册协议》</string>
+    <string name="register">注册</string>
+    <string name="login">登录</string>
+    <string name="own_account">已有账号登录</string>
+    <string name="forget_pwd">忘记密码?</string>
+    <string name="newuser_register">新用户注册</string>
+
+    <!-- 忘记密码  修改密码   -->
+    <string name="oldPwd_hint">请输入原密码</string>
+    <string name="setNewPwd_hint">请设置6-16位新密码</string>
+    <string name="affrimPwd_hint">请再次输入6-16位新密码</string>
+    <string name="pwd_rule">仅支持字母,数字组合,长度为6-16位,不支持纯\n数字或英文</string>
+    <string name="reset_pwd">重置密码</string>
+    <string name="affirm_pwd">请再次输入新密码</string>
+    <string name="affrim_pwd_not_accordance">两次密码输入不一致</string>
+    <string name="code_error_tv">验证码输入错误</string>
+    <string name="modi_pwd">修改密码</string>
+
+    <!--  课时信息  -->
+    <string name="time">时间</string>
+    <string name="category">类别</string>
+    <string name="num">数量</string>
+    <string name="OneToOne">1对1辅导课</string>
+    <string name="PrimaryClass">小班精品课</string>
+    <string name="BigPublicClass">大班公开课</string>
+    <string name="OneToOneRecode">1对1辅导课课时查看</string>
+    <string name="PrimaryClassRecode">小班精品课课时查看</string>
+    <string name="BigPublicClassCheck">大班精品课课时查看</string>
+    <string name="SurplusClassHour">剩余课时</string>
+    <string name="cheak">查看</string>
+
+    <!--  app使用记录  -->
+    <string name="allApp">全部应用</string>
+    <string name="recreation">游戏娱乐类</string>
+    <string name="study">学习类</string>
+    <string name="system">系统工具类</string>
+
+    <!--  编辑个人信息  -->
+    <string name="edit_info_name">姓名:</string>
+    <string name="edit_info_grade">年级:</string>
+    <string name="edit_info_city">城市:</string>
+    <string name="edit_info_school">学校:</string>
+    <string name="edit_info_sex">性别:</string>
+    <string name="edit_info_birthday">生日:</string>
+    <string name="edit_info_save">保存</string>
+    <string name="edit_info_city_title">选择城市</string>
+    <string name="edit_info_primary">小学</string>
+    <string name="edit_info_middle">中学</string>
+    <string name="edit_info_city_add">添加学校</string>
+    <string name="school_name_hint">请输入学校名称</string>
+    <string name="edit_info_birthday_title">选择生日</string>
+
+    <string name="edit_info_sex_title">选择性别</string>
+    <string name="man">男生</string>
+    <string name="woman">女生</string>
+
+
+    <string name="accessbility_desc">
+        春田学园AI无障碍服务
+    </string>
+
+
+    <string name="ap_multidimen_title">综合学习</string>
+    <string name="ap_syncLearning_title">同步课堂</string>
+    <string name="ap_comprehensiveTest_title">精选试题</string>
+    <string name="ap_examSystem_title">模拟考场</string>
+
+
+    <string name="anquan_changshi">安全常识</string>
+    <string name="liyi_changshi">礼仪常识</string>
+    <string name="chengyu_diangu">成语典故</string>
+    <string name="zhongguo_dili">中国地理</string>
+    <string name="lishi_chaodai">历史朝代</string>
+
+
+    <string name="current_app_not_install" >当前应用程序还没有安装！</string>
+
+
+    <string name="video_error">无法播放此视频</string>
+
+    <string name="search_empty">没有检索到相关内容，请描述的更准确点吧!</string>
+
+    <string name="chinese_char_start_failed">boll.chinese 启动失败</string>
+
+
+    <string name="input_password">请输入密码：</string>
+    <string name="input_password_hint">请输入密码</string>
+    <string name="super_password">超级密码</string>
+    <string name="password_not_correct">密码不正确！</string>
+    <string name="password_input_password_wrong">密码错误</string>
+    <string name="not_install_passwordhelper_app">请安装密码助手APP！</string>
+    <string name="not_set_password_protection">未设置密码保护问题！</string>
+    <string name="password_validate">身份验证</string>
+
+    <string name="competition_pk">PK中</string>
+    <string name="how_upgrade">如何升级</string>
 </resources>

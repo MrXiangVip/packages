@@ -38,6 +38,9 @@
             </intent-filter>
 
         </activity>
+        <activity
+            android:name=".ui.user.activity.PersonCenterActivity"
+            android:screenOrientation="landscape" android:exported="true"/>
     </application>
 
 </manifest>
