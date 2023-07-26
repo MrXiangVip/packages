@@ -152,7 +152,7 @@
         android:layout_marginBottom="@dimen/dp_4"
         android:background="@mipmap/aicon_text_bg"
         android:paddingBottom="@dimen/dp_6"
-        android:text="核心知识点"
+        android:text="服务大厅"
         android:textSize="@dimen/sp_16"
         app:layout_constraintBottom_toBottomOf="@id/iv_hxzsd"
         app:layout_constraintLeft_toLeftOf="@id/iv_hxzsd" />
@@ -176,7 +176,7 @@
         android:layout_marginBottom="@dimen/dp_4"
         android:background="@mipmap/aicon_text_bg"
         android:paddingBottom="@dimen/dp_6"
-        android:text="高频易错题"
+        android:text="读书平台"
         android:textSize="@dimen/sp_16"
         app:layout_constraintBottom_toBottomOf="@id/iv_gpyct"
         app:layout_constraintLeft_toLeftOf="@id/iv_gpyct" />

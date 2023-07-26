@@ -95,6 +95,7 @@ public class AiSubjectViewHolder extends  BaseHolder implements View.OnClickList
                 break;
         }
         mediaController=new MediaController(context);
+//        mediaController.setAnchorView( mVideoView);
         mVideoView.setMediaController(mediaController);
         mediaController.setMediaPlayer( mVideoView );
     }
