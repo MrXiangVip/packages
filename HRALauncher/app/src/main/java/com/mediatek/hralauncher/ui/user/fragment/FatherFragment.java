@@ -1,5 +1,7 @@
 package com.mediatek.hralauncher.ui.user.fragment;
 
+import android.view.View;
+
 import com.mediatek.hralauncher.R;
 
 public class FatherFragment extends BaseFragment{
@@ -10,7 +12,7 @@ public class FatherFragment extends BaseFragment{
     }
 
     @Override
-    protected void init() {
+    protected void init(View view) {
 
     }
 

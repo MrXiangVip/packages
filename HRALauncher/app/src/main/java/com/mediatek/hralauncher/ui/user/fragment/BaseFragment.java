@@ -22,10 +22,10 @@ public abstract class BaseFragment extends Fragment {
 
     public void onViewCreated(View view, Bundle savedInstanceState){
         super.onViewCreated(view, savedInstanceState);
-        init( );
+        init( view );
         initListener( );
     }
     protected abstract int getLayoutID();
-    protected abstract void init();
+    protected abstract void init(View view);
     protected abstract void initListener();
 }

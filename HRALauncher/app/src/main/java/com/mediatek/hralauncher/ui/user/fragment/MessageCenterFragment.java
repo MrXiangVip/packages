@@ -1,5 +1,7 @@
 package com.mediatek.hralauncher.ui.user.fragment;
 
+import android.view.View;
+
 import com.mediatek.hralauncher.R;
 
 public class MessageCenterFragment extends  BaseFragment{
@@ -10,9 +12,10 @@ public class MessageCenterFragment extends  BaseFragment{
     }
 
     @Override
-    protected void init() {
+    protected void init(View view) {
 
     }
+
 
     @Override
     protected void initListener() {

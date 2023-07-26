@@ -1,5 +1,7 @@
 package com.mediatek.hralauncher.ui.user.fragment;
 
+import android.view.View;
+
 import com.mediatek.hralauncher.R;
 
 public class AiInteractiveFragment extends BaseFragment{
@@ -9,7 +11,7 @@ public class AiInteractiveFragment extends BaseFragment{
     }
 
     @Override
-    protected void init() {
+    protected void init(View view) {
 
     }
 
