@@ -44,9 +44,16 @@
 <!--            app:layout_constraintWidth_percent="0.94" />-->
         <VideoView
             android:id="@+id/videov"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
             android:layout_centerInParent="true"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent="0.9"
+            app:layout_constraintWidth_percent="0.94"
+            android:visibility="visible"
             />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
