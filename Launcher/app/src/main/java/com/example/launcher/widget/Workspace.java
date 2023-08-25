@@ -15,13 +15,16 @@ import com.example.launcher.dragndrop.DropTarget;
 import com.example.launcher.dragndrop.SpringLoadedDragController;
 import com.example.launcher.util.IntArray;
 import com.example.launcher.util.IntSparseArrayMap;
+import com.example.launcher.util.PackageUserKey;
 
-public class Workspace extends PagedView implements DragController.DragListener , WorkspaceLayoutManager{
+import java.util.function.Predicate;
+
+public class Workspace extends PagedView implements DragController.DragListener , WorkspaceLayoutManager {
 
     private SpringLoadedDragController mSpringLoadedDragController;
     DragController mDragController;
     final Launcher mLauncher;
-    private String TAG="Workspace ";
+    private String TAG = "Workspace ";
     final IntSparseArrayMap<CellLayout> mWorkspaceScreens = new IntSparseArrayMap<>();
     final IntArray mScreenOrder = new IntArray();
 
@@ -71,6 +74,7 @@ public class Workspace extends PagedView implements DragController.DragListener 
         }
 
     }
+
     public CellLayout insertNewWorkspaceScreen(int screenId, int insertIndex) {
         if (mWorkspaceScreens.containsKey(screenId)) {
             throw new RuntimeException("Screen id " + screenId + " already exists!");
@@ -103,6 +107,7 @@ public class Workspace extends PagedView implements DragController.DragListener 
 //        // needed
         updateChildrenLayersEnabled();
     }
+
     private void updateChildrenLayersEnabled() {
 //        boolean enableChildrenLayers = mIsSwitchingState || isPageInTransition();
 //        if (enableChildrenLayers != mChildrenLayersEnabled) {
@@ -116,5 +121,9 @@ public class Workspace extends PagedView implements DragController.DragListener 
 //                }
 //            }
 //        }
+    }
+
+    public void updateNotificationDots(Predicate<PackageUserKey> updatedDots) {
+
     }
 }

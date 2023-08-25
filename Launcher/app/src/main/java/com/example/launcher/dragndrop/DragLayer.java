@@ -33,8 +33,6 @@ public class DragLayer extends BaseDragLayer<Launcher> {
         mWorkspaceScrim = new WorkspaceAndHotseatScrim(this);
     }
 
-
-
     public ViewGroupFocusHelper getFocusIndicatorHelper() {
         return mFocusIndicatorHelper;
     }

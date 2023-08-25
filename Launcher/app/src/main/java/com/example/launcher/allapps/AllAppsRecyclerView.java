@@ -7,6 +7,10 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 public class AllAppsRecyclerView extends BaseRecyclerView{
+
+    private AlphabeticalAppsList mApps;
+
+
     public AllAppsRecyclerView(@NonNull Context context) {
         this(context, null);
     }
@@ -17,5 +21,22 @@ public class AllAppsRecyclerView extends BaseRecyclerView{
 
     public AllAppsRecyclerView(@NonNull Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
+    }
+
+    @Override
+    public void onUpdateScrollbar(int dy) {
+
+    }
+
+    public void setApps(AlphabeticalAppsList apps) {
+        mApps = apps;
+    }
+    public AlphabeticalAppsList getApps() {
+        return mApps;
+    }
+
+
+    public void setAdapter(Adapter adapter) {
+        super.setAdapter(adapter);
     }
 }

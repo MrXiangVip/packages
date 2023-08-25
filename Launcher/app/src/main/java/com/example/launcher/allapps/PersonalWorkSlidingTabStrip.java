@@ -6,7 +6,13 @@ import android.widget.LinearLayout;
 
 import androidx.annotation.Nullable;
 
-public class PersonalWorkSlidingTabStrip extends LinearLayout {
+import com.example.launcher.pageindicators.PageIndicator;
+
+public class PersonalWorkSlidingTabStrip extends LinearLayout implements PageIndicator {
+
+    private AllAppsContainerView mContainerView;
+
+
     public PersonalWorkSlidingTabStrip(Context context) {
         this(context, null);
     }
@@ -22,4 +28,24 @@ public class PersonalWorkSlidingTabStrip extends LinearLayout {
     public PersonalWorkSlidingTabStrip(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
     }
+
+    @Override
+    public void setScroll(int currentScroll, int totalScroll) {
+
+    }
+
+    @Override
+    public void setActiveMarker(int activePage) {
+
+    }
+
+    @Override
+    public void setMarkersCount(int numMarkers) {
+
+    }
+
+    public void setContainerView(AllAppsContainerView containerView) {
+        mContainerView = containerView;
+    }
+
 }

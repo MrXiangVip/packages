@@ -5,6 +5,8 @@ import android.content.ContextWrapper;
 import android.view.ContextThemeWrapper;
 
 import com.example.launcher.DeviceProfile;
+import com.example.launcher.dot.DotInfo;
+import com.example.launcher.model.ItemInfo;
 
 public interface ActivityContext {
 
@@ -17,6 +19,10 @@ public interface ActivityContext {
             throw new IllegalArgumentException("Cannot find ActivityContext in parent tree");
         }
     }
+    default DotInfo getDotInfoForItem(ItemInfo info) {
+        return null;
+    }
+
     DeviceProfile getDeviceProfile();
 
 }

@@ -1,5 +1,7 @@
 package com.example.launcher.util;
 
+import java.util.StringTokenizer;
+
 public class IntArray implements Cloneable{
     private static final int MIN_CAPACITY_INCREMENT = 12;
 
@@ -41,6 +43,14 @@ public class IntArray implements Cloneable{
 
         mValues[index] = value;
     }
+    public void addAll(IntArray values) {
+        final int count = values.mSize;
+        ensureCapacity(count);
+
+        System.arraycopy(values.mValues, 0, mValues, mSize, count);
+        mSize += count;
+    }
+
     private void ensureCapacity(int count) {
         final int currentSize = mSize;
         final int minCapacity = currentSize + count;
@@ -58,5 +68,16 @@ public class IntArray implements Cloneable{
         if (index < 0 || len <= index) {
             throw new ArrayIndexOutOfBoundsException("length=" + len + "; index=" + index);
         }
+    }
+
+    public static IntArray fromConcatString(String concatString) {
+        StringTokenizer tokenizer = new StringTokenizer(concatString, ",");
+        int[] array = new int[tokenizer.countTokens()];
+        int count = 0;
+        while (tokenizer.hasMoreTokens()) {
+            array[count] = Integer.parseInt(tokenizer.nextToken().trim());
+            count++;
+        }
+        return new IntArray(array, array.length);
     }
 }

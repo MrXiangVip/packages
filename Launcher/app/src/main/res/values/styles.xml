@@ -94,4 +94,20 @@
         <item name="android:textColorPrimary">?android:attr/textColorPrimaryInverse</item>
         <item name="android:textColorSecondary">?android:attr/textColorSecondaryInverse</item>
     </style>
+
+    <style name="BaseIconUnBounded" parent="@android:style/TextAppearance.DeviceDefault">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:focusable">true</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:textColor">?android:attr/textColorSecondary</item>
+        <!-- No shadows in the base theme -->
+        <item name="android:shadowRadius">0</item>
+    </style>
+
+    <!-- Base theme for BubbleTextView and sub classes -->
+    <style name="BaseIcon" parent="@style/BaseIconUnBounded">
+        <item name="android:lines">1</item>
+    </style>
 </resources>
