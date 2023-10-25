@@ -9,4 +9,18 @@
     <attr name="switchBarTheme" format="reference" />
     <attr name="preferenceBackgroundColor" format="color" />
 
+    <!-- For Search -->
+    <declare-styleable name="Preference">
+        <!-- Synonyms for search results -->
+        <attr name="keywords" format="string" />
+        <!-- Whether or not the preference is searchable, by default it's true. -->
+        <attr name="searchable" format="boolean" />
+        <!-- Classname of a PreferenceController corresponding to the preference -->
+        <attr name="controller" format="string" />
+        <!-- Customized subtitle if it's an unavailable slice -->
+        <attr name="unavailableSliceSubtitle" format="string" />
+        <!-- Whether or not the preference is for work profile, by default it's false. -->
+        <attr name="forWork" format="boolean" />
+    </declare-styleable>
+
 </resources>

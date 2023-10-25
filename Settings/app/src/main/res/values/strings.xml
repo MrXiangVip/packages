@@ -5006,4 +5006,7 @@
     <string name="custom_build_version">"自定义版本"</string>
     <string name="software_updates_more_title">软件更新服务</string>
     <string name="software_updates_more_summary">检测软件更新</string>
+
+    <string name="available_wifi_list">可用WLAN列表</string>
+
 </resources>

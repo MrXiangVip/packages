@@ -1,5 +1,8 @@
 package com.example.settings.network;
 
+import android.os.Bundle;
+import android.util.Log;
+
 import com.example.settings.DashboardFragment;
 import com.example.settings.R;
 public class NetworkDashboardFragment extends DashboardFragment{
@@ -13,4 +16,8 @@ public class NetworkDashboardFragment extends DashboardFragment{
         return R.xml.network_and_internet;
     }
 
+    public void onCreatePreferences(Bundle savedInstanceState, String rootKey){
+        Log.d(TAG, "onCreatePreference "+rootKey);
+        super.onCreatePreferences(savedInstanceState, rootKey);
+    }
 }

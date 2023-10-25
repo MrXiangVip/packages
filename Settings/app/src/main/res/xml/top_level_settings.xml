@@ -27,9 +27,9 @@
         android:icon="@drawable/ic_homepage_network"
         android:order="-120"
         android:fragment="com.example.settings.network.NetworkDashboardFragment"
-        />
+        settings:controller="com.example.settings.network.TopLevelNetworkEntryPreferenceController"/>
+    />
 <!--        android:fragment="com.android.settings.network.NetworkDashboardFragment"-->
-<!--        settings:controller="com.android.settings.network.TopLevelNetworkEntryPreferenceController"/>-->
 
     <Preference
         android:key="top_level_connected_devices"

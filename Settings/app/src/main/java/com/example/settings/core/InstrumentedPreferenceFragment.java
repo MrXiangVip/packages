@@ -1,5 +1,6 @@
 package com.example.settings.core;
 
+import android.content.Context;
 import android.os.Bundle;
 
 import androidx.annotation.XmlRes;
@@ -16,6 +17,10 @@ public abstract  class InstrumentedPreferenceFragment extends PreferenceFragment
         if (resId > 0) {
             addPreferencesFromResource(resId);
         }
+    }
+
+    protected final Context getPrefContext() {
+        return getPreferenceManager().getContext();
     }
 
     public void addPreferencesFromResource(@XmlRes int preferencesResId) {

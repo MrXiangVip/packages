@@ -35,13 +35,13 @@
         android:title="@string/wifi_settings"
         android:summary="@string/summary_placeholder"
         android:icon="@drawable/ic_settings_wireless"
-        android:order="-30">
-<!--        android:fragment="com.android.settings.wifi.WifiSettings"-->
-<!--        settings:allowDividerAbove="true">-->
-<!--        <intent-->
-<!--            android:action="android.settings.WIFI_SETTINGS"-->
-<!--            android:targetClass="Settings$WifiSettingsActivity" />-->
+        android:order="-30"
+        android:fragment="com.example.settings.wifi.WifiSettings">
+        <intent
+            android:action="android.settings.WIFI_SETTINGS"
+            android:targetClass="Settings$WifiSettingsActivity" />
     </SwitchPreference>
+    <!--        settings:allowDividerAbove="true">-->
 
 <!--    <com.android.settings.widget.AddPreference-->
     <SwitchPreference

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingStart="?android:attr/listPreferredItemPaddingStart"
+    android:paddingEnd="?android:attr/listPreferredItemPaddingEnd"
+    android:orientation="horizontal">
+<!--    <LinearLayout-->
+<!--        android:id="@+id/icon_frame"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:minWidth="56dp"-->
+<!--        android:gravity="start|center_vertical"-->
+<!--        android:orientation="horizontal"-->
+<!--        android:paddingStart="56dp"-->
+<!--        android:paddingEnd="12dp"-->
+<!--        android:paddingTop="4dp"-->
+<!--        android:paddingBottom="4dp">-->
+<!--        <ImageView-->
+<!--            android:id="@android:id/icon"-->
+<!--            android:layout_width="24dp"-->
+<!--            android:layout_height="24dp"/>-->
+<!--    </LinearLayout>-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="8dp"
+        android:paddingStart="56dp"
+        android:layout_marginBottom="8dp">
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dip"
+            android:layout_marginEnd="6dip"
+            android:layout_marginTop="6dip"
+            android:layout_marginBottom="6dip"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView android:id="@android:id/title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:textAppearance="@android:style/TextAppearance.Material.Subhead"
+                    android:textColor="?android:attr/textColorPrimary"
+                    android:ellipsize="marquee"
+                    android:fadingEdge="horizontal" />
+
+                <TextView android:id="@android:id/summary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@android:id/title"
+                    android:layout_alignStart="@android:id/title"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColor="?android:attr/textColorSecondary"
+                    android:maxLines="4" />
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <!-- Preference should place its actual preference widget here. -->
+
+        <SeekBar
+            android:id="@+id/ruler_seek_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:max="100"
+            android:min="10"
+            android:thumb="@drawable/ruler_seekbar_circle"
+            />
+        <!--    android:progressDrawable="@drawable/seekbar_bg"-->
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <TextView
+                android:id="@+id/ruler_min"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left|center_vertical"
+                android:layout_alignParentLeft="true"
+                android:textColor="@color/black"
+                android:text="左边"/>
+            <TextView
+                android:id="@+id/ruler_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:textSize="17sp"
+                android:textColor="@android:color/black"
+                />
+            <TextView
+                android:id="@+id/ruler_max"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right|center_vertical"
+                android:paddingRight="10dp"
+                android:layout_alignParentRight="true"
+                android:textColor="@color/black"
+                android:text="右边"/>
+        </RelativeLayout>
+    </LinearLayout>
+
+</LinearLayout>
