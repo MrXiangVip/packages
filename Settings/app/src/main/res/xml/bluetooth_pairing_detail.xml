@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2017 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:settings="http://schemas.android.com/apk/res-auto"
+    android:title="@string/bluetooth">
+	
+<!--	<com.android.settings.custom.StaticBackgroundLinePreference-->
+	<Preference
+        android:key="bluetooth_line_bg"	/>
+<!--	    settings:allowDividerAbove="false"-->
+<!--        settings:allowDividerBelow="false"/>-->
+	
+<!--    <com.android.settings.custom.StaticBackgroundBottomPreference-->
+    <Preference
+	    android:key="bluetooth_bottom_bg"/>
+<!--	    settings:allowDividerAbove="false"-->
+<!--        settings:allowDividerBelow="false"/>	-->
+
+<!--    <com.android.settings.custom.BluetoothDeviceRenamePreference-->
+    <Preference
+        android:key="bt_pair_rename_devices"
+        android:title="@string/bluetooth_device_name"
+        android:summary="@string/summary_placeholder"/>
+<!--        settings:controller="com.android.settings.bluetooth.BluetoothDeviceRenamePreferenceController"/>-->
+	
+<!--	<com.android.settings.custom.CustomPreference-->
+	<Preference
+	    android:key="connected_top_bg"
+		android:title="@string/connected_device_previously_connected_title"/>
+<!--	    settings:allowDividerAbove="false"-->
+<!--        settings:allowDividerBelow="false"/>-->
+	
+    <PreferenceCategory
+        android:key="connected_bluetooth_devices"
+		settings:allowDividerAbove="false"
+        settings:allowDividerBelow="false"
+		android:layout="@layout/empty_view"
+        android:title="@string/connected_device_previously_connected_title"/>
+<!--        settings:controller="com.android.settings.bluetooth.ConnectedDevicePreferenceController" />	-->
+	
+<!--    <com.android.settings.custom.StaticBackgroundBottomPreference-->
+    <Preference
+	    android:key="connected_bottom_bg"/>
+<!--	    settings:allowDividerAbove="false"-->
+<!--        settings:allowDividerBelow="false"/>  	-->
+
+<!--    <com.android.settings.bluetooth.BluetoothProgressCategory-->
+    <PreferenceCategory
+        android:key="available_devices"
+        android:title="@string/bluetooth_paired_device_title"/>
+	<!--		settings:allowDividerAbove="false"-->
+	<!--        settings:allowDividerBelow="false"-->
+		
+<!--	<com.android.settings.custom.StaticBackgroundBottomPreference-->
+	<Preference
+	    android:key="available_bottom_bg"/>
+<!--	    settings:allowDividerAbove="false"-->
+<!--        settings:allowDividerBelow="false"/>  -->
+
+<!--    <com.android.settingslib.widget.FooterPreference-->
+<!--	    settings:allowDividerAbove="false"-->
+<!--        settings:allowDividerBelow="false"/>-->
+
+</PreferenceScreen>
