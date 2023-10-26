@@ -14,7 +14,8 @@
         <!-- Customize your theme here. -->
     </style>
 
-    <style name="Theme.SettingsBase" parent="@android:style/Theme.DeviceDefault.Settings" />
+    <style name="Theme.SettingsBase" parent="@android:style/Theme.DeviceDefault.Settings" >
+    </style>
     <style name="Theme.Settings" parent="Theme.SettingsBase">
 <!--        <item name="preferenceTheme">@style/PreferenceTheme</item>-->
         <item name="android:clipToPadding">false</item>
@@ -22,7 +23,9 @@
         <item name="android:listPreferredItemHeight">72dip</item>
         <item name="android:homeAsUpIndicator">@drawable/ic_arrow_back</item>
         <item name="android:navigationBarColor">@android:color/transparent</item>
-<!--        <item name="android:datePickerDialogTheme">@style/PickerDialogTheme.Settings</item>-->
+        <item name="preferenceTheme">@style/PreferenceTheme</item>
+
+        <!--        <item name="android:datePickerDialogTheme">@style/PickerDialogTheme.Settings</item>-->
 
 <!--        <item name="fingerprint_layout_theme">@style/FingerprintLayoutTheme</item>-->
 <!--        <item name="face_layout_theme">@style/FaceLayoutTheme</item>-->

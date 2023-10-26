@@ -60,7 +60,7 @@
 <!--        settings:allowDividerBelow="false"/>  	-->
 
 <!--    <com.android.settings.bluetooth.BluetoothProgressCategory-->
-    <PreferenceCategory
+    <com.example.settings.bluetooth.BluetoothProgressCategory
         android:key="available_devices"
         android:title="@string/bluetooth_paired_device_title"/>
 	<!--		settings:allowDividerAbove="false"-->

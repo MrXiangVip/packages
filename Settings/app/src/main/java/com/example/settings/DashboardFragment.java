@@ -53,6 +53,10 @@ public abstract class DashboardFragment extends PreferenceFragmentCompat impleme
         return null;
     }
 
+    protected final Context getPrefContext() {
+        return getPreferenceManager().getContext();
+    }
+
 //    private void refreshAllPreferences(final String tag) {
 //        final PreferenceScreen screen = getPreferenceScreen();
 //        if (screen != null) {
