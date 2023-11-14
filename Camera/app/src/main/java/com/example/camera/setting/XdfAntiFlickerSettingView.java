@@ -18,6 +18,8 @@ public class XdfAntiFlickerSettingView implements ICameraSettingView , XdfGroupB
     private String mKey;
     private XdfGroupButtonPreference mGroupPref;
     private String mSelectedValue="off";
+    private boolean mEnabled;
+
     private List<String> mEntryValues = new ArrayList<>();
     private List<String> mOriginalEntryValues = new ArrayList<>();
     private String TAG="XdfAntiFlickerSettingView";
@@ -50,6 +52,11 @@ public class XdfAntiFlickerSettingView implements ICameraSettingView , XdfGroupB
         mGroupPref.setSelectedValue(mSelectedValue );
         mGroupPref.setEntryValues( mEntryValues );
         mGroupPref.setEnabled( true);
+    }
+
+    @Override
+    public boolean isEnabled() {
+        return mEnabled;
     }
 
     @Override

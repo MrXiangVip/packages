@@ -40,6 +40,7 @@ import com.example.camera.setting.WhiteBalanceSettingView;
 import com.example.camera.setting.PictureSizeSettingView;
 import com.example.camera.setting.XdfPhotoMultiSettingView;
 import com.example.camera.shutter.ShutterRootLayout;
+import com.example.camera.utils.CameraUtil;
 import com.example.camerabg.R;
 
 import java.util.ArrayList;
@@ -125,6 +126,7 @@ public class CameraActivity extends PermissionActivity implements IApp {
     @Override
     protected void onCreateTasks(Bundle savedInstanceState) {
         super.onCreateTasks(savedInstanceState);
+        CameraUtil.launchCamera(this);
 
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_REVERSE_LANDSCAPE);
 

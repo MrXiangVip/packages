@@ -5,6 +5,32 @@ import android.view.ScaleGestureDetector;
 
 public interface IAppUiListener {
 
+    interface ISurfaceStatusListener {
+        /**
+         * Invoked when a surface is ready for use.
+         * @param surfaceObject The created surfaceHolder.
+         * @param width The width of the surface
+         * @param height The height of the surface
+         */
+        void surfaceAvailable(Object surfaceObject, int width, int height);
+
+        /**
+         * Invoked when the surface's buffers size changed.
+         *  @param surfaceObject The changed surface
+         * @param width The new width of the surface
+         * @param height The new height of the surface
+         */
+        void surfaceChanged(Object surfaceObject, int width, int height);
+
+        /**
+         * Invoked when the specified surface is about to be destroyed.
+         * @param surfaceObject The surface is about to be destroyed
+         * @param width
+         * @param height
+         *
+         */
+        void surfaceDestroyed(Object surfaceObject, int width, int height);
+    }
 
     interface OnModeChangeListener {
         /**
@@ -161,4 +187,12 @@ public interface IAppUiListener {
          */
         boolean onLongPress(float x, float y);
     }
+
+    interface OnThumbnailClickedListener {
+        /**
+         *Called when thumbnail clicked.
+         */
+        void onThumbnailClicked();
+    }
+
 }

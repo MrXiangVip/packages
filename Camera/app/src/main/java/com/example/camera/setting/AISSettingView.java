@@ -75,6 +75,11 @@ public class AISSettingView implements ICameraSettingView,  XdfSwitchPreference.
     }
 
     @Override
+    public boolean isEnabled() {
+        return false;
+    }
+
+    @Override
     public void onLayoutClick(View view) {
             Log.d(TAG, "view " +view);
     //        if( view instanceof )

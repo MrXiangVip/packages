@@ -1,5 +1,7 @@
 package com.example.camera.mode;
 
+import com.example.camera.common.IApp;
+import com.example.camera.common.ICameraContext;
 import com.example.camera.device.CameraDeviceManagerFactory.CameraApi;
 import com.example.camera.relation.DataStore;
 
@@ -16,6 +18,7 @@ public interface ICameraMode {
         PHOTO,
         VIDEO,
     }
+    void init(IApp app, ICameraContext cameraContext, boolean isFromLaunch);
 
     CameraApi getCameraApi();
     String getModeKey();

@@ -43,6 +43,7 @@ public class XdfPhotoMultiSettingView implements ICameraSettingView , XdfMultiIm
     private static List<Integer> mScenceModeIcons = new ArrayList<>();
     private static List<String> mScenceModeEntries = new ArrayList<>();
     private static List<String> mScenceModeEntryValues = new ArrayList<>();
+    private boolean mEnabled;
 
     private static String mScenceModeSelectedValue = null;
 //  AIS
@@ -130,6 +131,11 @@ public class XdfPhotoMultiSettingView implements ICameraSettingView , XdfMultiIm
 //        }
 //        xdfTabHostFragment.setScenceModeSelectedValue(mWhiteBalanceSelectedValue);
 //        xdfTabHostFragment.setScenceModeEntriesAndEntryValues(mEntries, mEntryValues, mWhiteBalanceIcons);
+    }
+
+    @Override
+    public boolean isEnabled() {
+        return mEnabled;
     }
 
     public void setWhiteBalanceEntryValues( ) {

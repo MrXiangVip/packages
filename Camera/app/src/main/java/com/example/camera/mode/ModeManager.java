@@ -5,6 +5,7 @@ import static com.example.camera.mode.ICameraMode.MODE_DEVICE_STATE_PREVIEWING;
 import android.os.Handler;
 import android.os.HandlerThread;
 import android.os.Looper;
+import android.os.Message;
 import android.util.Log;
 
 import com.example.camera.common.CameraContext;
@@ -26,7 +27,7 @@ public class ModeManager implements IModeListener , IAppUiListener.OnModeChangeL
     private ICameraContext mCameraContext;
     private ModeHandler mModeHandler;
     private static final String DEFAULT_CAPTURE_MODE =
-            "com.mediatek.camera.common.mode.photo.PhotoModeEntry";
+            "com.example.camera.mode.photo.PhotoModeEntry";
 
     private static final int MSG_MODE_INIT = 2;
     private static final int MSG_MODE_RESUME = 3;
@@ -141,8 +142,24 @@ public class ModeManager implements IModeListener , IAppUiListener.OnModeChangeL
         public ModeHandler(Looper looper) {
             super(looper);
         }
-    }
 
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            MsgParam param = (MsgParam) msg.obj;
+            if( param == null ){
+                return;
+            }
+            switch (msg.what) {
+                case MSG_MODE_INIT:
+                    Boolean isFromLaunch = (Boolean) param.mObj;
+                    param.mMode.init(mApp, mCameraContext, isFromLaunch.booleanValue());
+                    break;
+                default:
+                    break;
+            }
+
+        }
+    }
     private class FeatureLoadListener implements FeatureLoadDoneListener {
 
         @Override

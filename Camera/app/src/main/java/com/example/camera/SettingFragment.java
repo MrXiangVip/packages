@@ -101,6 +101,15 @@ public class SettingFragment extends PreferenceFragment  {
             mSettingViewList.add(view);
         }
     }
+    public synchronized boolean hasVisibleChild() {
+        boolean visible = false;
+        for (ICameraSettingView view : mSettingViewList) {
+            if (view.isEnabled()) {
+                visible = true;
+            }
+        }
+        return visible;
+    }
 
     public void onDestroy() {
         Log.d(TAG, "[onDestroy]");

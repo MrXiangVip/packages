@@ -14,6 +14,8 @@ public class PictureSizeSettingView implements ICameraSettingView ,XdfPictureSiz
     private  final String TAG = "PictureSizeSettingView";
     private XdfPictureSizePreference mGroupPref;
     private String mSelectedValue;
+    private boolean mEnabled;
+
     private List<String> mEntryValues = new ArrayList<>();
     @Override
     public void loadView(PreferenceFragment fragment) {
@@ -25,6 +27,11 @@ public class PictureSizeSettingView implements ICameraSettingView ,XdfPictureSiz
         mGroupPref.setEntryValues( mEntryValues );
         mGroupPref.setEnabled( true);
 
+    }
+
+    @Override
+    public boolean isEnabled() {
+        return mEnabled;
     }
 
     public void setValue(String value) {

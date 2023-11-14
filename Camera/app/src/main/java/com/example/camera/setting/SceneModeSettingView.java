@@ -27,6 +27,7 @@ public class SceneModeSettingView implements ICameraSettingView, SummaryPreferen
     private List<String> mEntries = new ArrayList<>();
     private List<String> mEntryValues = new ArrayList<>();
     private List<Integer> mIcons = new ArrayList<>();
+    private boolean mEnabled;
 
     private String mSelectedValue = null;
     private String mSummary = null;
@@ -97,6 +98,11 @@ public class SceneModeSettingView implements ICameraSettingView, SummaryPreferen
         }
         xdfTabHostFragment.setScenceModeSelectedValue(mSelectedValue);
         xdfTabHostFragment.setScenceModeEntriesAndEntryValues(mEntries, mEntryValues, mIcons);
+    }
+
+    @Override
+    public boolean isEnabled() {
+        return mEnabled;
     }
 
     @Override

@@ -11,6 +11,7 @@ import androidx.core.graphics.drawable.RoundedBitmapDrawable;
 import androidx.core.graphics.drawable.RoundedBitmapDrawableFactory;
 
 import com.example.camera.common.IApp;
+import com.example.camera.common.IAppUiListener.OnThumbnailClickedListener;
 import com.example.camera.common.RotateImageView;
 import com.example.camerabg.R;
 
@@ -23,6 +24,7 @@ public class ThumbnailViewManager extends AbstractViewManager{
 
     private RoundedBitmapDrawable mRoundDrawable;
     private Bitmap mRoundedBitmap = null;
+    private OnThumbnailClickedListener mOnClickListener;
 
     public ThumbnailViewManager(IApp app, ViewGroup parentView) {
         super(app, parentView);
@@ -35,8 +37,18 @@ public class ThumbnailViewManager extends AbstractViewManager{
                 .findViewById(R.id.thumbnail);
         mRoundDrawable = createRoundDrawable(null, THUMB_COLOR);
         mThumbnailView.setImageDrawable(mRoundDrawable);
-
+        mThumbnailView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (mOnClickListener != null) {
+                    mOnClickListener.onThumbnailClicked();
+                }
+            }
+        });
         return mThumbnailView;
+    }
+    public void setThumbnailClickedListener(OnThumbnailClickedListener listener) {
+        mOnClickListener = listener;
     }
 
     private RoundedBitmapDrawable createRoundDrawable(Bitmap bitmap, final int color) {

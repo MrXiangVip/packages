@@ -20,6 +20,7 @@ import com.example.camera.ui.AbstractViewManager;
 import com.example.camerabg.R;
 import com.example.camera.common.IApp;
 import com.example.camera.common.PreviewFrameLayout;
+import com.example.camera.common.IAppUiListener.ISurfaceStatusListener;
 
 public class PreviewManager extends AbstractViewManager  {
     protected IAppUi mAppUi;
@@ -31,7 +32,8 @@ public class PreviewManager extends AbstractViewManager  {
     private FocusView mFocusView;
     private RelativeLayout mExpandView;
     private ExposureView mExposureView;
-
+    private int mPreviewWidth = 0;
+    private int mPreviewHeight = 0;
     ExposureViewController mExposureViewController;
     private static final int EXPOSURE_VIEW_PRIORITY = 9;
     private IController mPreviewController;
@@ -59,6 +61,7 @@ public class PreviewManager extends AbstractViewManager  {
         mPreviewFrameLayout =
                 (PreviewFrameLayout) mApp.getActivity().findViewById(R.id.preview_layout_container);
         mPreviewController = new TextureViewController(app);
+        mPreviewController.setOnLayoutChangeListener(mOnLayoutChangeCallback);
         mPreviewController.setOnTouchListener(mOnTouchListenerImpl);
 
     }
@@ -68,8 +71,9 @@ public class PreviewManager extends AbstractViewManager  {
     }
 
     protected View getView() {
-        addFocusView();
-       return  ((TextureViewController)mPreviewController).attachTextureView();
+//        addFocusView();
+//       return  ((TextureViewController)mPreviewController).attachTextureView();
+        return mPreviewController.getView();
     }
 
     public void init( ){
@@ -101,8 +105,7 @@ public class PreviewManager extends AbstractViewManager  {
                 }
                 mExposureView = (ExposureView) mPreviewFrameLayout.findViewById(R.id.exposure_view);
                 Log.d(TAG, "ExposureViewController mExposureView EV = " + mExposureView);
-                setFocusLocation(mPreviewFrameLayout.getWidth() / 2, mPreviewFrameLayout.getHeight() /
-                        2);
+                setFocusLocation(mPreviewFrameLayout.getWidth() /2, mPreviewFrameLayout.getHeight() /2);
             }
         });
     }
@@ -120,4 +123,22 @@ public class PreviewManager extends AbstractViewManager  {
         p.setMargins(left, top, 0, 0);
         mFocusView.requestLayout();
     }
+
+    public void updatePreviewSize(int width, int height, ISurfaceStatusListener listener) {
+        Log.i(TAG, "updatePreviewSize: new size (" + width + " , " + height + " )"
+                + " current size (" + mPreviewWidth + " , " + mPreviewHeight + " )");
+        mPreviewWidth = width;
+        mPreviewHeight = height;
+        if (mPreviewController != null) {
+            mPreviewController.updatePreviewSize(width, height, listener);
+        }
+    }
+
+    private View.OnLayoutChangeListener mOnLayoutChangeCallback = new View.OnLayoutChangeListener(){
+
+        @Override
+        public void onLayoutChange(View v, int left, int top, int right, int bottom, int oldLeft, int oldTop, int oldRight, int oldBottom) {
+
+        }
+    };
 }

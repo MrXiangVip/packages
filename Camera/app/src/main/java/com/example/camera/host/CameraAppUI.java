@@ -16,6 +16,7 @@ import android.widget.Toast;
 import com.example.camera.ICameraSettingView;
 import com.example.camera.SettingFragment;
 import com.example.camera.common.IAppUiListener;
+import com.example.camera.common.IAppUiListener.ISurfaceStatusListener;
 import com.example.camera.common.PreviewFrameLayout;
 import com.example.camera.common.RotateLayout;
 import com.example.camera.effect.EffectViewManager;
@@ -176,24 +177,21 @@ public class CameraAppUI implements IAppUi {
         mViewManagers.add(mCameraSwitcherManager);
 
         mModePickerManager = new ModePickerManager(mApp, parentView);
-//        mModePickerManager.setSettingClickedListener(new OnSettingClickedListenerImpl());
-//        mModePickerManager.setModeChangeListener(new OnModeChangedListenerImpl());
+        mModePickerManager.setSettingClickedListener(new OnSettingClickedListenerImpl());
+        mModePickerManager.setModeChangeListener(new OnModeChangedListenerImpl());
         mModePickerManager.setVisibility(View.VISIBLE);
         mViewManagers.add(mModePickerManager);
-
-
-
+//
         mEffectViewManager = new EffectViewManager(mApp, parentView);
         mEffectViewManager.setVisibility(View.VISIBLE);
         mViewManagers.add(mEffectViewManager);
-
+//      缩略图
         mThumbnailViewManager = new ThumbnailViewManager(mApp, parentView);
         mThumbnailViewManager.setVisibility(View.VISIBLE);
         mViewManagers.add(mThumbnailViewManager);
-
+//      预览
         mPreviewManager = new PreviewManager( mApp, parentView );
         mPreviewManager.setVisibility( View.VISIBLE);
-//        mPreviewManager.init();
         mPreviewManager.setOnTouchListener(new OnTouchListenerImpl());
 
 
@@ -321,6 +319,31 @@ public class CameraAppUI implements IAppUi {
         mConfigUIHandler.removeMessages(APPLY_ALL_UI_VISIBILITY);
         for (int count = 0; count < mViewManagers.size(); count++) {
             mViewManagers.get(count).setVisibility(visibility);
+        }
+    }
+
+    public void setPreviewSize(final int width, final int height,
+                               final ISurfaceStatusListener listener) {
+        mApp.getActivity().runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                mPreviewManager.updatePreviewSize(width, height, listener);
+            }
+        });
+    }
+
+    private class OnSettingClickedListenerImpl implements View.OnClickListener {
+        @Override
+        public void onClick(View view) {
+            if (mSettingFragment.hasVisibleChild()) {
+                showSetting();
+            }
+        }
+    }
+    private class OnModeChangedListenerImpl implements ModePickerManager.OnModeChangedListener {
+        @Override
+        public void onModeChanged(String modeName) {
+
         }
     }
 }

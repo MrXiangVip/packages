@@ -27,6 +27,7 @@ public class WhiteBalanceSettingView implements ICameraSettingView, SummaryPrefe
     private List<String> mOriginalEntries = new ArrayList<>();
     private List<String> mOriginalEntryValues = new ArrayList<>();
     private List<Integer> mOriginalIcons = new ArrayList<>();
+    private boolean mEnabled;
 
     private String mSelectedValue = null;
     private String mSummary = null;
@@ -85,6 +86,10 @@ public class WhiteBalanceSettingView implements ICameraSettingView, SummaryPrefe
         xdfTabHostFragment.setWhiteBalanceEntriesAndEntryValues(mEntries, mEntryValues, mIcons);
     }
 
+    @Override
+    public boolean isEnabled() {
+        return mEnabled;
+    }
 
 
     public void setEntryValues(List<String> entryValues) {

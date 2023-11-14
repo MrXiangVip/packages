@@ -8,6 +8,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 public class PreviewTextureView extends TextureView {
+    private double mAspectRatio = 0.0;
+
     public PreviewTextureView(@NonNull Context context) {
         this(context, null);
     }
@@ -22,5 +24,12 @@ public class PreviewTextureView extends TextureView {
 
     public PreviewTextureView(@NonNull Context context, @Nullable AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
+    }
+
+    public void setAspectRatio(double aspectRatio) {
+        if (mAspectRatio != aspectRatio) {
+            mAspectRatio = aspectRatio;
+            requestLayout();
+        }
     }
 }
