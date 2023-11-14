@@ -8,6 +8,7 @@ import android.animation.AnimatorInflater;
 import android.animation.ValueAnimator;
 import android.app.Activity;
 import android.app.FragmentTransaction;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.GestureDetector;
@@ -44,7 +45,7 @@ import com.example.camerabg.R;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CameraActivity extends Activity implements IApp {
+public class CameraActivity extends PermissionActivity implements IApp {
     private String TAG ="Camera";
 
     private RotateImageView flash;
@@ -122,8 +123,10 @@ public class CameraActivity extends Activity implements IApp {
         return  mDetector.onTouchEvent( event);
     }
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    protected void onCreateTasks(Bundle savedInstanceState) {
+        super.onCreateTasks(savedInstanceState);
+
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_REVERSE_LANDSCAPE);
 
         getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_LAYOUT_FLAGS
                 | View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
@@ -141,9 +144,9 @@ public class CameraActivity extends Activity implements IApp {
     }
 
 
-    protected void onResume( ) {
+    protected void onResumeTasks() {
+        super.onResumeTasks();
         mCameraAppUI.onResume();
-        super.onResume();
     }
 
 }

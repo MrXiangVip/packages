@@ -54,31 +54,6 @@ public class WhiteBalanceRecyclerAdapter extends RecyclerView.Adapter<WhiteBalan
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.cat_item, parent, false);
         final ViewHolder holder = new ViewHolder(view);
-
-        holder.holderView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                int position= holder.getAdapterPosition();
-                String entry = mEntries.get(position);
-                String entryValue = mEntryValues.get(position);
-                Toast.makeText(v.getContext(), "你点击了 View " + entryValue, Toast.LENGTH_SHORT).show();
-                mListener.onWhiteBalanceRecylerItemClick( entry, entryValue );
-                Log.d(TAG, "onClick "+entryValue);
-//
-                if( mRecyclerView != null ){
-                    int count = mRecyclerView.getChildCount();
-                    for(int i =0; i< count; i++){
-                        ViewGroup viewGroup = (ViewGroup) mRecyclerView.getChildAt( i );
-                        ImageView imageView= (ImageView)viewGroup.findViewById(R.id.image);
-                        imageView.setSelected(false);
-                    }
-                    ViewGroup viewGroup = (ViewGroup) mRecyclerView.getChildAt( position );
-                    ImageView imageView= (ImageView)viewGroup.findViewById(R.id.image);
-                    imageView.setSelected(true);
-                }
-            }
-        });
-
         return holder;
     }
     public void setWhiteBalanceSelectedValue(String whiteBalanceSelectedValue){
@@ -96,6 +71,31 @@ public class WhiteBalanceRecyclerAdapter extends RecyclerView.Adapter<WhiteBalan
         }else{
             holder.image.setSelected( false );
         }
+        holder.holderView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int position= holder.getAdapterPosition();
+                String entry = mEntries.get(position);
+                String entryValue = mEntryValues.get(position);
+                Toast.makeText(v.getContext(), "你点击了 View " + entryValue, Toast.LENGTH_SHORT).show();
+                mListener.onWhiteBalanceRecylerItemClick( entry, entryValue );
+                Log.d(TAG, "onClick "+entryValue);
+//
+                if( mRecyclerView != null ){
+                    int count = mRecyclerView.getChildCount();
+                    for(int i =0; i< count; i++){
+                        ViewGroup viewGroup = (ViewGroup) mRecyclerView.getChildAt( i );
+                        ImageView imageView= (ImageView)viewGroup.findViewById(R.id.image);
+                        imageView.setSelected(false);
+                    }
+//                    ViewGroup viewGroup = (ViewGroup) mRecyclerView.getChildAt( position );
+//                    ImageView imageView= (ImageView)viewGroup.findViewById(R.id.image);
+//                    imageView.setSelected(true);
+                    holder.holderView.findViewById(R.id.image).setSelected(true);
+                }
+                mWhiteBalanceSelectedValue = entryValue;
+            }
+        });
     }
 
     @Override

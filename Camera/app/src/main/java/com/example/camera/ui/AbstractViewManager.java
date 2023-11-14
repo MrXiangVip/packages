@@ -54,4 +54,11 @@ public abstract class AbstractViewManager implements IViewManager {
             mView.setVisibility(visibility);
         }
     }
+    public void onCreate() {
+
+    }
+    public void onResume() {
+
+    }
+
 }

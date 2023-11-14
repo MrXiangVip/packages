@@ -23,6 +23,8 @@ public class RotateLayout extends ViewGroup implements  Rotatable {
     public void onFinishInflate() {
         super.onFinishInflate();
         mChild = getChildAt(0);
+        mChild.setPivotX(0);
+        mChild.setPivotY(0);
 
     }
 
@@ -96,6 +98,10 @@ public class RotateLayout extends ViewGroup implements  Rotatable {
 
     @Override
     public void setOrientation(int orientation, boolean animation) {
+        orientation = orientation % 360;
+        if (mOrientation == orientation) {
+            return;
+        }
         mOrientation = orientation;
         requestLayout();
     }

@@ -6,4 +6,8 @@ public interface IViewManager {
 //    void setEnabled(boolean enabled);
 //    boolean isEnabled();
 
+    void onCreate();
+
+    void onResume();
+
 }

@@ -6,18 +6,6 @@
     android:id="@+id/activity_root"
     >
 
-<!--    <FrameLayout-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:orientation="vertical">-->
-
-<!--        <FrameLayout-->
-<!--            android:id="@+id/app_ui_root_substitude"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="match_parent"-->
-<!--            android:splitMotionEvents="false" />-->
-<!--    </FrameLayout>-->
-
 
     <FrameLayout
         android:id="@+id/preview_frame_root"
@@ -56,9 +44,10 @@
         android:visibility="gone"/>
     <FrameLayout
         android:id="@+id/setting_ui_root"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_gravity="center"
+        android:orientation="vertical"
         android:background="@android:color/transparent">
 
         <include layout="@layout/setting_layout"/>

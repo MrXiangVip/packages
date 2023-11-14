@@ -56,14 +56,30 @@ public class ScenceModeRecyclerAdapter extends RecyclerView.Adapter<ScenceModeRe
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        Log.d(TAG, "onCreateViewHolder");
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.cat_item, parent, false);
         final ViewHolder holder = new ViewHolder(view);
+        return holder;
+    }
 
+    @Override
+    public void onBindViewHolder(ViewHolder holder, int position) {
+        Log.d(TAG, "onBindViewHolder position "+position);
+
+        String  name = mEntries.get(position);
+        int id = mIcons.get(position);
+        holder.image.setImageResource( id );
+        holder.name.setText( name);
+        if( mScenceModeSelectedValue!=null && mScenceModeSelectedValue.equals(name) ){
+            holder.image.setSelected( true );
+        }else{
+            holder.image.setSelected( false );
+        }
         holder.holderView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int position = holder.getAdapterPosition();
-                String name = mEntries.get(position);
+//                int position = holder.getAdapterPosition();
+//                String name = mEntries.get(position);
                 Toast.makeText(v.getContext(), "你点击了 View " + name, Toast.LENGTH_SHORT).show();
                 mListener.onScenceModeRecylerItemClick( name );
                 Log.d(TAG, "onClick "+name);
@@ -75,27 +91,15 @@ public class ScenceModeRecyclerAdapter extends RecyclerView.Adapter<ScenceModeRe
                         ImageView imageView= (ImageView)viewGroup.findViewById(R.id.image);
                         imageView.setSelected(false);
                     }
-                    ViewGroup viewGroup = (ViewGroup) mRecyclerView.getChildAt( position );
-                    ImageView imageView= (ImageView)viewGroup.findViewById(R.id.image);
-                    imageView.setSelected(true);
+//                    ViewGroup viewGroup = (ViewGroup) mRecyclerView.getChildAt( position );
+//                    ImageView imageView= (ImageView)viewGroup.findViewById(R.id.image);
+//                    imageView.setSelected(true);
+                    holder.holderView.findViewById(R.id.image).setSelected(true);
                 }
+                mScenceModeSelectedValue = name;
             }
         });
 
-        return holder;
-    }
-
-    @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
-        String  name = mEntries.get(position);
-        int id = mIcons.get(position);
-        holder.image.setImageResource( id );
-        holder.name.setText( name);
-        if( mScenceModeSelectedValue!=null && mScenceModeSelectedValue.equals(name) ){
-            holder.image.setSelected( true );
-        }else{
-            holder.image.setSelected( false );
-        }
     }
 
     @Override

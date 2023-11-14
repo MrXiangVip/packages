@@ -17,6 +17,7 @@ import com.example.camera.ICameraSettingView;
 import com.example.camera.SettingFragment;
 import com.example.camera.common.IAppUiListener;
 import com.example.camera.common.PreviewFrameLayout;
+import com.example.camera.common.RotateLayout;
 import com.example.camera.effect.EffectViewManager;
 import com.example.camera.gesture.GestureManager;
 import com.example.camera.modepicker.ModePickerManager;
@@ -164,6 +165,11 @@ public class CameraAppUI implements IAppUi {
         mShutterManager.setVisibility(View.VISIBLE);
         mShutterManager.registerDone();
         mViewManagers.add(mShutterManager);
+
+//      设置按钮
+        mQuickSwitcherManager = new QuickSwitcherManager(mApp, parentView);
+        mQuickSwitcherManager.setVisibility(View.VISIBLE);
+        mViewManagers.add(mQuickSwitcherManager);
 //      切换按钮
         mCameraSwitcherManager = new CameraSwitcherManager(mApp, parentView);
         mCameraSwitcherManager.setVisibility(View.VISIBLE);
@@ -175,11 +181,7 @@ public class CameraAppUI implements IAppUi {
         mModePickerManager.setVisibility(View.VISIBLE);
         mViewManagers.add(mModePickerManager);
 
-//      设置按钮
-        mQuickSwitcherManager = new QuickSwitcherManager(mApp, parentView);
-        mQuickSwitcherManager.setVisibility(View.VISIBLE);
-//        mQuickSwitcherManager.setModeChangeListener(new OnQuickModeChangedListenerImpl());
-        mViewManagers.add(mQuickSwitcherManager);
+
 
         mEffectViewManager = new EffectViewManager(mApp, parentView);
         mEffectViewManager.setVisibility(View.VISIBLE);
@@ -224,7 +226,12 @@ public class CameraAppUI implements IAppUi {
 
         XdfAntiFlickerSettingView xdfAntiFlickerSettingView = new XdfAntiFlickerSettingView(mApp.getActivity(), "shake");
         addSettingView( xdfAntiFlickerSettingView );
+
+        for (int count = 0; count < mViewManagers.size(); count ++) {
+            mViewManagers.get(count).onCreate();
+        }
     }
+
 
 
     public void showSetting() {
@@ -249,11 +256,18 @@ public class CameraAppUI implements IAppUi {
         }
     }
     public void onResume() {
-//        RotateLayout root = (RotateLayout) mApp.getActivity().findViewById(R.id.app_ui);
+        RotateLayout root = (RotateLayout) mApp.getActivity().findViewById(R.id.app_ui);
         Configuration newConfig = mApp.getActivity().getResources().getConfiguration();
-//        for (int count = 0; count < mViewManagers.size(); count ++) {
-//            mViewManagers.get(count).onResume();
-//        }
+        if( root != null ){
+            if (newConfig.orientation == Configuration.ORIENTATION_PORTRAIT) {
+                root.setOrientation(0, false);
+            } else if (newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE) {
+                root.setOrientation(90, false);
+            }
+        }
+        for (int count = 0; count < mViewManagers.size(); count ++) {
+            mViewManagers.get(count).onResume();
+        }
     }
 
     @Override
