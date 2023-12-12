@@ -1,6 +1,6 @@
 package com.example.settings.security;
 
-import com.example.settings.DashboardFragment;
+import com.example.settings.dashboard.DashboardFragment;
 import com.example.settings.R;
 
 public class SecuritySettings extends DashboardFragment {

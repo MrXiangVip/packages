@@ -21,7 +21,7 @@
         android:theme="@style/Theme.Settings"
         tools:targetApi="31">
         <activity
-            android:name=".SettingsHomepageActivity"
+            android:name=".homepage.SettingsHomepageActivity"
             android:theme="@style/Theme.Settings.Home"
             android:exported="true">
             <intent-filter>

@@ -1,6 +1,6 @@
 package com.example.settings.aboutphone;
 
-import com.example.settings.DashboardFragment;
+import com.example.settings.dashboard.DashboardFragment;
 import com.example.settings.R;
 
 public class MyDeviceInfoFragment extends DashboardFragment {

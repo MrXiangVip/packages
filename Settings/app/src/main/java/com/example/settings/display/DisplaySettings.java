@@ -1,6 +1,6 @@
 package com.example.settings.display;
 
-import com.example.settings.DashboardFragment;
+import com.example.settings.dashboard.DashboardFragment;
 import com.example.settings.R;
 
 public class DisplaySettings extends DashboardFragment {

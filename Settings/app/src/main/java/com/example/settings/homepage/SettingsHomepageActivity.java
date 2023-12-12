@@ -1,4 +1,4 @@
-package com.example.settings;
+package com.example.settings.homepage;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
@@ -7,6 +7,9 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
 import android.view.View;
+
+import com.example.settings.R;
+import com.example.settings.homepage.TopLevelSettings;
 
 public class SettingsHomepageActivity extends FragmentActivity {
 

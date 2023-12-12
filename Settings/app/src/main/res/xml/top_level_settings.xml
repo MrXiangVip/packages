@@ -29,7 +29,6 @@
         android:fragment="com.example.settings.network.NetworkDashboardFragment"
         settings:controller="com.example.settings.network.TopLevelNetworkEntryPreferenceController"/>
     />
-<!--        android:fragment="com.android.settings.network.NetworkDashboardFragment"-->
 
     <Preference
         android:key="top_level_connected_devices"
@@ -39,7 +38,6 @@
         android:order="-110"
         android:fragment="com.example.settings.connecteddevice.ConnectedDeviceDashboardFragment"
         />
-    <!--        android:fragment="com.android.settings.connecteddevice.ConnectedDeviceDashboardFragment"-->
 <!--        settings:controller="com.android.settings.connecteddevice.TopLevelConnectedDevicesPreferenceController"/>-->
 
     <Preference

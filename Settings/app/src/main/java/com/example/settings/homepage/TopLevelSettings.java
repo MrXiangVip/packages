@@ -1,8 +1,11 @@
-package com.example.settings;
+package com.example.settings.homepage;
 
 import android.content.Context;
 
-public class TopLevelSettings extends  DashboardFragment{
+import com.example.settings.R;
+import com.example.settings.dashboard.DashboardFragment;
+
+public class TopLevelSettings extends DashboardFragment {
 
     public void onAttach(Context context) {
         super.onAttach(context);

@@ -3,6 +3,7 @@ package com.example.settings.bluetooth;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.os.Bundle;
+import android.util.Log;
 
 import androidx.preference.PreferenceGroup;
 
@@ -14,6 +15,7 @@ import com.example.settings.settingslib.bluetooth.LocalBluetoothManager;
 import java.util.Collection;
 
 public abstract class DeviceListPreferenceFragment extends RestrictedDashboardFragment implements BluetoothCallback {
+    private static final String TAG ="DeviceListPreferenceFragment " ;
     BluetoothAdapter mBluetoothAdapter;
     PreferenceGroup mDeviceListGroup;
     LocalBluetoothManager mLocalManager;
@@ -61,6 +63,7 @@ public abstract class DeviceListPreferenceFragment extends RestrictedDashboardFr
     }
 
     void startScanning() {
+        Log.d(TAG, "startScanning");
         if (!mBluetoothAdapter.isDiscovering()) {
             mBluetoothAdapter.startDiscovery();
         }
@@ -72,6 +75,7 @@ public abstract class DeviceListPreferenceFragment extends RestrictedDashboardFr
     }
 
     void createDevicePreference(BluetoothDevice cachedDevice) {
+        Log.d(TAG, "createDevicePreference "+cachedDevice);
         String key = cachedDevice.getAddress();
         BluetoothDevicePreference preference = (BluetoothDevicePreference) mDeviceListGroup.findPreference(key);
 

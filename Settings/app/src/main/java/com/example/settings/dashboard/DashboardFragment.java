@@ -1,4 +1,4 @@
-package com.example.settings;
+package com.example.settings.dashboard;
 
 import android.content.Context;
 import android.os.Bundle;
