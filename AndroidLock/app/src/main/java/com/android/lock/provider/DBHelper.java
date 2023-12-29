@@ -1,0 +1,31 @@
+package com.android.lock.provider;
+
+import android.content.Context;
+import android.database.DatabaseErrorHandler;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
+
+import androidx.annotation.Nullable;
+
+import com.android.lock.utils.DBUtils;
+
+public class DBHelper extends SQLiteOpenHelper {
+
+    public DBHelper(@Nullable Context context, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, int version) {
+        super(context, name, factory, version);
+    }
+
+
+    @Override
+    public void onCreate(SQLiteDatabase db) {
+        db.execSQL("CREATE TABLE IF NOT EXISTS " + DBUtils.LOCK_TABLE_NAME + "("
+                +" packageName TEXT PRIMARY KEY,"
+                +" lockCondition BOOLEAN DEFAULT 1"
+                +");");
+    }
+
+    @Override
+    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+
+    }
+}

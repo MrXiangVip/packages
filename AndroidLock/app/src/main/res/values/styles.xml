@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+    <style name="SureButton">
+        <item name="android:layout_margin">10dp</item>
+        <item name="android:background">@drawable/bottom_sure_selector</item>
+        <item name="android:text">确认</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:padding">5dp</item>
+    </style>
+
+    <style name="CancelButton">
+        <item name="android:layout_margin">10dp</item>
+        <item name="android:background">@drawable/bottom_cancel_selector</item>
+        <item name="android:text">取消</item>
+        <item name="android:textColor">@android:color/holo_blue_dark</item>
+        <item name="android:padding">5dp</item>
+    </style>
+</resources>

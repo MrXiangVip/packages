@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">应用锁</string>
+    <string name="input_password">\"%1$s\"已被锁住,请输入密码后进入</string>
+</resources>
