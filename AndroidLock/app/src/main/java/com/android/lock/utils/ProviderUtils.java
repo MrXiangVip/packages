@@ -36,7 +36,7 @@ public class ProviderUtils {
         Cursor cursor = resolver.query(uri_package, null, selection, selectionArgs, null,null);
         while( cursor.moveToNext() ){
              int flag = cursor.getInt( 1);
-             bean = new PackageBean( packageName, flag==0? false:true);
+             bean = new PackageBean( packageName, flag);
         }
         if( cursor!= null ){
             cursor.close();

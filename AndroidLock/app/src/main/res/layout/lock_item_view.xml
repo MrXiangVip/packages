@@ -16,16 +16,27 @@
             android:layout_marginLeft="20dp"
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"/>
-
-        <TextView
-            android:id="@+id/app_name"
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="16sp"
             android:layout_centerVertical="true"
             android:paddingLeft="20dp"
-            android:layout_toRightOf="@+id/app_icon"/>
-
+            android:layout_toRightOf="@+id/app_icon"
+            android:orientation="vertical"
+            >
+            <TextView
+                android:id="@+id/app_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                />
+            <TextView
+                android:id="@+id/check_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                />
+        </LinearLayout>
         <Switch
             android:id="@+id/arrow"
             android:layout_width="wrap_content"

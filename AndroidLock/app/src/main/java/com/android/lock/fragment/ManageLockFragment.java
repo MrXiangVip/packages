@@ -19,10 +19,8 @@ public class ManageLockFragment extends Fragment implements View.OnClickListener
 
     RecyclerView recyclerView;
     RelativeLayout  lockSwitchLayout;
-    Switch          lockSwitch;
     RelativeLayout  gotoResetPassword;
     ManageApplicationAdapter adapter;
-    boolean isChecked=false;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
@@ -35,7 +33,6 @@ public class ManageLockFragment extends Fragment implements View.OnClickListener
         super.onViewCreated(view, savedInstanceState);
 
         recyclerView = view.findViewById(R.id.applications);
-        lockSwitch = view.findViewById(R.id.lockSwitch);
         lockSwitchLayout = view.findViewById( R.id.lockSwitchLayout );
         gotoResetPassword = view.findViewById(R.id.gotoResetPassword);
         lockSwitchLayout.setOnClickListener( this );
@@ -47,21 +44,21 @@ public class ManageLockFragment extends Fragment implements View.OnClickListener
     @Override
     public void onResume() {
         super.onResume();
+//        ((MainActivity)getActivity()).clearFragments();
+
         adapter = new ManageApplicationAdapter( getActivity() );
         recyclerView.setAdapter( adapter );
 
-//        isChecked = SystemProperties.getBoolean( "persist.vendor.application.lock.enable", false);
-        lockSwitch.setChecked( isChecked);
     }
 
     @Override
     public void onClick(View v) {
         if( v.getId() == R.id.lockSwitchLayout ){
 
-            ((MainActivity)getActivity()).showFragment( new CloseLockFragment());
+            ((MainActivity)getActivity()).pushBackFragment( new CloseLockFragment());
 
         }else if( v.getId() ==R.id.gotoResetPassword ){
-            ((MainActivity)getActivity()).showFragment( new ResetPasswordFragment());
+            ((MainActivity)getActivity()).pushBackFragment( new ResetPasswordFragment());
         }
     }
 }

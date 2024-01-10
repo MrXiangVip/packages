@@ -10,6 +10,9 @@ import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Toolbar;
 
 import com.android.lock.fragment.EnableLockFragment;
@@ -20,17 +23,17 @@ public class MainActivity extends Activity {
 
 
     private Intent preIntent;
-    private Bundle  preOption;
+    private Bundle preOption;
     private String action;
     private String TAG="MainActivity.XSHX.";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Log.d(TAG, "onCreate");
+        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN |View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
         setContentView(R.layout.activity_main);
         initActionBar();
-        parseIntent();
-
     }
 
     public void initActionBar( ){
@@ -82,7 +85,11 @@ public class MainActivity extends Activity {
         try{
             if( preIntent !=null ){
                 String packageName = preIntent.getComponent().getPackageName();
+                if( packageName.equals( getPackageName())){
+                    return  null;
+                }
                 appLabel = (String) getPackageManager().getApplicationInfo(packageName, 0).loadLabel(getPackageManager());
+                Log.d(TAG, "label "+appLabel);
             }
         }catch (Exception e){
             e.printStackTrace();
@@ -96,24 +103,35 @@ public class MainActivity extends Activity {
 
     public void showFragment(Fragment fragment) {
         final FragmentManager fragmentManager = getFragmentManager();
-        final FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.main_content, fragment);
-        fragmentTransaction.commit();
+        final FragmentTransaction transaction = fragmentManager.beginTransaction();
+        transaction.replace(R.id.main_content, fragment);
+        transaction.commit();
     }
 
     public void pushBackFragment(Fragment fragment ){
         final FragmentManager fragmentManager = getFragmentManager();
         final FragmentTransaction transaction = fragmentManager.beginTransaction();
-        transaction.addToBackStack( null);
+        transaction.replace(R.id.main_content, fragment);
+        transaction.addToBackStack( "TAG");
         transaction.commit();
+    }
+
+    public void popBackFragment(){
+        final FragmentManager fragmentManager = getFragmentManager();
+        int backStackCount = fragmentManager.getBackStackEntryCount();
+        if (backStackCount > 0) {
+            fragmentManager.popBackStack("TAG",  FragmentManager.POP_BACK_STACK_INCLUSIVE);
+        }
     }
 
     @Override
     protected void onResume() {
         super.onResume();
+        Log.d(TAG, "onResume");
+        parseIntent();
 //      如果没有开启去往点击开启界面
 //        if( SystemProperties.getBoolean("persist.vendor.application.lock.enable", false)){
-        if( true){
+        if( true ){
             showFragment( new EnableLockFragment());
         }else{
             showFragment(new InputPasswordFragment());
@@ -122,10 +140,27 @@ public class MainActivity extends Activity {
     }
 
     @Override
+    protected void onPause() {
+        super.onPause();
+        Log.d(TAG, "onPause");
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.d(TAG, "onStop");
+        finish();
+    }
+
+    @Override
     protected void onDestroy() {
         Log.d(TAG, " onDestroy ");
         super.onDestroy();
 
+    }
+
+    public void goBack(View view){
+        onBackPressed();
     }
 
     public void removeAllRecentTasks() {

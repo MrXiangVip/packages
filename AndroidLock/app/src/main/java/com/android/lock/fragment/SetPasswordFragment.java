@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import androidx.annotation.Nullable;
 
@@ -18,7 +19,6 @@ public class SetPasswordFragment extends Fragment {
 
 //    VerifyEditText  vet;
     PasswordEditText vet;
-
     @Override
     public void onCreate( Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +35,7 @@ public class SetPasswordFragment extends Fragment {
     public void onViewCreated(View view,  Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         vet = view.findViewById( R.id.vet );
+        vet.clearText();
         vet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -46,15 +47,20 @@ public class SetPasswordFragment extends Fragment {
             @Override
             public void complete(String content) {
                 getActivity().getSharedPreferences("password", Context.MODE_PRIVATE).edit().putString("firstPassword", content).apply();
-                ((MainActivity)getActivity()).showFragment( new SetPasswordFragmentNext() );
+                ((MainActivity)getActivity()).pushBackFragment( new SetPasswordFragmentNext() );
             }
         });
-        ((MainActivity) getActivity()).setActionBarTitle("应用锁密码");
-
     }
 
     @Override
     public void onResume() {
         super.onResume();
+        ((MainActivity) getActivity()).setActionBarTitle("应用锁密码");
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        vet.clearText();
     }
 }

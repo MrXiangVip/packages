@@ -31,7 +31,8 @@ public class EnableLockFragment extends Fragment implements View.OnClickListener
     @Override
     public void onClick(View v) {
         if( v.getId() == R.id.enableLock ){
-            ((MainActivity)getActivity()).showFragment( new SetPasswordFragment() );
+
+            ((MainActivity)getActivity()).pushBackFragment( new SetPasswordFragment() );
         }
     }
 }

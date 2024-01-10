@@ -8,4 +8,5 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="gray">#FFEFEFEF</color>
+    <color name="password_background">#fff1f1f1</color>
 </resources>

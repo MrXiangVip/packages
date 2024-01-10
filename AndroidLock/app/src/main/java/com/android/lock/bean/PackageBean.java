@@ -6,16 +6,16 @@ public class PackageBean {
     private String packageName;
     private Drawable packageIcon;
     private String packageLabel;
-    private boolean lockFlag;
+    private int lockFlag;  //0. 关锁    1.开锁     2.不可见
 
-    public PackageBean(String name, Drawable drawable, String label, boolean flag) {
+    public PackageBean(String name, Drawable drawable, String label, int flag) {
         packageName = name;
         packageIcon = drawable;
         packageLabel = label;
         lockFlag= flag;
     }
 
-    public PackageBean(String name, boolean flag){
+    public PackageBean(String name, int flag){
         packageName = name;
         lockFlag = flag;
     }
@@ -43,11 +43,11 @@ public class PackageBean {
         return packageLabel;
     }
 
-    public void setLockFlag(boolean lockFlag) {
+    public void setLockFlag(int lockFlag) {
         this.lockFlag = lockFlag;
     }
 
-     public boolean getLockFlag( ){
+     public int getLockFlag( ){
         return  lockFlag;
      }
 }

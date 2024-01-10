@@ -20,9 +20,8 @@ public class LockProvider extends ContentProvider {
     private static final UriMatcher mMatcher;
     public static final String AUTOHORITY = "android.provider";
     public static final int Lock_Code = 1;
-    private static final String DATABASE_NAME = "application.db";
-    DBHelper mDbHelper = null;
-    SQLiteDatabase db = null;
+//    DBHelper mDbHelper = null;
+//    SQLiteDatabase db = null;
     private String TAG="LockProvider.";
 
     static {
@@ -35,8 +34,8 @@ public class LockProvider extends ContentProvider {
     @Override
     public boolean onCreate() {
         mContext = getContext();
-        mDbHelper = new DBHelper(getContext(), DATABASE_NAME, null, 1);
-        db = mDbHelper.getWritableDatabase();
+//        mDbHelper = new DBHelper(mContext);
+//        db = mDbHelper.getWritableDatabase();
 
         return false;
     }
@@ -45,9 +44,12 @@ public class LockProvider extends ContentProvider {
     @Override
     public Cursor query(@NonNull Uri uri, @Nullable String[] projection, @Nullable String selection, @Nullable String[] selectionArgs, @Nullable String sortOrder) {
         String table = getTableName(uri);
+        SQLiteDatabase db = new DBHelper(mContext).getWritableDatabase();
         return db.query(table, projection, selection, selectionArgs, null, null, sortOrder, null);
 
     }
+
+
 
     @Nullable
     @Override
@@ -61,6 +63,7 @@ public class LockProvider extends ContentProvider {
         Log.d(TAG, "insert "+values.toString());
         Uri url = null;
         String table = getTableName(uri);
+        SQLiteDatabase db = new DBHelper(mContext).getWritableDatabase();
         long rowID = db.replace(table, null, values);
         if (rowID > 0) {
             url = ContentUris.withAppendedId(uri, rowID);

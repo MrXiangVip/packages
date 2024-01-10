@@ -30,6 +30,7 @@ public class ManageApplicationAdapter extends RecyclerView.Adapter<ManageApplica
 
     ManageApplicationAdapter(Context context) {
         mContext = context;
+        Utils.initLaunchedPackageBean(context);//在init里加需要屏蔽的包名
         mData = Utils.getLaunchedPackageBean(context);
     }
 
@@ -47,7 +48,7 @@ public class ManageApplicationAdapter extends RecyclerView.Adapter<ManageApplica
         PackageBean bean = mData.get(position);
         holder.appName.setText( bean.getPackageLabel() );
         holder.appIcon.setImageDrawable( bean.getPackageIcon() );
-        holder.aSwitch.setChecked( bean.getLockFlag() );
+
         holder.aSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -55,8 +56,20 @@ public class ManageApplicationAdapter extends RecyclerView.Adapter<ManageApplica
                 values.put("packageName", bean.getPackageName());
                 values.put("lockCondition", isChecked);
                 ProviderUtils.getInstance(mContext).insertPackageBean( values);
+                if( isChecked ){
+                    holder.appStatus.setText("锁定");
+                }else{
+                    holder.appStatus.setText("未锁定");
+                }
             }
         });
+        if( bean.getLockFlag() == 0 ){
+            holder.aSwitch.setChecked( false );
+            holder.appStatus.setText("未锁定");
+        }else if( bean.getLockFlag() == 1){
+            holder.aSwitch.setChecked( true );
+            holder.appStatus.setText("锁定");
+        }
     }
 
     @Override
@@ -69,14 +82,17 @@ public class ManageApplicationAdapter extends RecyclerView.Adapter<ManageApplica
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
 
-        public TextView appName;
+        public TextView  appName;
+        public TextView  appStatus;
         public ImageView appIcon;
         public Switch     aSwitch;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             appName = itemView.findViewById( R.id.app_name);
+            appStatus =  itemView.findViewById(R.id.check_status );
             appIcon = itemView.findViewById( R.id.app_icon );
             aSwitch = itemView.findViewById(R.id.arrow);
+
         }
 
     }

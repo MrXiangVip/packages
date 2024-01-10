@@ -19,15 +19,12 @@
             android:layout_alignParentLeft="true"
             android:paddingLeft="10dp"
             android:text="关闭应用锁功能"/>
-        <Switch
-            android:id="@+id/lockSwitch"
+        <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:paddingRight="10dp"
-            android:clickable="false"
-            android:checked="true"
-            />
+            android:src="@drawable/ic_arrow_in"/>
     </RelativeLayout>
     <RelativeLayout
         android:id="@+id/gotoResetPassword"

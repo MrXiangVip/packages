@@ -66,9 +66,11 @@ public class PasswordEditText extends AppCompatEditText {
             Round = t.getDimensionPixelSize(R.styleable.PwdEditText_round, (int)TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,3,getResources().getDisplayMetrics()));
             Circle = t.getDimensionPixelSize(R.styleable.PwdEditText_circle, (int)TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,7,getResources().getDisplayMetrics()));
             textSize = t.getDimensionPixelSize(R.styleable.PwdEditText_textSize, (int)TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP,16,getResources().getDisplayMetrics()));
-            checkedColor = t.getColor(R.styleable.PwdEditText_checkedColor,getResources().getColor(android.R.color.widget_edittext_dark));
-            defaultColor = t.getColor(R.styleable.PwdEditText_defaultColor,getResources().getColor(android.R.color.darker_gray ));
-            backColor = t.getColor(R.styleable.PwdEditText_backColor,0xfff1f1f1);
+//            checkedColor = t.getColor(R.styleable.PwdEditText_checkedColor,getResources().getColor(android.R.color.widget_edittext_dark));
+//            defaultColor = t.getColor(R.styleable.PwdEditText_defaultColor,getResources().getColor(android.R.color.darker_gray ));
+            checkedColor = t.getColor(R.styleable.PwdEditText_checkedColor,getResources().getColor(R.color.password_background));
+            defaultColor = t.getColor(R.styleable.PwdEditText_defaultColor,getResources().getColor(R.color.password_background));
+            backColor = t.getColor(R.styleable.PwdEditText_backColor,getResources().getColor(R.color.password_background));
             textColor = t.getColor(R.styleable.PwdEditText_textColor,  getResources().getColor(android.R.color.holo_blue_dark));
             waitInputColor = t.getColor(R.styleable.PwdEditText_waitInputColor,0xFF444444);
             isPwd = t.getBoolean(R.styleable.PwdEditText_isPwd,true);
