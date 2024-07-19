@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">FactoryMode</string>
+    <string name="test_lcd">测试LCD</string>
+    <string name="test_double_mic">测试双 MIC</string>
+    <string name="test_left_mic">测试  MIC</string>
+    <string name="test_mic">测试 MIC Phone</string>
+
+    <string name="left_channel">左声道</string>
+    <string name="right_channel">右声道</string>
+    <string name="play_recorder">播放录音</string>
+    <string name="stop_recorder">停止播放</string>
+    <string name="stop_recording">停止录音</string>
+    <string name="start_recording">开始录音</string>
+
+    <string name="Success">Success</string>
+    <string name="Failed">Failed</string>
+    <string name="Mic_start">主麦开始录音</string>
+    <string name="Mic_start2">副麦开始录音</string>
+    <string name="Mic_operation">麦克风选项</string>
+    <string name="Speaker_operation">喇叭选项</string>
+    <string name="mid_header">mid-MTK Function Test V2.0</string>
+    <string name="mic_inavailable">Mic inavailable!</string>
+    <string name="sdcard_tips_success">已检测到SD卡</string>
+    <string name="sdcard_tips_failed">没有检测到SD卡</string>
+
+    <string name="Mic_stop">停止录音并播放</string>
+    <string name="Mic_play">开始播放</string>
+    <string name="title_activity_main">MainActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+</resources>

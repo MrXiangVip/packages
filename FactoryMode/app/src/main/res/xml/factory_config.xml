@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <Config data_in_sharepreference="true">
+        <component
+            name="lcd"
+            fragment="com.android.factorymode.fragments.LcdTest"
+            title="@string/test_lcd">
+        </component>
+
+        <component
+            name="double mic"
+            fragment="com.android.factorymode.fragments.DoubleMic"
+            title="@string/test_double_mic">
+        </component>
+
+        <component
+            name="mic phone"
+            fragment="com.android.factorymode.fragments.MicTest"
+            title="@string/test_mic">
+        </component>
+
+        <component
+            name=" mic "
+            fragment="com.android.factorymode.fragments.MicPhoneTest"
+            title="@string/test_left_mic">
+        </component>
+
+
+    </Config>
+
+</resources>
