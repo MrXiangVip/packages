@@ -1,0 +1,23 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.MyApplication" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    </style>
+
+    <style name="Theme.MyApplication" parent="Base.Theme.MyApplication" />
+
+    <style name="CustomActivityTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- 关键：设置窗口为浮动模式（非全屏） -->
+        <item name="android:windowIsFloating">true</item>
+        <!-- 隐藏标题栏（可选） -->
+        <item name="android:windowNoTitle">true</item>
+        <!-- 窗口背景（可选） -->
+        <item name="android:windowBackground">@android:color/white</item>
+        <!-- 固定宽度和高度（单位：dp） -->
+        <item name="android:backgroundDimEnabled">true</item> <!-- 背景变暗 -->
+        <item name="android:backgroundDimAmount">0.5</item> <!-- 暗度值（0-1） -->
+
+    </style>
+
+</resources>
