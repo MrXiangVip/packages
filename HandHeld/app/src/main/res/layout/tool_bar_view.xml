@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_editor_dialog"
+    android:orientation="vertical"
+    tools:parentTag="android.widget.LinearLayout">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="24dp"
+        android:paddingHorizontal="18dp"
+        android:layout_marginTop="6dp">
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:maxWidth="180dp"
+            android:gravity="center_vertical"
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:textColor="#FFFFFF"
+            tools:text="@string/app_name" />
+
+        <ImageView
+            android:id="@+id/rename"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginLeft="4dp"
+            android:src="@drawable/ic_tool_edit"
+            tools:ignore="ContentDescription" />
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <ImageView
+            android:id="@+id/drag"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_tool_drag"
+            tools:ignore="ContentDescription" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:paddingHorizontal="18dp"
+        android:gravity="center_vertical"
+        android:clipChildren="false"
+        android:clipToPadding="false">
+
+        <ImageButton
+            android:id="@+id/add"
+            style="@style/ToolBarButton"
+            android:layout_marginStart="0dp"
+            android:background="@drawable/ic_tool_add" />
+
+        <ImageButton
+            android:id="@+id/cloud"
+            style="@style/ToolBarButton"
+            android:background="@drawable/ic_tool_remote" />
+
+        <ImageButton
+            android:id="@+id/clear"
+            style="@style/ToolBarButton"
+            android:background="@drawable/ic_tool_clean" />
+
+        <ImageButton
+            android:id="@+id/close"
+            style="@style/ToolBarButton"
+            android:background="@drawable/ic_tool_no" />
+
+        <ImageButton
+            android:id="@+id/save"
+            style="@style/ToolBarButton"
+            android:background="@drawable/ic_tool_yes" />
+    </LinearLayout>
+</merge>

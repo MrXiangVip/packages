@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:paddingVertical="12dp"
+    tools:background="@drawable/bg_config_layout">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/editor_joystick"
+        android:textColor="#99EBEBF5"
+        android:textSize="9sp" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp">
+
+        <TextView
+            android:id="@+id/keyLeftJoystick"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@drawable/bg_joystick"
+            />
+        <!--            app:inputId="1" -->
+
+        <TextView
+            android:id="@+id/keyRightJoystick"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="10dp"
+            android:background="@drawable/bg_joystick"
+            />
+<!--        app:inputId="2"-->
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="192dp"
+        android:layout_height="0.5dp"
+        android:layout_marginTop="14dp"
+        android:background="#FF3A3A3C" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:text="@string/editor_direction"
+        android:textColor="#99EBEBF5"
+        android:textSize="9sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/keyUp"
+            style="@style/NewKeyConfigView"
+            />
+<!--        app:inputId="11"-->
+
+        <TextView
+            android:id="@+id/keyDown"
+            style="@style/NewKeyConfigView"
+            />
+<!--        app:inputId="12"-->
+
+        <TextView
+            android:id="@+id/keyLeft"
+            style="@style/NewKeyConfigView"
+            />
+<!--        app:inputId="13"-->
+
+        <TextView
+            android:id="@+id/keyRight"
+            style="@style/NewKeyConfigView"
+            />
+<!--        app:inputId="14"-->
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="192dp"
+        android:layout_height="0.5dp"
+        android:layout_marginTop="8dp"
+        android:background="#FF3A3A3C" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:text="@string/editor_button"
+        android:textColor="#99EBEBF5"
+        android:textSize="9sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/keyA"
+            style="@style/NewKeyConfigView"
+            />
+<!--        app:inputId="21"-->
+
+        <TextView
+            android:id="@+id/keyB"
+            style="@style/NewKeyConfigView"
+            />
+<!--        app:inputId="22"-->
+
+        <TextView
+            android:id="@+id/keySe"
+            style="@style/NewKeyConfigView"
+            />
+<!--        app:inputId="51"-->
+
+        <TextView
+            android:id="@+id/keyM1"
+            style="@style/NewKeyConfigView"
+            android:visibility="gone"
+            />
+<!--        app:inputId="1001"-->
+
+        <TextView
+            android:id="@+id/keyL3"
+            style="@style/NewKeyConfigView"
+            />
+<!--        app:inputId="33"-->
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/keyX"
+            style="@style/NewKeyConfigView"
+            />
+<!--        app:inputId="24"-->
+
+        <TextView
+            android:id="@+id/keyY"
+            style="@style/NewKeyConfigView"
+            />
+<!--        app:inputId="25"-->
+        <TextView
+            android:id="@+id/keySt"
+            style="@style/NewKeyConfigView"
+            />
+<!--        app:inputId="52"-->
+
+        <TextView
+            android:id="@+id/keyM2"
+            style="@style/NewKeyConfigView"
+            android:visibility="gone"
+            />
+<!--        app:inputId="1002"-->
+
+        <TextView
+            android:id="@+id/keyR3"
+            style="@style/NewKeyConfigView"
+            />
+<!--        app:inputId="43"-->
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/keyL1"
+            style="@style/NewKeyConfigView"
+            />
+<!--        app:inputId="31"-->
+
+        <TextView
+            android:id="@+id/keyL2"
+            style="@style/NewKeyConfigView"
+            />
+<!--        app:inputId="32"-->
+
+        <TextView
+            android:id="@+id/keyR1"
+            style="@style/NewKeyConfigView"
+            />
+<!--        app:inputId="41"-->
+
+        <TextView
+            android:id="@+id/keyR2"
+            style="@style/NewKeyConfigView"
+            />
+<!--        app:inputId="42"-->
+
+    </LinearLayout>
+</LinearLayout>

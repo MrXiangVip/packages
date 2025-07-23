@@ -19,5 +19,19 @@
         <item name="android:backgroundDimAmount">0.5</item> <!-- 暗度值（0-1） -->
 
     </style>
+    <style name="ToolBarButton">
+        <item name="android:layout_width">36dp</item>
+        <item name="android:layout_height">36dp</item>
+<!--        <item name="android:background">@drawable/bg_tool_bar_button</item>-->
+        <item name="android:padding">6dp</item>
+        <item name="android:layout_marginStart">16dp</item>
+    </style>
+
+    <style name="NewKeyConfigView">
+        <item name="android:layout_width">32dp</item>
+        <item name="android:layout_height">32dp</item>
+        <item name="android:layout_marginHorizontal">4dp</item>
+        <item name="android:background">@drawable/bg_key_config</item>
+    </style>
 
 </resources>

@@ -12,20 +12,21 @@ import android.view.WindowManager;
 import com.example.myapplication.R;
 import com.google.android.material.tabs.TabLayout;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class FloatingView {
     private static SideBarView sidebarView;
-    private WindowManager windowManager;
-//    private ViewPager viewPager;
+    private static GamepadConfigEditor  gamepadConfigEditor;
     private static FloatingView mInstance;
     private static Context mContext;
 
-//    private SideBarViewPager pageAdapter;
-
-    private SideBarViewPager viewPager;
+    private Map<Class<? extends View>, View> views = new HashMap<>();
     private FloatingView(Context context){
         sidebarView = new SideBarView(context);
-
-
+        gamepadConfigEditor = new GamepadConfigEditor(context);
+        views.put(SideBarView.class, sidebarView);
+        views.put(GamepadConfigEditor.class, gamepadConfigEditor);
     }
     public static FloatingView getInstance(Context context){
         mContext = context;
@@ -35,23 +36,19 @@ public class FloatingView {
         }
         return mInstance;
     }
-    public void show() {
-        if( sidebarView.getParent()==null ){
-            WindowManager.LayoutParams params = new WindowManager.LayoutParams();
-            params.width = (int) (mContext.getResources().getDisplayMetrics().widthPixels * 0.5);
-            params.height = WindowManager.LayoutParams.MATCH_PARENT;
-            params.gravity = Gravity.RIGHT;
-            params.format = PixelFormat.TRANSLUCENT;
-            params.flags = WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL;
-            windowManager = (WindowManager) mContext.getSystemService(WINDOW_SERVICE);
-            windowManager.addView(sidebarView, params);
 
+    public <T extends View> T get(Class<T> cls){
+        T view = (T)views.get(cls);
+        if( view ==null){
+            return null;
         }
-
+        return view;
     }
-    public void dismiss() {
-        if (sidebarView.getParent() != null) {
-            windowManager.removeView(sidebarView);
+
+
+    public void dismissAll( ){
+        for(Map.Entry<Class<? extends View>, View> entry:views.entrySet()){
+            ((IFloatingView)entry).dismiss();
         }
     }
 }

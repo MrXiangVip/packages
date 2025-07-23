@@ -1,21 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.example.myapplication.widget.ScreenMappingModeSettingsView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <TextView
+    <Button
+        android:id="@+id/emptyView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="无方案"/>
+        android:text="无方案"
+        android:background="@android:color/transparent"/>
 
-    <TextView
+    <Button
+        android:id="@+id/createSchemeView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="新建方案"/>
+        android:text="新建方案"
+        android:background="@android:color/transparent"/>
 
-    <TextView
+    <Button
+        android:id="@+id/displayCurrentConfigOnScreenView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="在屏幕上显示当前方案"/>
-</LinearLayout>
+        android:text="在屏幕上显示当前方案"
+        android:background="@android:color/transparent"/>
+</com.example.myapplication.widget.ScreenMappingModeSettingsView>

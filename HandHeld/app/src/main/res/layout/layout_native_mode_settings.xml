@@ -1,19 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.example.myapplication.widget.NativeModeSettingsView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <TextView
+    <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="按键布局"/>
-    <TextView
+        android:text="按键布局"
+        android:background="@android:color/transparent"/>
+    <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="连发"/>
-    <TextView
+        android:text="连发"
+        android:background="@android:color/transparent"/>
+    <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="摇杆反向"/>
-</LinearLayout>
+        android:text="摇杆反向"
+        android:background="@android:color/transparent"/>
+</com.example.myapplication.widget.NativeModeSettingsView>

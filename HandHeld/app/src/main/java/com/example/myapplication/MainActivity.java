@@ -23,6 +23,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import com.example.myapplication.widget.FloatingView;
+import com.example.myapplication.widget.SideBarView;
 
 public class MainActivity extends AppCompatActivity implements View.OnKeyListener, View.OnClickListener {
     String TAG = "MainActivity.";
@@ -104,7 +105,7 @@ public class MainActivity extends AppCompatActivity implements View.OnKeyListene
     public boolean onTouchEvent(MotionEvent event) {
         Log.d(TAG, "onTouchEvent " + event.toString());
         Log.d(TAG, "x:" + event.getX() + " y:" + event.getY());
-        FloatingView.getInstance(this).dismiss();
+        FloatingView.getInstance(this).get(SideBarView.class).dismiss();
         int pointCount = 0;
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
@@ -274,7 +275,7 @@ public class MainActivity extends AppCompatActivity implements View.OnKeyListene
 //            Intent intent = new Intent();
 //            intent.setAction("android.intent.action.SideBar");
 //            startActivity(intent);
-            FloatingView.getInstance(this).show();
+            FloatingView.getInstance(this).get(SideBarView.class).show();
         }
     }
 

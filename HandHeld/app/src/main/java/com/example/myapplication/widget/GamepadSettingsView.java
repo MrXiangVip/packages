@@ -76,6 +76,7 @@ public class GamepadSettingsView extends LinearLayout implements View.OnClickLis
 
         currentAppGamepadMode = currentAppGamepadMode.isNative()?
             GamepadConfigType.TOUCHSCREEN : GamepadConfigType.NATIVE;
+
         refreshContainerUi();
     }
 

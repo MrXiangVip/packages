@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Hand Held</string>
+
+    <string name="editor_joystick">摇杆</string>
+    <string name="editor_direction">方向键</string>
+    <string name="editor_button">按键</string>
 </resources>
