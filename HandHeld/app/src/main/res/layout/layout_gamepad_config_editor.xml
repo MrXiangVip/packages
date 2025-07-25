@@ -5,10 +5,10 @@
     android:layout_height="match_parent"
     >
 
-<!--    <com.handheld.editor.core.GamepadConfigViewEditMode-->
-<!--        android:id="@+id/configView"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent" />-->
+    <com.example.myapplication.widget.GamepadConfigViewEditMode
+        android:id="@+id/configView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
 
     <com.example.myapplication.widget.ToolBarView
