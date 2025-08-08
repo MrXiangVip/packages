@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="8dp"
+    android:orientation="horizontal">
+
+    <!-- 用户消息（靠右） -->
+    <LinearLayout
+        android:id="@+id/ll_user"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="end">
+
+        <TextView
+            android:id="@+id/tv_user_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxWidth="240dp"
+            android:padding="12dp"
+            android:background="@drawable/user_bubble"
+            android:textColor="@android:color/white"/>
+    </LinearLayout>
+
+    <!-- AI消息（靠左） -->
+    <LinearLayout
+        android:id="@+id/ll_ai"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="start">
+
+        <TextView
+            android:id="@+id/tv_ai_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxWidth="240dp"
+            android:padding="12dp"
+            android:background="@drawable/ai_bubble"
+            android:textColor="@android:color/black"/>
+    </LinearLayout>
+
+</LinearLayout>
